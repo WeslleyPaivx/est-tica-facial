@@ -53,7 +53,11 @@ Repositório `est-tica-facial` estava vazio (sem commits, sem branches remotas, 
 - **Performance Advisor: 12 × INFO `unused_index`** — esperado em banco vazio; índices de FK/tenant mantidos.
 - Verificação de catálogo no Supabase real: 7 tabelas em `public`, todas com RLS; 15 policies, nenhuma `true` nem para anon; anon sem grants em tabelas nem EXECUTE em funções, sem USAGE em `private`; `authenticated` sem INSERT/UPDATE de tabela inteira (só por coluna), sem UPDATE em `organization_id`/`status`; `SECURITY DEFINER` só em `private`; todas as funções com `search_path`; trigger `on_auth_user_created` ativo; 33 permissões na matriz.
 
+### Validação manual com Auth real (2026-11-03)
+
+Proprietário rodou o app localmente contra a homologação e concluiu: cadastro → e-mail de confirmação do Supabase → confirmação (PKCE em `/auth/confirm`) → onboarding → criação de organização → MFA TOTP obrigatório para owner → visão geral com contagens reais e evento de auditoria. Conta usada: a do próprio proprietário (não sintética).
+
 ### Próximos passos
 
-1. Ajustar Auth da homologação no painel (R9) e rodar E2E autenticado com usuários sintéticos (R2).
+1. Automatizar o E2E autenticado (Playwright) com usuários sintéticos (R2); validar convite/aceite, troca de organização e revogação.
 2. Fase 2: CRUD de contatos/empresas (tabelas já com RLS), leads, pipelines, atividades, tarefas, agenda, command palette, com testes de isolamento por entidade.

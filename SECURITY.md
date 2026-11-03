@@ -43,8 +43,8 @@
 | # | Risco | Severidade | Situação |
 | --- | --- | --- | --- |
 | R1 | ~~Supabase Advisors não executados~~ — **resolvido em 2026-11-03** na homologação `zaniva-crm-homolog`: Security Advisor 0 achados; Performance Advisor 12 × INFO `unused_index` (banco vazio; índices cobrem FKs/filtros por tenant, mantidos). Reavaliar com dados sintéticos. | — | Resolvido |
-| R9 | Configurações de Auth da homologação (senha mínima 8, Site URL/Redirect URLs, templates de e-mail) ainda não ajustadas no painel; o conector não expõe essas opções. | Média | Pendente: ajustar no painel conforme `supabase/config.toml` |
-| R2 | Fluxos Auth reais (e-mail, MFA TOTP, expiração de JWT, refresh) não testados E2E contra GoTrue; testados apenas por unidade/RLS com JWT simulado. | Média | Pendente: Playwright autenticado em homologação |
+| R9 | Configurações de Auth da homologação ajustadas pelo proprietário (senha mínima 8, Site URL/Redirect `localhost`). Templates de e-mail no padrão Supabase (inglês) e SMTP padrão com limite baixo de envio. | Baixa | Trocar por SMTP próprio e templates em PT antes de uso real |
+| R2 | Fluxo Auth real validado manualmente (cadastro, confirmação, org, MFA) em 2026-11-03; falta automação E2E e casos de expiração/revogação de sessão e convites. | Média | Pendente: Playwright autenticado em homologação |
 | R3 | Envio de e-mail de convite não implementado (estado honesto na UI). | Baixa | Fase 5 |
 | R4 | Rate limit de aplicação (Server Actions) depende dos limites do Supabase Auth; sem limitador próprio além do limite de criação de org. | Média | Avaliar WAF/Vercel Firewall ou limitador antes de produção |
 | R5 | `aal` vem do JWT assinado pelo Supabase; um JWT aal2 continua válido até expirar (≤ `jwt_expiry`, 1 h) mesmo após desativar o fator. | Baixa | Aceito; reduzir `jwt_expiry` se necessário |
