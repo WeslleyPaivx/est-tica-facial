@@ -37,6 +37,16 @@ describe("fronteira frontend/backend", () => {
     expect(exported.length).toBe(all.length);
   });
 
+  it("actions de CRM: sessão revalidada e organization_id nunca vem do formulário", () => {
+    const s = src("server/actions/crm.ts");
+    expect(s.match(/const s = await requireOrgSession\(\);/g)?.length).toBe(2); // save + remove
+    expect(s).not.toMatch(/form\.get\(["']organization_id["']\)/);
+    expect(s).toMatch(/organization_id: orgId/);
+    for (const fn of ["saveCompanyAction", "deleteCompanyAction", "saveContactAction", "deleteContactAction"]) {
+      expect(s).toMatch(new RegExp(`export async function ${fn}[\\s\\S]*?return (save|remove)\\(`));
+    }
+  });
+
   it("nenhuma variável NEXT_PUBLIC_ sensível", () => {
     const offenders = files.filter((f) => /NEXT_PUBLIC_[A-Z_]*(SECRET|SERVICE|PRIVATE|TOKEN|PASSWORD)/.test(src(f)));
     expect(offenders).toEqual([]);

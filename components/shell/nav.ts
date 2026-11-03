@@ -1,8 +1,15 @@
-export type NavItem = { href: string; label: string; icon: "home" | "building" | "users" | "history" | "shield"; permission?: string };
+export type NavItem = { href: string; label: string; icon: "home" | "contact" | "briefcase" | "building" | "users" | "history" | "shield"; permission?: string };
 
 // Somente rotas implementadas. Módulos da Fase 2+ entram aqui quando existirem de fato.
 export const NAV: { group: string; items: NavItem[] }[] = [
   { group: "Geral", items: [{ href: "/", label: "Visão geral", icon: "home" }] },
+  {
+    group: "CRM",
+    items: [
+      { href: "/contacts", label: "Contatos", icon: "contact", permission: "contacts.read" },
+      { href: "/companies", label: "Empresas", icon: "briefcase", permission: "companies.read" },
+    ],
+  },
   {
     group: "Configurações",
     items: [

@@ -7,6 +7,13 @@ test("rotas protegidas redirecionam anônimo para login com next seguro", async 
   await expect(page.locator('input[name="next"]')).toHaveValue("/settings/members");
 });
 
+test("rotas do CRM exigem login", async ({ page }) => {
+  for (const path of ["/contacts", "/contacts/new", "/companies", "/companies/00000000-0000-4000-8000-000000000000"]) {
+    await page.goto(path);
+    await expect(page, path).toHaveURL(/\/login\?next=/);
+  }
+});
+
 test("raiz redireciona para login sem parâmetro", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveURL(/\/login$/);

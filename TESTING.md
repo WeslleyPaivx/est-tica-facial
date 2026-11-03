@@ -12,7 +12,9 @@ Todos os testes usam **dados sintéticos**.
 
 Fixtures: organizações **A (Alpha)** e **B (Beta)** criadas pela RPC real; owner/admin/member/limited em cada uma (convidados e aceitos pela RPC real); um usuário externo; um não verificado; anônimo. Cada teste troca `role` e `request.jwt.claims` como o PostgREST faz.
 
-Cobertura (110 asserções + 10 de catálogo): SELECT/INSERT/UPDATE/DELETE de A em B; `organization_id` adulterado; mover registro entre tenants; FK cruzada; UUID adivinhado; id escolhido pelo cliente; elevação do próprio papel; convite indevido; admin vs owner; último owner; replay/expiração/revogação de convite; e-mail não verificado; membership removida; org suspensa; JWT sem `sub`; claims/metadata forjadas; MFA insuficiente (aal1) para owner/admin; busca textual; auditoria isolada; validação de slug/nome; HTML armazenado como texto; rate limit de criação. Qualquer falha encerra com código ≠ 0.
+`25_crm_contacts_companies.sql`: responsável de outra organização ou sem membership, site com `javascript:`, notas isoladas por tenant, limited sem edição.
+
+Cobertura (118 asserções + 10 de catálogo): SELECT/INSERT/UPDATE/DELETE de A em B; `organization_id` adulterado; mover registro entre tenants; FK cruzada; UUID adivinhado; id escolhido pelo cliente; elevação do próprio papel; convite indevido; admin vs owner; último owner; replay/expiração/revogação de convite; e-mail não verificado; membership removida; org suspensa; JWT sem `sub`; claims/metadata forjadas; MFA insuficiente (aal1) para owner/admin; busca textual; auditoria isolada; validação de slug/nome; HTML armazenado como texto; rate limit de criação. Qualquer falha encerra com código ≠ 0.
 
 ## Unit + fronteira de segurança — `pnpm test`
 

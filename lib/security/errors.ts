@@ -9,6 +9,7 @@ const BY_MESSAGE: Array<[RegExp, string]> = [
   [/cannot change own role/i, "Você não pode alterar o próprio papel."],
   [/cannot grant|cannot manage/i, "Seu papel não permite esta alteração."],
   [/invitation not available|not pending/i, "Convite indisponível, expirado ou já utilizado."],
+  [/owner must be a member/i, "O responsável precisa ser membro desta organização."],
 ];
 
 export function safeDbMessage(error: DbError, fallback = "Não foi possível concluir a operação."): string {

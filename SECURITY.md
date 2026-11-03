@@ -43,6 +43,7 @@
 | # | Risco | Severidade | Situação |
 | --- | --- | --- | --- |
 | R1 | ~~Supabase Advisors não executados~~ — **resolvido em 2026-11-03** na homologação `zaniva-crm-homolog`: Security Advisor 0 achados; Performance Advisor 12 × INFO `unused_index` (banco vazio; índices cobrem FKs/filtros por tenant, mantidos). Reavaliar com dados sintéticos. | — | Resolvido |
+| R10 | Proteção contra senhas vazadas (HaveIBeenPwned) desligada na homologação — achado WARN do Security Advisor. | Média | Ligar em Authentication → Providers → Email ("Prevent use of leaked passwords"); pode exigir plano pago |
 | R9 | Configurações de Auth da homologação ajustadas pelo proprietário (senha mínima 8, Site URL/Redirect `localhost`). Templates de e-mail no padrão Supabase (inglês) e SMTP padrão com limite baixo de envio. | Baixa | Trocar por SMTP próprio e templates em PT antes de uso real |
 | R2 | Fluxo Auth real validado manualmente (cadastro, confirmação, org, MFA) em 2026-11-03; falta automação E2E e casos de expiração/revogação de sessão e convites. | Média | Pendente: Playwright autenticado em homologação |
 | R3 | Envio de e-mail de convite não implementado (estado honesto na UI). | Baixa | Fase 5 |

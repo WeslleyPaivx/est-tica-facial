@@ -1,5 +1,17 @@
 # Status de implementação
 
+## Fase 2 — CRM core · **em andamento**
+
+### Entrega 2.1 — Contatos e empresas (2026-11-04)
+
+- Migration `20261104000100_crm_contacts_companies.sql` (não destrutiva): empresas ganham e-mail, telefone, site (só http/https) e notas; contatos ganham responsável (`owner_id`) e notas. Trigger garante que o responsável é membro da **mesma** organização. Grants só nas colunas novas. Aplicada na homologação.
+- Telas `/contacts` e `/companies`: lista com busca (nome/e-mail/telefone), paginação de 25, estados vazio/erro, criação, edição, exclusão com confirmação. Botões e formulários conforme permissão (limited vê em modo leitura; só owner/admin excluem). UUID de outro tenant → 404.
+- Server Actions `server/actions/crm.ts`: `organization_id` sempre da membership ativa; update/delete filtram por id **e** organização e exigem linha afetada; Zod em todos os campos; termo de busca sanitizado antes do filtro PostgREST.
+- Testes: SQL 128/128 (+8: responsável cross-tenant, sem membership, site `javascript:`, notas isoladas, limited sem edição); Vitest 51/51 (+5); Playwright 22/22 (+2 rotas do CRM exigem login). Lint, typecheck e build ok.
+- Advisors após a migration: Security 1 × WARN `auth_leaked_password_protection` (configuração de Auth, ver SECURITY R10); Performance só `unused_index` INFO.
+- Pendente na Fase 2: tags, histórico por registro, leads/oportunidades, pipelines Kanban, atividades, tarefas, agenda, command palette Ctrl+K.
+
+
 ## Fase 1 — Fundação + segurança · **concluída localmente** (2026-11-03)
 
 Gate de produção: **PRODUCTION BLOCKED** — E2E autenticado, configurações de Auth e backups pendentes (SECURITY.md R2, R7, R9). Advisors executados sem achados de segurança.

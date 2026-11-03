@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
-import { Building2, History, House, PanelLeft, ShieldCheck, Users, X } from "lucide-react";
+import { Briefcase, Building2, Contact, History, House, PanelLeft, ShieldCheck, Users, X } from "lucide-react";
 import { cx } from "@/design-system/components/cx";
 import { Logo } from "@/design-system/components/logo";
 import { NAV, type NavItem } from "./nav";
 
-const ICONS = { home: House, building: Building2, users: Users, history: History, shield: ShieldCheck };
+const ICONS = { home: House, contact: Contact, briefcase: Briefcase, building: Building2, users: Users, history: History, shield: ShieldCheck };
 const COLLAPSE_COOKIE = "zaniva_sidebar";
 
 function NavLinks({ permissions, collapsed, onNavigate }: { permissions: string[]; collapsed: boolean; onNavigate?: () => void }) {
