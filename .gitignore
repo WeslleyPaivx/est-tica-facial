@@ -1,0 +1,32 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+next-env.d.ts
+
+# segredos e credenciais — nunca versionar
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials*.json
+service-account*.json
+
+# dumps e backups
+*.dump
+*.sql.gz
+*.backup
+dumps/
+
+.vercel
+.supabase/
+supabase/.temp/
+.DS_Store
+/blob-report/
+/playwright/.cache/

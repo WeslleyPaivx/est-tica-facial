@@ -1,0 +1,51 @@
+# Status de implementação
+
+## Fase 1 — Fundação + segurança · **concluída localmente** (2026-11-03)
+
+Gate de produção: **PRODUCTION BLOCKED** — Advisors Supabase e E2E autenticado pendentes de projeto de homologação autorizado (SECURITY.md R1, R2).
+
+### Inspeção inicial
+
+Repositório `est-tica-facial` estava vazio (sem commits, sem branches remotas, sem migrations, sem segredos no histórico). Projeto criado do zero. Nenhum projeto Supabase existente foi alterado; nenhum deploy realizado.
+
+### Implementado
+
+- **Arquitetura** Next.js 16 App Router + Supabase, pastas conforme contrato (ARCHITECTURE.md).
+- **Design system**: tokens light/dark da paleta Zaniva, tema por cookie (light/dark/sistema), Geist, primitivas (Button, Field/Input/Select, Alert/Badge/EmptyState, Table, PageHeader/Section), Liquid Glass restrito a barra superior e menus, com fallbacks e `prefers-reduced-motion`/`-transparency`/`-contrast`.
+- **Shell corporativo**: sidebar recolhível (preferência persistida), drawer no mobile com Escape, barra superior em vidro, troca de organização (Radix, teclado), menu de conta com tema e saída. Somente rotas implementadas aparecem no menu; itens filtrados por permissão.
+- **Auth**: cadastro com confirmação de e-mail, login, recuperação e redefinição de senha, confirmação via `token_hash`/PKCE, saída local e global, revalidação da sessão no servidor.
+- **MFA TOTP**: cadastro com QR/chave, verificação, obrigatório para owner/admin (banco + app).
+- **Organizações e membership**: onboarding (criar org ou aceitar convite), troca de org, renomear org, convites (criar/revogar/aceitar), mudança de papel, remoção/saída, regra de último owner.
+- **RBAC**: papéis owner/admin/member/limited, matriz privada de permissões, `my_permissions` para a UI.
+- **Auditoria**: registros imutáveis pelo app para eventos de org/convite/membro; página e resumo na visão geral.
+- **Schema inicial + RLS**: profiles, organizations, organization_members, organization_invitations, audit_logs, companies, contacts (FK compostas, `organization_id` imutável).
+- **Segurança da aplicação**: CSP com nonce, cabeçalhos, `server-only`, Zod em todas as actions, mensagens de erro seguras, redirect seguro, varredura de segredos (pre-commit + CI com histórico).
+- **CI** GitHub Actions: secret scan (histórico), lint, typecheck, unit, RLS (Postgres 17), build, E2E.
+
+### Arquivos principais
+
+`supabase/migrations/20261103000100_foundation.sql`, `supabase/migrations/20261103000200_core_tenant_tables.sql`, `supabase/tests/*`, `supabase/config.toml`, `proxy.ts`, `lib/**`, `server/**`, `features/**`, `components/**`, `design-system/**`, `app/**`, `tests/**`, `scripts/test-rls.sh`, `scripts/scan-secrets.mjs`, `.github/workflows/ci.yml`, `.githooks/pre-commit`, documentação `*.md`.
+
+### Testes executados (local, 2026-11-03)
+
+| Suíte | Resultado |
+| --- | --- |
+| `pnpm lint` | 0 erros, 0 avisos |
+| `pnpm typecheck` | ok |
+| `pnpm test` (Vitest) | 46/46 |
+| `pnpm test:rls` (PostgreSQL 16.15 local) | 120/120 asserções (110 adversariais + 10 de catálogo) |
+| `pnpm build` | ok (todas as rotas dinâmicas) |
+| `pnpm test:e2e` (Chromium desktop + Pixel 7) | 20/20 |
+| `pnpm scan:secrets` | nenhum segredo |
+
+### Não executado / limitações
+
+- Supabase Security Advisor e Performance Advisor (sem projeto de homologação autorizado). Lint de catálogo local cobre RLS, policies `true`, grants de anon, `SECURITY DEFINER` fora de `private`, `search_path`, views.
+- E2E autenticado contra Supabase Auth real (e-mail, MFA, expiração/revogação de sessão).
+- Testes RLS rodaram em PG 16 com shim do `auth`; CI usa PG 17. Supabase real deve ser validado na homologação.
+- React Hook Form/TanStack ainda não usados (formulários da Fase 1 são simples e validados no servidor com Zod); entram na Fase 2 com tabelas e formulários complexos.
+
+### Próximos passos
+
+1. Proprietário autoriza projeto Supabase de homologação → aplicar migrations, rodar Advisors, E2E autenticado.
+2. Fase 2: CRUD de contatos/empresas (tabelas já com RLS), leads, pipelines, atividades, tarefas, agenda, command palette, com testes de isolamento por entidade.

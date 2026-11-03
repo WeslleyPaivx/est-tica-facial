@@ -1,0 +1,63 @@
+/* Tokens Zaniva. Light é o padrão; dark via data-theme="dark" ou preferência do sistema (data-theme="system"). */
+:root {
+  --z-bg: #f6f6f4;
+  --z-surface: #ffffff;
+  --z-surface-2: #f0f1ef;
+  --z-fg: #202426;
+  --z-muted: #676d70;
+  --z-border: #e2e5e3;
+  --z-accent: #53675e;
+  --z-accent-fg: #ffffff;
+  --z-danger: #a33a32;
+  --z-danger-bg: #f8eceb;
+  --z-success: #2f6b47;
+  --z-success-bg: #e9f2ec;
+  --z-warning: #8a5a14;
+  --z-warning-bg: #f7f0e3;
+  --z-glass-tint: rgb(255 255 255 / 0.62);
+  --z-glass-edge: rgb(255 255 255 / 0.7);
+  --z-glass-line: rgb(32 36 38 / 0.08);
+}
+
+[data-theme="dark"] {
+  --z-bg: #141719;
+  --z-surface: #1c2022;
+  --z-surface-2: #25292c;
+  --z-fg: #f0f1ee;
+  --z-muted: #a2a8a5;
+  --z-border: #343a3d;
+  --z-accent: #84988c;
+  --z-accent-fg: #141719;
+  --z-danger: #e48a82;
+  --z-danger-bg: #3a2220;
+  --z-success: #8cc4a0;
+  --z-success-bg: #1f3227;
+  --z-warning: #e0b56e;
+  --z-warning-bg: #352b1b;
+  --z-glass-tint: rgb(28 32 34 / 0.6);
+  --z-glass-edge: rgb(255 255 255 / 0.1);
+  --z-glass-line: rgb(255 255 255 / 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="system"] {
+    color-scheme: dark;
+    --z-bg: #141719;
+    --z-surface: #1c2022;
+    --z-surface-2: #25292c;
+    --z-fg: #f0f1ee;
+    --z-muted: #a2a8a5;
+    --z-border: #343a3d;
+    --z-accent: #84988c;
+    --z-accent-fg: #141719;
+    --z-danger: #e48a82;
+    --z-danger-bg: #3a2220;
+    --z-success: #8cc4a0;
+    --z-success-bg: #1f3227;
+    --z-warning: #e0b56e;
+    --z-warning-bg: #352b1b;
+    --z-glass-tint: rgb(28 32 34 / 0.6);
+    --z-glass-edge: rgb(255 255 255 / 0.1);
+    --z-glass-line: rgb(255 255 255 / 0.06);
+  }
+}

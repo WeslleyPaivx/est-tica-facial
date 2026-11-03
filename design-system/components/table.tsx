@@ -1,0 +1,16 @@
+import type { HTMLAttributes, TdHTMLAttributes, ThHTMLAttributes } from "react";
+import { cx } from "./cx";
+
+export function Table({ className, ...p }: HTMLAttributes<HTMLTableElement>) {
+  return (
+    <div className="overflow-x-auto rounded-lg border border-border bg-surface">
+      <table className={cx("w-full border-collapse text-[13px] tabular", className)} {...p} />
+    </div>
+  );
+}
+export function Th({ className, ...p }: ThHTMLAttributes<HTMLTableCellElement>) {
+  return <th scope="col" className={cx("h-9 border-b border-border bg-surface-2 px-3 text-left text-xs font-medium text-muted", className)} {...p} />;
+}
+export function Td({ className, ...p }: TdHTMLAttributes<HTMLTableCellElement>) {
+  return <td className={cx("h-10 border-b border-border px-3 align-middle last:border-b-0", className)} {...p} />;
+}

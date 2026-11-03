@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@import "../design-system/tokens.css";
+@import "../design-system/glass.css";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme inline {
+  --color-bg: var(--z-bg);
+  --color-surface: var(--z-surface);
+  --color-surface-2: var(--z-surface-2);
+  --color-fg: var(--z-fg);
+  --color-muted: var(--z-muted);
+  --color-border: var(--z-border);
+  --color-accent: var(--z-accent);
+  --color-accent-fg: var(--z-accent-fg);
+  --color-danger: var(--z-danger);
+  --color-danger-bg: var(--z-danger-bg);
+  --color-success: var(--z-success);
+  --color-success-bg: var(--z-success-bg);
+  --color-warning: var(--z-warning);
+  --color-warning-bg: var(--z-warning-bg);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html[data-theme="dark"] {
+    color-scheme: dark;
+  }
+  body {
+    background: var(--z-bg);
+    color: var(--z-fg);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--z-accent);
+    outline-offset: 2px;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

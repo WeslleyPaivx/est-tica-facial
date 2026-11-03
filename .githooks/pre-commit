@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# Bloqueia commits com possíveis segredos.
+node scripts/scan-secrets.mjs || { echo "Commit bloqueado: possível segredo. Remova-o e ROTACIONE a chave."; exit 1; }
