@@ -12,5 +12,5 @@ export function Th({ className, ...p }: ThHTMLAttributes<HTMLTableCellElement>) 
   return <th scope="col" className={cx("h-9 border-b border-border bg-surface-2 px-3 text-left text-xs font-medium text-muted", className)} {...p} />;
 }
 export function Td({ className, ...p }: TdHTMLAttributes<HTMLTableCellElement>) {
-  return <td className={cx("h-10 border-b border-border px-3 align-middle last:border-b-0", className)} {...p} />;
+  return <td className={cx("h-10 border-b border-border px-3 align-middle [tr:last-child>&]:border-b-0", className)} {...p} />;
 }
