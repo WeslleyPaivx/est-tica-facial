@@ -2,7 +2,7 @@
 
 ## Fase 1 — Fundação + segurança · **concluída localmente** (2026-11-03)
 
-Gate de produção: **PRODUCTION BLOCKED** — Advisors Supabase e E2E autenticado pendentes de projeto de homologação autorizado (SECURITY.md R1, R2).
+Gate de produção: **PRODUCTION BLOCKED** — E2E autenticado, configurações de Auth e backups pendentes (SECURITY.md R2, R7, R9). Advisors executados sem achados de segurança.
 
 ### Inspeção inicial
 
@@ -40,12 +40,20 @@ Repositório `est-tica-facial` estava vazio (sem commits, sem branches remotas, 
 
 ### Não executado / limitações
 
-- Supabase Security Advisor e Performance Advisor (sem projeto de homologação autorizado). Lint de catálogo local cobre RLS, policies `true`, grants de anon, `SECURITY DEFINER` fora de `private`, `search_path`, views.
 - E2E autenticado contra Supabase Auth real (e-mail, MFA, expiração/revogação de sessão).
-- Testes RLS rodaram em PG 16 com shim do `auth`; CI usa PG 17. Supabase real deve ser validado na homologação.
+- Testes RLS adversariais completos (fixtures A/B) rodaram em PG 16 com shim do `auth`; no Supabase real foram verificados catálogo e privilégios, não a suíte completa com usuários reais.
+- Configurações de Auth do projeto de homologação (senha mínima, URLs, templates) ainda não ajustadas no painel.
 - React Hook Form/TanStack ainda não usados (formulários da Fase 1 são simples e validados no servidor com Zod); entram na Fase 2 com tabelas e formulários complexos.
+
+### Homologação Supabase (2026-11-03, autorizada pelo proprietário)
+
+- Projeto **novo** `zaniva-crm-homolog` (ref `aztsuhsupuhvvgjekcdq`, sa-east-1, PostgreSQL 17.11), org Orbyn Tech. Projetos existentes não foram alterados. Sem dados.
+- Migrations aplicadas via conector: `foundation`, `core_tenant_tables` (mesmo SQL de `supabase/migrations/`). Antes, foram removidas 2 tabelas vazias e o enum criados por uma tentativa manual parcial.
+- **Security Advisor: 0 achados.**
+- **Performance Advisor: 12 × INFO `unused_index`** — esperado em banco vazio; índices de FK/tenant mantidos.
+- Verificação de catálogo no Supabase real: 7 tabelas em `public`, todas com RLS; 15 policies, nenhuma `true` nem para anon; anon sem grants em tabelas nem EXECUTE em funções, sem USAGE em `private`; `authenticated` sem INSERT/UPDATE de tabela inteira (só por coluna), sem UPDATE em `organization_id`/`status`; `SECURITY DEFINER` só em `private`; todas as funções com `search_path`; trigger `on_auth_user_created` ativo; 33 permissões na matriz.
 
 ### Próximos passos
 
-1. Proprietário autoriza projeto Supabase de homologação → aplicar migrations, rodar Advisors, E2E autenticado.
+1. Ajustar Auth da homologação no painel (R9) e rodar E2E autenticado com usuários sintéticos (R2).
 2. Fase 2: CRUD de contatos/empresas (tabelas já com RLS), leads, pipelines, atividades, tarefas, agenda, command palette, com testes de isolamento por entidade.
