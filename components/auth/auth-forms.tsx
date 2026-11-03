@@ -25,7 +25,7 @@ export function SignInForm({ next }: { next?: string }) {
       </Field>
       <FormStatus state={state} />
       <Button type="submit" disabled={pending}>{pending ? "Entrando…" : "Entrar"}</Button>
-      <div className="flex justify-between text-[13px] text-muted">
+      <div className="flex justify-between text-sm text-muted">
         <Link href="/forgot-password" className="hover:text-fg">Esqueci a senha</Link>
         <Link href="/signup" className="hover:text-fg">Criar conta</Link>
       </div>
@@ -49,7 +49,7 @@ export function SignUpForm() {
       </Field>
       <FormStatus state={state} />
       <Button type="submit" disabled={pending}>{pending ? "Criando…" : "Criar conta"}</Button>
-      <p className="text-[13px] text-muted">
+      <p className="text-sm text-muted">
         Já tem conta? <Link href="/login" className="text-fg underline-offset-2 hover:underline">Entrar</Link>
       </p>
     </form>
@@ -65,7 +65,7 @@ export function ForgotPasswordForm() {
       </Field>
       <FormStatus state={state} />
       <Button type="submit" disabled={pending}>{pending ? "Enviando…" : "Enviar instruções"}</Button>
-      <Link href="/login" className="text-[13px] text-muted hover:text-fg">Voltar para o login</Link>
+      <Link href="/login" className="text-sm text-muted hover:text-fg">Voltar para o login</Link>
     </form>
   );
 }
@@ -82,7 +82,7 @@ export function NewPasswordForm() {
       </Field>
       <FormStatus state={state} />
       <Button type="submit" disabled={pending}>{pending ? "Salvando…" : "Salvar senha"}</Button>
-      {state.ok ? <Link href="/" className="text-[13px] text-muted hover:text-fg">Ir para o app</Link> : null}
+      {state.ok ? <Link href="/" className="text-sm text-muted hover:text-fg">Ir para o app</Link> : null}
     </form>
   );
 }

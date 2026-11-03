@@ -18,8 +18,8 @@ export default async function MfaPage() {
 
   return (
     <AuthLayout>
-      <h1 className="mb-1 text-base font-semibold">Verificação em duas etapas</h1>
-      <p className="mb-5 text-[13px] text-muted">
+      <h1 className="mb-1.5 text-2xl">Verificação em duas etapas</h1>
+      <p className="mb-7 text-sm text-muted">
         {factor
           ? "Informe o código do seu autenticador para continuar."
           : mandatory
@@ -27,7 +27,7 @@ export default async function MfaPage() {
             : "Proteja sua conta com um aplicativo autenticador."}
       </p>
       {factor ? <VerifyFactor factorId={factor.id} /> : <EnrollFactor />}
-      <div className="mt-5 flex justify-between text-[13px] text-muted">
+      <div className="mt-5 flex justify-between text-sm text-muted">
         {!mandatory && !factor ? <Link href="/" className="hover:text-fg">Agora não</Link> : <span />}
         <form action={signOutAction}>
           <button type="submit" className="hover:text-fg">Sair</button>

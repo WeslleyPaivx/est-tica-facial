@@ -63,7 +63,7 @@ test("tema escuro aplicado via preferência salva", async ({ page, context, base
   await page.goto("/login");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-  expect(bg).toBe("rgb(20, 23, 25)");
+  expect(bg).toBe("rgb(15, 16, 17)");
 });
 
 test("layout sem rolagem horizontal", async ({ page }) => {

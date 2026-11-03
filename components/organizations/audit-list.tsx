@@ -38,7 +38,7 @@ export async function AuditList({ organizationId, limit, compact = false }: { or
     return (
       <ul className="flex flex-col divide-y divide-border">
         {rows.map((r) => (
-          <li key={r.id} className="flex items-center justify-between gap-3 py-2 text-[13px]">
+          <li key={r.id} className="flex items-center justify-between gap-3 py-2 text-sm">
             <span className="truncate">
               {ACTION_LABEL[r.action] ?? r.action}
               <span className="text-muted"> · {(r.actor_id && names.get(r.actor_id)) || "Usuário"}</span>

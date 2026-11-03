@@ -15,7 +15,7 @@ export default async function OrganizationSettingsPage() {
       <PageHeader title="Organização" description="Dados gerais do espaço de trabalho." />
       <Section title="Identificação" description={editable ? undefined : "Somente proprietários e administradores podem editar."}>
         <RenameOrgForm name={org.name} disabled={!editable} />
-        <dl className="mt-5 grid max-w-md grid-cols-[120px_1fr] gap-y-2 border-t border-border pt-4 text-[13px]">
+        <dl className="mt-5 grid max-w-md grid-cols-[120px_1fr] gap-y-2 border-t border-border pt-4 text-sm">
           <dt className="text-muted">Identificador</dt>
           <dd className="font-mono">{org.slug}</dd>
           <dt className="text-muted">Status</dt>

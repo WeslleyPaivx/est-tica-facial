@@ -8,8 +8,8 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   const { next } = await searchParams;
   return (
     <>
-      <h1 className="mb-1 text-base font-semibold">Entrar</h1>
-      <p className="mb-5 text-[13px] text-muted">Acesse a conta da sua organização.</p>
+      <h1 className="mb-1.5 text-2xl">Entrar</h1>
+      <p className="mb-7 text-sm text-muted">Acesse a conta da sua organização.</p>
       <SignInForm next={safeNextPath(next, "")} />
     </>
   );

@@ -1,63 +1,89 @@
-/* Tokens Zaniva. Light é o padrão; dark via data-theme="dark" ou preferência do sistema (data-theme="system"). */
+/* Tokens Zaniva — "galeria à luz do dia": canvas off-white, cards brancos, texto quase preto,
+   quatro acentos (floresta, pervinca, rosa, manteiga) usados só como pontuação.
+   Light é o padrão; dark via data-theme="dark" ou preferência do sistema (data-theme="system"). */
 :root {
-  --z-bg: #f6f6f4;
+  --z-bg: #f9f9f9;
   --z-surface: #ffffff;
-  --z-surface-2: #f0f1ef;
-  --z-fg: #202426;
-  --z-muted: #676d70;
-  --z-border: #e2e5e3;
-  --z-accent: #53675e;
-  --z-accent-fg: #ffffff;
-  --z-danger: #a33a32;
-  --z-danger-bg: #f8eceb;
-  --z-success: #2f6b47;
-  --z-success-bg: #e9f2ec;
-  --z-warning: #8a5a14;
-  --z-warning-bg: #f7f0e3;
-  --z-glass-tint: rgb(255 255 255 / 0.62);
-  --z-glass-edge: rgb(255 255 255 / 0.7);
-  --z-glass-line: rgb(32 36 38 / 0.08);
+  --z-surface-2: #f2f2f1;
+  --z-fg: #0a0b0c;
+  --z-muted: #5c5f63;
+  --z-border: rgb(10 11 12 / 0.1);
+  --z-border-strong: rgb(10 11 12 / 0.18);
+  --z-ink: #0a0b0c;
+  --z-ink-fg: #ffffff;
+  --z-accent: #abcbf9;
+  --z-accent-fg: #0a0b0c;
+  --z-accent-wash: rgb(171 203 249 / 0.35);
+  --z-forest: #00543d;
+  --z-pink: #ffbbfc;
+  --z-butter: #fce88b;
+  --z-danger: #a8322a;
+  --z-danger-bg: #fbecea;
+  --z-success: #00543d;
+  --z-success-bg: #e3f1ea;
+  --z-warning: #7a5a00;
+  --z-warning-bg: #fdf6d8;
+  --z-focus: #3d6fd6;
+  --z-glass-tint: rgb(255 255 255 / 0.68);
+  --z-glass-edge: rgb(255 255 255 / 0.75);
+  --z-glass-line: rgb(10 11 12 / 0.08);
 }
 
 [data-theme="dark"] {
-  --z-bg: #141719;
-  --z-surface: #1c2022;
-  --z-surface-2: #25292c;
-  --z-fg: #f0f1ee;
-  --z-muted: #a2a8a5;
-  --z-border: #343a3d;
-  --z-accent: #84988c;
-  --z-accent-fg: #141719;
-  --z-danger: #e48a82;
-  --z-danger-bg: #3a2220;
-  --z-success: #8cc4a0;
-  --z-success-bg: #1f3227;
-  --z-warning: #e0b56e;
-  --z-warning-bg: #352b1b;
-  --z-glass-tint: rgb(28 32 34 / 0.6);
-  --z-glass-edge: rgb(255 255 255 / 0.1);
+  --z-bg: #0f1011;
+  --z-surface: #17181a;
+  --z-surface-2: #202124;
+  --z-fg: #f4f4f2;
+  --z-muted: #a3a6aa;
+  --z-border: rgb(255 255 255 / 0.1);
+  --z-border-strong: rgb(255 255 255 / 0.18);
+  --z-ink: #f4f4f2;
+  --z-ink-fg: #0a0b0c;
+  --z-accent: #abcbf9;
+  --z-accent-fg: #0a0b0c;
+  --z-accent-wash: rgb(171 203 249 / 0.16);
+  --z-forest: #4fb08b;
+  --z-pink: #ffbbfc;
+  --z-butter: #fce88b;
+  --z-danger: #f0928a;
+  --z-danger-bg: #3a1f1d;
+  --z-success: #7fd1ad;
+  --z-success-bg: #18302a;
+  --z-warning: #f2d36b;
+  --z-warning-bg: #332b12;
+  --z-focus: #abcbf9;
+  --z-glass-tint: rgb(23 24 26 / 0.66);
+  --z-glass-edge: rgb(255 255 255 / 0.08);
   --z-glass-line: rgb(255 255 255 / 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
   [data-theme="system"] {
     color-scheme: dark;
-    --z-bg: #141719;
-    --z-surface: #1c2022;
-    --z-surface-2: #25292c;
-    --z-fg: #f0f1ee;
-    --z-muted: #a2a8a5;
-    --z-border: #343a3d;
-    --z-accent: #84988c;
-    --z-accent-fg: #141719;
-    --z-danger: #e48a82;
-    --z-danger-bg: #3a2220;
-    --z-success: #8cc4a0;
-    --z-success-bg: #1f3227;
-    --z-warning: #e0b56e;
-    --z-warning-bg: #352b1b;
-    --z-glass-tint: rgb(28 32 34 / 0.6);
-    --z-glass-edge: rgb(255 255 255 / 0.1);
+    --z-bg: #0f1011;
+    --z-surface: #17181a;
+    --z-surface-2: #202124;
+    --z-fg: #f4f4f2;
+    --z-muted: #a3a6aa;
+    --z-border: rgb(255 255 255 / 0.1);
+    --z-border-strong: rgb(255 255 255 / 0.18);
+    --z-ink: #f4f4f2;
+    --z-ink-fg: #0a0b0c;
+    --z-accent: #abcbf9;
+    --z-accent-fg: #0a0b0c;
+    --z-accent-wash: rgb(171 203 249 / 0.16);
+    --z-forest: #4fb08b;
+    --z-pink: #ffbbfc;
+    --z-butter: #fce88b;
+    --z-danger: #f0928a;
+    --z-danger-bg: #3a1f1d;
+    --z-success: #7fd1ad;
+    --z-success-bg: #18302a;
+    --z-warning: #f2d36b;
+    --z-warning-bg: #332b12;
+    --z-focus: #abcbf9;
+    --z-glass-tint: rgb(23 24 26 / 0.66);
+    --z-glass-edge: rgb(255 255 255 / 0.08);
     --z-glass-line: rgb(255 255 255 / 0.06);
   }
 }

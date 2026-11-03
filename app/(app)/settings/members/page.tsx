@@ -64,7 +64,7 @@ export default async function MembersPage() {
             return (
               <tr key={m.id}>
                 <Td>
-                  <span className="font-medium">{label}</span>
+                  <span className="">{label}</span>
                   {self ? <span className="ml-2 text-xs text-muted">(você)</span> : null}
                 </Td>
                 <Td>
@@ -89,7 +89,7 @@ export default async function MembersPage() {
           ) : (
             <ul className="flex flex-col divide-y divide-border">
               {invites.map((inv) => (
-                <li key={inv.id} className="flex flex-wrap items-center justify-between gap-2 py-2 text-[13px]">
+                <li key={inv.id} className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
                   <span className="min-w-0 truncate">
                     {inv.email} <span className="text-muted">· {isRole(inv.role) ? ROLE_LABEL[inv.role] : inv.role} · expira {fmt.format(new Date(inv.expires_at))}</span>
                   </span>

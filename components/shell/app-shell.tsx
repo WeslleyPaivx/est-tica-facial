@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
 import { Building2, History, House, PanelLeft, ShieldCheck, Users, X } from "lucide-react";
 import { cx } from "@/design-system/components/cx";
+import { Logo } from "@/design-system/components/logo";
 import { NAV, type NavItem } from "./nav";
 
 const ICONS = { home: House, building: Building2, users: Users, history: History, shield: ShieldCheck };
@@ -14,10 +15,10 @@ function NavLinks({ permissions, collapsed, onNavigate }: { permissions: string[
   const pathname = usePathname();
   const visible = (i: NavItem) => !i.permission || permissions.includes(i.permission);
   return (
-    <nav aria-label="Principal" className="flex flex-col gap-4 px-2 py-3">
+    <nav aria-label="Principal" className="flex flex-col gap-6 px-3 py-5">
       {NAV.map((g) => (
         <div key={g.group} className="flex flex-col gap-0.5">
-          {!collapsed ? <p className="px-2 pb-1 text-xs text-muted">{g.group}</p> : null}
+          {!collapsed ? <p className="px-3 pb-1.5 text-xs text-muted">{g.group}</p> : null}
           {g.items.filter(visible).map((item) => {
             const Icon = ICONS[item.icon];
             const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -29,8 +30,8 @@ function NavLinks({ permissions, collapsed, onNavigate }: { permissions: string[
                 aria-current={active ? "page" : undefined}
                 title={collapsed ? item.label : undefined}
                 className={cx(
-                  "flex h-8 items-center gap-2 rounded-md px-2 text-[13px] transition-colors duration-100",
-                  active ? "bg-surface-2 font-medium text-fg" : "text-muted hover:bg-surface-2 hover:text-fg",
+                  "flex h-9 items-center gap-2.5 rounded-full px-3 text-sm transition-colors duration-100",
+                  active ? "bg-accent-wash text-fg" : "text-muted hover:bg-surface-2 hover:text-fg",
                   collapsed && "justify-center",
                 )}
               >
@@ -76,18 +77,18 @@ export function AppShell({
     <div className="flex min-h-dvh">
       <aside
         className={cx(
-          "sticky top-0 hidden h-dvh shrink-0 flex-col border-r border-border bg-surface md:flex",
-          collapsed ? "w-14" : "w-56",
+          "sticky top-0 hidden h-dvh shrink-0 flex-col border-r border-border bg-bg md:flex",
+          collapsed ? "w-16" : "w-60",
         )}
       >
-        <div className={cx("flex h-12 items-center border-b border-border px-3", collapsed ? "justify-center" : "justify-between")}>
-          {!collapsed ? <span className="text-sm font-semibold tracking-tight">Zaniva</span> : null}
+        <div className={cx("flex h-16 items-center px-4", collapsed ? "justify-center" : "justify-between")}>
+          {!collapsed ? <Logo /> : null}
           <button
             type="button"
             onClick={toggle}
             aria-label={collapsed ? "Expandir menu lateral" : "Recolher menu lateral"}
             aria-expanded={!collapsed}
-            className="grid size-7 place-items-center rounded-md text-muted hover:bg-surface-2 hover:text-fg"
+            className="grid size-8 place-items-center rounded-full text-muted hover:bg-surface-2 hover:text-fg"
           >
             <PanelLeft aria-hidden className="size-4" strokeWidth={1.75} />
           </button>
@@ -98,10 +99,10 @@ export function AppShell({
       {mobileOpen ? (
         <div className="fixed inset-0 z-40 md:hidden" role="dialog" aria-modal="true" aria-label="Menu">
           <button type="button" aria-label="Fechar menu" className="absolute inset-0 bg-black/30" onClick={() => setMobileOpen(false)} />
-          <div className="absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r border-border bg-surface">
-            <div className="flex h-12 items-center justify-between border-b border-border px-3">
-              <span className="text-sm font-semibold tracking-tight">Zaniva</span>
-              <button type="button" onClick={() => setMobileOpen(false)} aria-label="Fechar menu" className="grid size-8 place-items-center rounded-md text-muted hover:bg-surface-2">
+          <div className="absolute inset-y-0 left-0 flex w-72 max-w-[85vw] flex-col border-r border-border bg-bg">
+            <div className="flex h-16 items-center justify-between px-4">
+              <Logo />
+              <button type="button" onClick={() => setMobileOpen(false)} aria-label="Fechar menu" className="grid size-8 place-items-center rounded-full text-muted hover:bg-surface-2">
                 <X aria-hidden className="size-4" />
               </button>
             </div>
@@ -111,18 +112,18 @@ export function AppShell({
       ) : null}
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <div className="z-glass sticky top-0 z-30 flex h-12 items-center gap-2 border-x-0 border-t-0 px-3 md:px-5">
+        <div className="z-glass sticky top-0 z-30 flex h-16 items-center gap-2 border-x-0 border-t-0 px-4 md:px-8">
           <button
             type="button"
             onClick={() => setMobileOpen(true)}
             aria-label="Abrir menu"
-            className="grid size-8 place-items-center rounded-md text-muted hover:bg-surface-2 md:hidden"
+            className="grid size-9 place-items-center rounded-full text-muted hover:bg-surface-2 md:hidden"
           >
             <PanelLeft aria-hidden className="size-4" strokeWidth={1.75} />
           </button>
           {header}
         </div>
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6 md:px-6">{children}</main>
+        <main className="mx-auto w-full max-w-[1200px] flex-1 px-4 py-8 md:px-8 md:py-12">{children}</main>
       </div>
     </div>
   );

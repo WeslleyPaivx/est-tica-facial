@@ -11,7 +11,7 @@ const tones: Record<Tone, string> = {
 
 export function Alert({ tone = "neutral", children }: { tone?: Tone; children: ReactNode }) {
   return (
-    <div role={tone === "danger" ? "alert" : "status"} className={cx("rounded-md border px-3 py-2 text-[13px]", tones[tone])}>
+    <div role={tone === "danger" ? "alert" : "status"} className={cx("rounded-sm border px-3 py-2.5 text-[13px]", tones[tone])}>
       {children}
     </div>
   );
@@ -19,7 +19,7 @@ export function Alert({ tone = "neutral", children }: { tone?: Tone; children: R
 
 export function Badge({ tone = "neutral", children }: { tone?: Tone; children: ReactNode }) {
   return (
-    <span className={cx("inline-flex h-5 items-center rounded-sm border px-1.5 text-xs font-medium", tones[tone])}>
+    <span className={cx("inline-flex h-6 items-center rounded-full border px-2.5 text-xs", tones[tone])}>
       {children}
     </span>
   );
@@ -33,8 +33,8 @@ export function FormStatus({ state }: { state: { error?: string; message?: strin
 
 export function EmptyState({ title, description, action }: { title: string; description?: string; action?: ReactNode }) {
   return (
-    <div className="flex flex-col items-start gap-2 rounded-lg border border-dashed border-border px-5 py-8">
-      <p className="text-sm font-medium">{title}</p>
+    <div className="flex flex-col items-start gap-2 rounded-lg border border-dashed border-border-strong px-6 py-10">
+      <p className="text-base">{title}</p>
       {description ? <p className="max-w-prose text-[13px] text-muted">{description}</p> : null}
       {action}
     </div>

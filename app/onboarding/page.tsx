@@ -20,8 +20,8 @@ export default async function OnboardingPage({ searchParams }: { searchParams: P
 
   return (
     <AuthLayout>
-      <h1 className="mb-1 text-base font-semibold">Sua organização</h1>
-      <p className="mb-5 text-[13px] text-muted">Aceite um convite pendente ou crie uma nova organização.</p>
+      <h1 className="mb-1.5 text-2xl">Sua organização</h1>
+      <p className="mb-7 text-sm text-muted">Aceite um convite pendente ou crie uma nova organização.</p>
       {error === "invite" ? <div className="mb-4"><Alert tone="danger">Convite indisponível, expirado ou já utilizado.</Alert></div> : null}
       {!s.user.emailVerified ? (
         <Alert tone="warning">Confirme seu e-mail para continuar.</Alert>
@@ -32,7 +32,7 @@ export default async function OnboardingPage({ searchParams }: { searchParams: P
               {invites.map((inv) => (
                 <li key={inv.id} className="flex items-center justify-between gap-3 px-3 py-2.5">
                   <div className="min-w-0">
-                    <p className="truncate text-sm font-medium">{inv.organization_name}</p>
+                    <p className="truncate text-sm">{inv.organization_name}</p>
                     <p className="text-xs text-muted">{isRole(inv.role) ? ROLE_LABEL[inv.role] : inv.role}</p>
                   </div>
                   <form action={acceptInvitationAction}>
@@ -46,7 +46,7 @@ export default async function OnboardingPage({ searchParams }: { searchParams: P
           <CreateOrgForm />
         </div>
       )}
-      <form action={signOutAction} className="mt-5 text-[13px] text-muted">
+      <form action={signOutAction} className="mt-5 text-sm text-muted">
         <button type="submit" className="hover:text-fg">Sair</button>
       </form>
     </AuthLayout>

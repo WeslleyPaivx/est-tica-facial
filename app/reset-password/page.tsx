@@ -9,8 +9,8 @@ export default async function ResetPasswordPage() {
   await requireSession();
   return (
     <AuthLayout>
-      <h1 className="mb-1 text-base font-semibold">Definir nova senha</h1>
-      <p className="mb-5 text-[13px] text-muted">As demais sessões serão encerradas.</p>
+      <h1 className="mb-1.5 text-2xl">Definir nova senha</h1>
+      <p className="mb-7 text-sm text-muted">As demais sessões serão encerradas.</p>
       <NewPasswordForm />
     </AuthLayout>
   );

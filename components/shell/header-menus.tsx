@@ -9,18 +9,18 @@ import { signOutAction } from "@/server/actions/auth";
 
 type OrgOption = { id: string; name: string; roleLabel: string };
 
-const menuContent = "z-glass z-glass-refract z-50 min-w-56 rounded-lg p-1 text-[13px] text-fg";
+const menuContent = "z-glass z-glass-refract z-50 min-w-60 rounded-lg p-1.5 text-sm text-fg";
 const menuItem =
-  "flex h-8 w-full cursor-default select-none items-center gap-2 rounded-md px-2 outline-none data-[highlighted]:bg-surface-2";
+  "flex h-9 w-full cursor-default select-none items-center gap-2 rounded-sm px-2.5 outline-none data-[highlighted]:bg-surface-2";
 
 export function OrgSwitcher({ current, options }: { current: OrgOption; options: OrgOption[] }) {
   return (
     <Menu.Root>
-      <Menu.Trigger className="flex h-8 max-w-[60vw] items-center gap-2 rounded-md px-2 text-[13px] hover:bg-surface-2">
-        <span aria-hidden className="grid size-5 shrink-0 place-items-center rounded-sm bg-accent text-[11px] font-semibold text-accent-fg">
+      <Menu.Trigger className="flex h-9 max-w-[60vw] items-center gap-2 rounded-full border border-border bg-surface pr-3 pl-1.5 text-sm hover:bg-surface-2">
+        <span aria-hidden className="grid size-6 shrink-0 place-items-center rounded-full bg-accent text-[11px] text-accent-fg">
           {current.name.slice(0, 1).toUpperCase()}
         </span>
-        <span className="truncate font-medium">{current.name}</span>
+        <span className="truncate">{current.name}</span>
         <ChevronsUpDown aria-hidden className="size-3.5 shrink-0 text-muted" />
       </Menu.Trigger>
       <Menu.Portal>
@@ -65,13 +65,13 @@ export function UserMenu({ email, name, theme }: { email: string; name: string; 
   ];
   return (
     <Menu.Root>
-      <Menu.Trigger aria-label="Menu da conta" className="grid size-8 place-items-center rounded-full border border-border bg-surface text-[11px] font-semibold hover:bg-surface-2">
+      <Menu.Trigger aria-label="Menu da conta" className="grid size-9 place-items-center rounded-full bg-ink text-xs text-ink-fg hover:opacity-90">
         {initials}
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Content align="end" sideOffset={6} className={menuContent}>
           <div className="px-2 py-1.5">
-            {name ? <p className="truncate font-medium">{name}</p> : null}
+            {name ? <p className="truncate">{name}</p> : null}
             <p className="truncate text-xs text-muted">{email}</p>
           </div>
           <Menu.Separator className="my-1 h-px bg-border" />

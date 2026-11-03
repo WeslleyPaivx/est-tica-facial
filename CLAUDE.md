@@ -14,11 +14,13 @@ Atue como **Principal Full-Stack Engineer, SaaS Architect, Senior Product Design
 
 O produto deve lembrar a precisão, densidade informacional e clareza de Linear, Attio e Stripe Dashboard **sem copiar suas interfaces**. Criar identidade visual original da Zaniva.
 
-**PROIBIDO:** estética genérica de IA; gradientes decorativos; cores vibrantes, neon, glow; roxo/azul elétricos; cards gigantes; sombras pesadas; bordas excessivamente arredondadas; emojis decorativos; ilustrações genéricas; widgets de métricas fictícias; efeitos 3D, parallax, partículas; scroll cinematográfico; animações teatrais; cabeçalhos promocionais; **eyebrows/overlines decorativas** sobre títulos de seções. Interface séria para empresas.
+**PROIBIDO:** estética genérica de IA; gradientes decorativos (exceto o fundo desfocado das telas de entrada); cores vibrantes, neon, glow; roxo/azul elétricos; sombras em cards e botões; emojis decorativos; ilustrações genéricas; widgets de métricas fictícias; efeitos 3D, parallax, partículas; scroll cinematográfico; animações teatrais; cabeçalhos promocionais; **eyebrows/overlines decorativas** sobre títulos de seções. Interface séria para empresas.
 
-**Paleta base — light:** #F6F6F4 fundo, #FFFFFF superfície, #F0F1EF superfície secundária, #202426 texto, #676D70 secundário, #E2E5E3 borda, #53675E destaque discreto. **Dark:** #141719 fundo, #1C2022 superfície, #25292C secundário, #F0F1EE texto, #A2A8A5 secundário, #343A3D borda, #84988C destaque. Usar cores semânticas de estado com contraste acessível.
+**Direção visual (definida pelo proprietário em 2026-11-03): "galeria à luz do dia".** Canvas off-white, cards brancos planos com bordas finas, texto quase preto e quatro acentos usados só como pontuação (barra de 4px à esquerda de cards de métrica, botão principal, item ativo do menu). Sem sombras: elevação só por cor de superfície + borda fina.
 
-Tipografia Geist ou Inter; grid e espaçamento consistentes; títulos contidos; tabelas densas e legíveis; números tabulares; elementos com propósito. Criar tokens e design system próprio. **Light e dark mode completos.** Responsividade real, não apenas encolhimento do desktop.
+**Paleta — light:** #F9F9F9 canvas, #FFFFFF card, #F2F2F1 superfície secundária, #0A0B0C texto/tinta, #5C5F63 secundário, bordas #0A0B0C a 10–18%. **Acentos:** #00543D floresta (marca), #ABCBF9 pervinca (ação principal, texto escuro), #FFBBFC rosa, #FCE88B manteiga. Acentos nunca como cor de texto nem fundos amplos. **Dark:** #0F1011 canvas, #17181A card, #202124 secundária, #F4F4F2 texto, #A3A6AA secundário, bordas brancas a 10–18%; acentos mantidos. Cores semânticas de estado com contraste acessível.
+
+**Tipografia:** Inter em **peso único 400**; hierarquia só por tamanho (12/14/15/20/24/32/36). **Raios:** inputs 4px, cards 8px, botões e chips em pílula. Números tabulares; tabelas legíveis. Tokens e design system próprios. **Light e dark mode completos.** Responsividade real, não apenas encolhimento do desktop.
 
 ### ÚNICO efeito visual especial permitido: Liquid Glass
 

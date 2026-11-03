@@ -1,12 +1,15 @@
+import { Logo } from "@/design-system/components/logo";
+
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="flex min-h-dvh items-center justify-center px-4 py-10">
-      <div className="w-full max-w-[380px]">
-        <div className="mb-6 flex items-center gap-2">
-          <span aria-hidden className="grid size-7 place-items-center rounded-md bg-accent text-[13px] font-semibold text-accent-fg">Z</span>
-          <span className="text-sm font-semibold tracking-tight">Zaniva CRM</span>
+    <main className="relative flex min-h-dvh items-center justify-center overflow-hidden px-4 py-12">
+      {/* Fundo atmosférico desfocado: o único gradiente do sistema, restrito às telas de entrada. */}
+      <div aria-hidden className="z-auth-wash pointer-events-none absolute inset-0" />
+      <div className="relative w-full max-w-[420px]">
+        <div className="mb-8 flex justify-center">
+          <Logo />
         </div>
-        <div className="rounded-lg border border-border bg-surface p-6">{children}</div>
+        <div className="rounded-lg border border-border bg-surface p-8">{children}</div>
       </div>
     </main>
   );

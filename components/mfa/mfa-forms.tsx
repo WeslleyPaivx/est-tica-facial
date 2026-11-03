@@ -36,10 +36,10 @@ export function EnrollFactor() {
   }
   return (
     <div className="flex flex-col gap-4">
-      <p className="text-[13px] text-muted">Escaneie o QR code no seu aplicativo autenticador (TOTP) e informe o código gerado.</p>
+      <p className="text-sm text-muted">Escaneie o QR code no seu aplicativo autenticador (TOTP) e informe o código gerado.</p>
       {/* eslint-disable-next-line @next/next/no-img-element -- data URI SVG gerado pelo Supabase Auth */}
       <img src={state.qrCode} alt="QR code para configurar o autenticador" width={176} height={176} className="rounded-md border border-border bg-white p-2" />
-      <details className="text-[13px]">
+      <details className="text-sm">
         <summary className="cursor-pointer text-muted">Não consegue escanear? Use a chave</summary>
         <code className="mt-2 block break-all rounded-sm bg-surface-2 px-2 py-1 font-mono text-xs">{state.secret}</code>
       </details>

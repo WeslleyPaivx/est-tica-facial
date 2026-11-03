@@ -17,7 +17,7 @@ export default async function SecurityPage() {
       <PageHeader title="Segurança da conta" description={s.user.email} />
       <Section title="Verificação em duas etapas" description="Aplicativo autenticador (TOTP).">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-[13px]">
+          <div className="flex items-center gap-2 text-sm">
             <Badge tone={verified.length ? "success" : "warning"}>{verified.length ? "Ativa" : "Inativa"}</Badge>
             <span className="text-muted">Sessão atual: {s.aal.current === "aal2" ? "verificada com MFA" : "somente senha"}</span>
           </div>

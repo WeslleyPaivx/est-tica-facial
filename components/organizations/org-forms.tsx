@@ -56,7 +56,7 @@ export function MemberRoleForm({ memberId, role, roles, label }: { memberId: str
   return (
     <form action={action} className="flex items-center gap-2">
       <input type="hidden" name="memberId" value={memberId} />
-      <Select name="role" defaultValue={role} aria-label={`Papel de ${label}`} className="h-8 w-40 text-[13px]">
+      <Select name="role" defaultValue={role} aria-label={`Papel de ${label}`} className="h-8 w-40 text-sm">
         {roles.map((r) => (
           <option key={r} value={r}>{ROLE_LABEL[r]}</option>
         ))}
