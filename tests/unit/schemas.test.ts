@@ -23,7 +23,10 @@ describe("schemas de auth", () => {
   it("exige senha forte", () => {
     expect(signUpSchema.safeParse({ fullName: "Ana", email: "a@b.co", password: "curta1" }).success).toBe(false);
     expect(signUpSchema.safeParse({ fullName: "Ana", email: "a@b.co", password: "somenteletrasaqui" }).success).toBe(false);
-    expect(signUpSchema.safeParse({ fullName: "Ana", email: "a@b.co", password: "senhaforte2026" }).success).toBe(true);
+    expect(signUpSchema.safeParse({ fullName: "Ana", email: "a@b.co", password: "Curta!1" }).success).toBe(false); // 7 caracteres
+    expect(signUpSchema.safeParse({ fullName: "Ana", email: "a@b.co", password: "semmaiuscula!" }).success).toBe(false);
+    expect(signUpSchema.safeParse({ fullName: "Ana", email: "a@b.co", password: "SemSimbolo1" }).success).toBe(false);
+    expect(signUpSchema.safeParse({ fullName: "Ana", email: "a@b.co", password: "Senha#forte" }).success).toBe(true);
   });
   it("TOTP exige 6 dígitos e factorId UUID", () => {
     expect(totpSchema.safeParse({ factorId: "x", code: "123456" }).success).toBe(false);

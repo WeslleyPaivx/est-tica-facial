@@ -50,7 +50,7 @@ test("cadastro valida senha fraca no servidor", async ({ page }) => {
   await page.getByLabel("E-mail profissional").fill("pessoa@exemplo.test");
   await page.getByLabel("Senha").fill("curta");
   await page.getByRole("button", { name: "Criar conta" }).click();
-  await expect(page.locator("form [role=alert]")).toContainText("12 caracteres");
+  await expect(page.locator("form [role=alert]")).toContainText("8 caracteres");
 });
 
 test("link de confirmação inválido leva à página de erro", async ({ page }) => {

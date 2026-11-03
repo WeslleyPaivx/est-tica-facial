@@ -44,8 +44,8 @@ export function SignUpForm() {
       <Field label="E-mail profissional" htmlFor="email">
         <Input id="email" name="email" type="email" autoComplete="email" required />
       </Field>
-      <Field label="Senha" htmlFor="password" hint="Mínimo de 12 caracteres, com letras e números.">
-        <Input id="password" name="password" type="password" autoComplete="new-password" required minLength={12} />
+      <Field label="Senha" htmlFor="password" hint="Mínimo de 8 caracteres, com uma letra maiúscula e um símbolo.">
+        <Input id="password" name="password" type="password" autoComplete="new-password" required minLength={8} />
       </Field>
       <FormStatus state={state} />
       <Button type="submit" disabled={pending}>{pending ? "Criando…" : "Criar conta"}</Button>
@@ -74,8 +74,8 @@ export function NewPasswordForm() {
   const [state, action, pending] = useActionState(updatePasswordAction, {});
   return (
     <form action={action} className="flex flex-col gap-4" noValidate>
-      <Field label="Nova senha" htmlFor="password" hint="Mínimo de 12 caracteres, com letras e números.">
-        <Input id="password" name="password" type="password" autoComplete="new-password" required minLength={12} />
+      <Field label="Nova senha" htmlFor="password" hint="Mínimo de 8 caracteres, com uma letra maiúscula e um símbolo.">
+        <Input id="password" name="password" type="password" autoComplete="new-password" required minLength={8} />
       </Field>
       <Field label="Confirmar senha" htmlFor="confirm">
         <Input id="confirm" name="confirm" type="password" autoComplete="new-password" required />

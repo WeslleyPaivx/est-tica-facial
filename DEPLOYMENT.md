@@ -5,7 +5,7 @@
 ## Homologação (quando autorizado)
 
 1. Criar projeto Supabase **novo** de homologação (não reutilizar projetos existentes).
-2. Auth: confirmação de e-mail ligada, MFA TOTP habilitado, senha mínima 12, Site URL e Redirect URLs apontando para `…/auth/confirm` (espelhar `supabase/config.toml`).
+2. Auth: confirmação de e-mail ligada, MFA TOTP habilitado, senha mínima 8, Site URL e Redirect URLs apontando para `…/auth/confirm` (espelhar `supabase/config.toml`).
 3. Templates de e-mail: links para `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=<tipo>&next=<rota>` (ou fluxo PKCE padrão).
 4. Data API: expor apenas o schema `public` (nunca `private`).
 5. Aplicar migrations em ordem (`supabase db push` ou SQL editor) e rodar **Security Advisor** e **Performance Advisor**; registrar cada achado.

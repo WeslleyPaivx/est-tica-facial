@@ -3,9 +3,10 @@ import { z } from "zod";
 const email = z.string().trim().toLowerCase().max(254).pipe(z.email({ message: "E-mail inválido." }));
 const password = z
   .string()
-  .min(12, "Use ao menos 12 caracteres.")
+  .min(8, "Use ao menos 8 caracteres.")
   .max(128, "Senha longa demais.")
-  .refine((v) => /[a-zA-Z]/.test(v) && /\d/.test(v), "Combine letras e números.");
+  .refine((v) => /[A-Z]/.test(v), "Inclua ao menos uma letra maiúscula.")
+  .refine((v) => /[^A-Za-z0-9\s]/.test(v), "Inclua ao menos um símbolo (ex.: ! @ # $).");
 
 export const signInSchema = z.object({ email, password: z.string().min(1, "Informe a senha.").max(128) });
 export const signUpSchema = z.object({
