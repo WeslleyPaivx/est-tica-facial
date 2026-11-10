@@ -33,13 +33,15 @@ function mix(a, b, u) {
 // ---------- renderer / cena ----------
 const canvas = document.getElementById("gl");
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
-renderer.setPixelRatio(1);
+// prévia leve: 3D em meia resolução e sombras menores (render bem mais rápido sem GPU)
+const LITE = !!window.__hyperframes?.getVariables?.()?.lite;
+renderer.setPixelRatio(LITE ? 0.5 : 1);
 renderer.setSize(1080, 1920, false);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.2;
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.type = LITE ? THREE.PCFShadowMap : THREE.PCFSoftShadowMap;
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#0b0d1c");
