@@ -7,7 +7,7 @@ TOTAL = json.loads(re.search(r"ANCHORS = (\[.*\]);", open("src/voz.js").read()).
 musica = (glob.glob("assets/musica.mp3") + glob.glob("assets/musica.wav"))[:1]
 ins = ["-i", "assets/voz/vozes.wav", "-i", "assets/sfx/efeitos.wav", "-i", "assets/sfx/quarto.wav", "-i", "assets/sfx/jogo.wav"]
 g = ("[0]aformat=channel_layouts=mono,asplit=3[voz][sc1][sc2];"
-     "[3]volume=-13dB[jg];[jg][sc1]sidechaincompress=threshold=0.03:ratio=6:attack=15:release=350[jogo];")
+     "[3]volume=-27dB[jg];[jg][sc1]sidechaincompress=threshold=0.01:ratio=20:attack=10:release=450:makeup=1[jogo];")
 mixin = "[voz][1][2][jogo]"
 if musica:
     ins += ["-stream_loop", "-1", "-i", musica[0]]

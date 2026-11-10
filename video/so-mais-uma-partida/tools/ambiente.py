@@ -58,7 +58,7 @@ t, k = 0.0, 0
 while t < PAUSE - e8:
     root, arp = prog[(k // 8) % 4]
     add(jogo, t, tri(note(root - 12 + (12 if k % 2 else 0)), e8 * 0.9), 0.32)
-    add(jogo, t, pulse(note(arp[k % 4] + 12), e8 * 0.55, 0.25), 0.10)
+    add(jogo, t, pulse(note(arp[k % 4] + 12), e8 * 0.55, 0.25), 0.05)
     if k % 8 in (0, 3, 6):  # "bumbo" de ruído curtinho
         add(jogo, t, rng.uniform(-1, 1, int(0.03 * SR)) * env(int(0.03 * SR), 0.001, 0.025), 0.10)
     t += e8; k += 1
@@ -66,17 +66,17 @@ while t < PAUSE - e8:
 # ---- pulo do bonequinho: na tela ele pula a cada pi/4.2 s (régua da animação) ----
 o = 0.0
 while o < 48.6:
-    add(jogo, unwarp(o), pulse(note(72), 0.12, 0.5, sweep=2.2), 0.12)
+    add(jogo, unwarp(o), pulse(note(72), 0.12, 0.5, sweep=1.8), 0.05)
     o += np.pi / 4.2
 # moedinhas (duas notas)
 for o in np.arange(0.9, 48.0, 1.37) + rng.uniform(-0.2, 0.2, len(np.arange(0.9, 48.0, 1.37))):
     tt = unwarp(o)
-    add(jogo, tt, pulse(note(83), 0.06, 0.5), 0.09)
-    add(jogo, tt + 0.06, pulse(note(88), 0.16, 0.5), 0.09)
+    add(jogo, tt, pulse(note(79), 0.06, 0.5), 0.035)
+    add(jogo, tt + 0.06, pulse(note(84), 0.14, 0.5), 0.035)
 # som de pause
 for i, m in enumerate([84, 79, 84, 79]):
     add(jogo, PAUSE + i * 0.07, pulse(note(m), 0.06, 0.5), 0.12)
-jogo = bp(jogo, 180, 6500)  # som de alto-falante de TV
+jogo = lp(bp(jogo, 180, 6500), 2800)  # abafado: sem bipe estridente  # som de alto-falante de TV
 
 # ---- cliques dos botões: a mão "aperta" quando sin(13t + s) sobe (mesmo ritmo da animação) ----
 def jogando(o): return o < 15.4 or 20.4 < o < 29.1
@@ -84,7 +84,7 @@ click = bp(rng.uniform(-1, 1, int(0.012 * SR)), 1500, 7000) * env(int(0.012 * SR
 for s in (0, 2):
     kk = 0
     while (o := (2 * np.pi * kk - s) / 13) < 29.1:
-        if o > 0 and jogando(o): add(quarto, unwarp(o), click, db(-26 + rng.uniform(-4, 2)))
+        if o > 0 and jogando(o): add(quarto, unwarp(o), click, db(-34 + rng.uniform(-4, 2)))
         kk += 1
 
 # ---- relógio: tique-taque 1 por segundo; acelera junto com os ponteiros (22–29) e para no impacto ----
