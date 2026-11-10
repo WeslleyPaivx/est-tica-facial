@@ -101,7 +101,7 @@ while o < 29.1 or (31 < o < 56):
 a, b = unwarp(50.5), unwarp(56.0)
 nn = int((b - a) * SR); tt = np.arange(nn) / SR
 risco = bp(rng.uniform(-1, 1, nn), 2000, 7000) * (0.35 + 0.65 * np.abs(np.sin(tt * 9))) * env(nn, 0.1, 0.3)
-add(quarto, a, risco, db(-30))
+# sem caneta: o ruído pulsando soava como trem (pedido do dono)
 
 # ---- silêncio de quarto à noite: ruído marrom grave bem baixo, o tempo todo ----
 br = np.cumsum(rng.normal(0, 1, N)); br -= onepole(br, 3)  # ruído marrom sem deriva

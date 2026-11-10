@@ -8,8 +8,8 @@ def unwarp(o):  # régua da animação -> tempo real do vídeo
 assert abs(unwarp(A[5][1]) - A[5][0]) < 1e-9
 END, TOTAL, sr = A[-2][0], A[-1][0], 44100
 # (ação na régua da animação, som, ganho dB); None = título final
-ev = [(4.0,"pop",-6),(9.0,"sparkle",-8),(19.5,"whoosh-short",-10),
-      (29.1,"impact-bass-1",-8),(32.2,"whoosh",-12),(36.6,"whoosh-short",-11),(41.0,"pop",-9),(47.1,"whoosh-short",-11),
+ev = [(4.0,"pop",-6),(9.0,"sparkle",-8),
+      (29.1,"impact-bass-1",-8),(41.0,"pop",-9),
       (48.6,"click",-6),(49.1,"click-soft",-6),(None,"chime",-10)]
 mix = np.zeros(int(TOTAL * sr) + sr)
 for o, name, db in ev:
