@@ -1,0 +1,4 @@
+.hyperframes/
+node_modules/
+# gerado por: node audio/make.cjs
+assets/trilha.wav

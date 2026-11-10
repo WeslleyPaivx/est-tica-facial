@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="37.5" data-fps="60" data-width="1080" data-height="1920">
+      <audio id="trilha" src="assets/trilha.wav" data-start="0" data-duration="37.5" data-volume="1"></audio>
+
+      <!-- fundo: cortinas de luz, como na referência -->
+      <div id="bg" class="clip" data-layout-ignore data-start="0" data-duration="37.5">
+        <i class="beam b1"></i><i class="beam b2"></i><i class="beam b3"></i><i class="beam b4"></i><i class="beam b5"></i>
+        <div class="dots"></div>
+        <div class="vig"></div>
+      </div>
+
+      <!-- 0 · abertura -->
+      <section id="s0" class="clip scene" data-start="0" data-duration="4">
+        <div class="logo" id="logo0">
+          <div class="word" data-layout-allow-overlap><span class="ln"><span class="w">zaniva</span><span class="dot">.</span></span></div>
+          <div class="sub">SOLUÇÕES DIGITAIS</div>
+        </div>
+        <p class="tag"><span class="ln">Tudo que o seu negócio</span><span class="ln">precisa pra <em>vender online.</em></span></p>
+      </section>
+
+      <!-- 1 · sites -->
+      <section id="s1" class="clip scene" data-start="4" data-duration="5.5">
+        <div class="head">
+          <div class="num">01 / 06</div>
+          <h2 class="ttl" data-layout-allow-overlap><span class="ln">Sites</span></h2>
+          <div class="rule"></div>
+          <p class="desc">Rápidos, bonitos e feitos pra converter.</p>
+        </div>
+        <div class="browser" id="br">
+          <div class="bar"><i></i><i></i><i></i><div class="url" id="url">suamarca.com.br</div></div>
+          <div class="page">
+            <div class="nav"><b></b><span></span><span></span><span></span></div>
+            <h3 class="hero"><span class="ln">Sua marca,</span><span class="ln">no ar.</span></h3>
+            <div class="btn" id="cta">Comprar agora<i class="ripple"></i></div>
+            <div class="cards"><div></div><div></div><div></div></div>
+          </div>
+        </div>
+        <svg class="cursor" id="cur" viewBox="0 0 24 24"><path d="M4 2l15 9-6.5 1.6L9.6 19z" fill="#fff" stroke="#12051f" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        <div class="editor" id="ed">
+          <div class="tabs"><b>site.js</b><span>estilo.css</span></div>
+          <div class="codewrap"><pre id="code" data-layout-ignore><span class="k">const</span> site = zaniva.<span class="f">criar</span>({
+  marca: <span class="s">"sua loja"</span>,
+  rapido: <span class="k">true</span>,
+  seo: <span class="k">true</span>,
+})
+
+site.<span class="f">publicar</span>() <span class="c">// no ar</span></pre><i id="caret"></i></div>
+        </div>
+        <div class="toast" id="pub"><i class="ok"></i>Site publicado</div>
+      </section>
+
+      <!-- 2 · automações -->
+      <section id="s2" class="clip scene" data-start="9.5" data-duration="5">
+        <div class="head">
+          <div class="num">02 / 06</div>
+          <h2 class="ttl" data-layout-allow-overlap><span class="ln">Automações</span></h2>
+          <div class="rule"></div>
+          <p class="desc">Seu processo rodando sozinho, 24h por dia.</p>
+        </div>
+        <div class="flow">
+          <svg viewBox="0 0 900 1000"><path id="wire" d="M210,70 C210,170 690,170 690,270 C690,370 210,370 210,470 C210,570 690,570 690,670 C690,770 210,770 210,870" /></svg>
+          <i id="pulse"></i>
+          <div class="node" style="left:0;top:10px"><i></i><div><b>Novo lead</b><span>formulário do site</span></div></div>
+          <div class="node" style="left:480px;top:210px"><i></i><div><b>WhatsApp</b><span>mensagem enviada</span></div></div>
+          <div class="node" style="left:0;top:410px"><i></i><div><b>CRM</b><span>contato cadastrado</span></div></div>
+          <div class="node" style="left:480px;top:610px"><i></i><div><b>Cobrança</b><span>link de pagamento</span></div></div>
+          <div class="node last" style="left:0;top:810px"><i></i><div><b>Venda fechada</b><span>sem ninguém digitar nada</span></div></div>
+        </div>
+      </section>
+
+      <!-- 3 · chatbot -->
+      <section id="s3" class="clip scene" data-start="14.5" data-duration="6.5">
+        <div class="head">
+          <div class="num">03 / 06</div>
+          <h2 class="ttl" data-layout-allow-overlap><span class="ln">Chatbot</span><span class="ln mg">humanizado</span></h2>
+          <div class="rule"></div>
+          <p class="desc">Conversa como gente. Sem menu robotizado.</p>
+        </div>
+        <div class="phone" id="ph">
+          <div class="chathead"><i class="av">B</i><div><b>Bia</b><span>online agora</span></div></div>
+          <div class="msgs">
+            <div class="m me" id="m1">Oi! Tem horário pra sábado?</div>
+            <div class="slot"><div class="typing" id="t1"><i></i><i></i><i></i></div><div class="m bot" id="m2">Oi, Marina! Tenho sim. Sábado às 10h ou 14h30, qual fica melhor pra você?</div></div>
+            <div class="m me" id="m3">10h tá ótimo</div>
+            <div class="slot"><div class="typing" id="t2"><i></i><i></i><i></i></div><div class="m bot" id="m4">Fechado! Te mando um lembrete na sexta. Qualquer coisa é só chamar.</div></div>
+          </div>
+          <div class="inputbar"><span>Mensagem</span><i></i></div>
+        </div>
+        <div class="robot" id="rb">Digite 1 para vendas<i></i></div>
+      </section>
+
+      <!-- 4 · motion -->
+      <section id="s4" class="clip scene" data-start="21" data-duration="4.5">
+        <div class="head">
+          <div class="num">04 / 06</div>
+          <h2 class="ttl" data-layout-allow-overlap><span class="ln">Motion</span><span class="ln mg">pra vendas</span></h2>
+          <div class="rule"></div>
+          <p class="desc">Anúncios animados que param o scroll.</p>
+        </div>
+        <div class="ad" id="ad">
+          <div class="adtop"><b>LOJA AURORA</b><span>só essa semana</span></div>
+          <div class="off" id="off">-40%</div>
+          <div class="strip" data-layout-allow-overflow data-layout-ignore><div id="mq">SEMANA DO CLIENTE &nbsp;•&nbsp; SEMANA DO CLIENTE &nbsp;•&nbsp; SEMANA DO CLIENTE &nbsp;•&nbsp; SEMANA DO CLIENTE &nbsp;•&nbsp; SEMANA DO CLIENTE &nbsp;•&nbsp;</div></div>
+          <div class="bag" id="bag"><i></i></div>
+          <div class="price" id="price"><small>por</small>R$ 89<sup>,90</sup></div>
+          <div class="buy" id="buy">Comprar agora</div>
+          <i class="star st1"></i><i class="star st2"></i><i class="star st3"></i>
+        </div>
+        <div class="tline">
+          <div class="trk"><i style="left:2%;width:38%"></i><i style="left:46%;width:30%" class="alt"></i></div>
+          <div class="trk"><i style="left:14%;width:22%" class="alt"></i><i style="left:40%;width:52%"></i></div>
+          <div class="trk"><i style="left:6%;width:60%" class="dim"></i><b style="left:6%"></b><b style="left:34%"></b><b style="left:66%"></b></div>
+          <div id="playhead"></div>
+        </div>
+      </section>
+
+      <!-- 5 · design -->
+      <section id="s5" class="clip scene" data-start="25.5" data-duration="3">
+        <div class="head">
+          <div class="num">05 / 06</div>
+          <h2 class="ttl" data-layout-allow-overlap><span class="ln">Design</span></h2>
+          <div class="rule"></div>
+          <p class="desc">Identidade que as pessoas lembram.</p>
+        </div>
+        <div class="dz">
+          <div class="dcard type"><b>Aa</b><span>Manrope · Bold</span></div>
+          <div class="dcard mark">
+            <svg viewBox="0 0 430 430"><circle class="gl" cx="215" cy="215" r="150"/><path class="gl" d="M0,215H430M215,0V430M65,65L365,365M365,65L65,365"/><rect class="gl" x="109" y="109" width="212" height="212"/></svg>
+            <b>z<em>.</em></b>
+          </div>
+          <div class="sw"><div style="background:#0B0620"><span>#0B0620</span></div><div style="background:#7A00B4"><span>#7A00B4</span></div><div style="background:#EA36C2"><span>#EA36C2</span></div><div style="background:#C9A6FF"><span>#C9A6FF</span></div><div style="background:#FFFFFF"><span>#FFFFFF</span></div></div>
+          <div class="bez">
+            <svg viewBox="0 0 900 300"><path class="hl" d="M150,230L60,60M450,90L330,20M450,90L570,160M750,210L840,60"/><path id="curve" d="M60,230 C150,230 330,20 450,90 C570,160 750,210 840,60"/></svg>
+            <i class="an" style="left:60px;top:230px"></i><i class="an" style="left:450px;top:90px"></i><i class="an" style="left:840px;top:60px"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 · crm -->
+      <section id="s6" class="clip scene" data-start="28.5" data-duration="3.5">
+        <div class="head">
+          <div class="num">06 / 06</div>
+          <h2 class="ttl" data-layout-allow-overlap><span class="ln">CRM</span></h2>
+          <div class="rule"></div>
+          <p class="desc">Cada cliente no lugar certo, do lead à venda.</p>
+        </div>
+        <div class="board">
+          <div class="col"><h4>Novo <span>3</span></h4></div>
+          <div class="col"><h4>Em contato <span>2</span></h4></div>
+          <div class="col"><h4>Fechado <span>2</span></h4></div>
+          <div class="kc" style="left:0;top:70px" id="kmove"><b>Bela Face</b><span>R$ 2.400</span><i class="ok"></i></div>
+          <div class="kc up" style="left:0;top:220px"><b>Studio Luz</b><span>R$ 980</span></div>
+          <div class="kc up" style="left:0;top:370px"><b>Ótica Vila</b><span>R$ 1.650</span></div>
+          <div class="kc" style="left:310px;top:70px"><b>Padaria Sol</b><span>R$ 720</span></div>
+          <div class="kc" style="left:620px;top:70px"><b>Pet do Bairro</b><span>R$ 1.200</span></div>
+        </div>
+        <div class="chart">
+          <h4>Vendas fechadas</h4>
+          <div class="bars"><i style="height:28%"></i><i style="height:40%"></i><i style="height:35%"></i><i style="height:56%"></i><i style="height:70%"></i><i style="height:92%" class="hot"></i></div>
+        </div>
+      </section>
+
+      <!-- 7 · fechamento -->
+      <section id="s7" class="clip scene" data-start="32" data-duration="5.5">
+        <div class="list"><span class="ln">sites</span><span class="ln">automações</span><span class="ln">chatbots</span><span class="ln">motion</span><span class="ln">design</span><span class="ln">crm</span></div>
+        <div class="logo" id="logo7">
+          <div class="word" data-layout-allow-overlap><span class="ln"><span class="w">zaniva</span><span class="dot">.</span></span></div>
+          <div class="sub">SOLUÇÕES DIGITAIS</div>
+        </div>
+        <div class="cta" id="cta7">Vamos criar o seu?</div>
+      </section>
+
+      <!-- marca fixa + progresso -->
+      <div id="hud" class="clip" data-start="4" data-duration="28">
+        <b>zaniva<em>.</em></b>
+        <div class="pg"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <div id="wipes" class="clip" data-start="0" data-duration="37.5"><i id="wB"></i><i id="wA"></i></div>
+    </div>
+    <script src="film.js"></script>
+  </body>
+</html>

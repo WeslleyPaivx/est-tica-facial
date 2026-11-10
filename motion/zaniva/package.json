@@ -1,0 +1,12 @@
+{
+  "name": "zaniva",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.9.31 preview",
+    "check": "npx --yes hyperframes@0.9.31 check",
+    "audio": "node audio/make.cjs",
+    "render": "node audio/make.cjs && npx --yes hyperframes@0.9.31 render --fps 60 --quality high -o renders/zaniva-motion.mp4",
+    "publish": "npx --yes hyperframes@0.9.31 publish"
+  }
+}
