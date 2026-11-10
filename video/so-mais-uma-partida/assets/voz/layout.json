@@ -2,85 +2,73 @@
  {
   "n": "01",
   "who": "rapaz",
-  "start": 0.15,
-  "end": 4.22,
-  "file": "assets/voz/01_rapaz.wav"
+  "start": 0.0,
+  "end": 3.99
  },
  {
   "n": "02",
   "who": "diabo",
-  "start": 4.47,
-  "end": 10.2,
-  "file": "assets/voz/02_diabo.wav"
+  "start": 4.35,
+  "end": 9.95
  },
  {
   "n": "03",
   "who": "anjo",
-  "start": 10.45,
-  "end": 14.53,
-  "file": "assets/voz/03_anjo.wav"
+  "start": 10.27,
+  "end": 14.22
  },
  {
   "n": "04",
   "who": "rapaz",
-  "start": 14.78,
-  "end": 17.74,
-  "file": "assets/voz/04_rapaz.wav"
+  "start": 14.7,
+  "end": 17.53
  },
  {
   "n": "05",
   "who": "diabo",
-  "start": 17.99,
-  "end": 19.82,
-  "file": "assets/voz/05_diabo.wav"
+  "start": 17.97,
+  "end": 23.66
  },
  {
   "n": "06",
   "who": "anjo",
-  "start": 20.07,
-  "end": 27.66,
-  "file": "assets/voz/06_anjo.wav"
+  "start": 23.99,
+  "end": 30.43
  },
  {
   "n": "07",
   "who": "rapaz",
-  "start": 27.91,
-  "end": 33.48,
-  "file": "assets/voz/07_rapaz.wav"
+  "start": 30.82,
+  "end": 33.38
  },
  {
   "n": "08",
   "who": "anjo",
-  "start": 33.73,
-  "end": 38.04,
-  "file": "assets/voz/08_anjo.wav"
+  "start": 33.71,
+  "end": 37.89
  },
  {
   "n": "09",
   "who": "diabo",
-  "start": 38.29,
-  "end": 42.0,
-  "file": "assets/voz/09_diabo.wav"
+  "start": 38.19,
+  "end": 41.77
  },
  {
   "n": "10",
   "who": "anjo",
-  "start": 42.25,
-  "end": 48.6,
-  "file": "assets/voz/10_anjo.wav"
+  "start": 42.15,
+  "end": 48.37
  },
  {
   "n": "11",
   "who": "rapaz",
-  "start": 48.85,
-  "end": 52.46,
-  "file": "assets/voz/11_rapaz.wav"
+  "start": 48.77,
+  "end": 52.25
  },
  {
   "n": "12",
   "who": "anjo",
-  "start": 52.71,
-  "end": 58.16,
-  "file": "assets/voz/12_anjo.wav"
+  "start": 52.67,
+  "end": 57.99
  }
 ]
