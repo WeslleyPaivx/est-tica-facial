@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "./lib/three.module.min.js" } }
+    </script>
+    <style>
+      :root {
+        --ink: #ffffff;
+        --font: "Nunito", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0d1c; }
+      #root { position: absolute; inset: 0; font-family: var(--font); }
+      #gl { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+      /* legenda: pequena, branca, dentro da faixa segura (168–1330 px), longe do trilho direito */
+      .cap {
+        position: absolute; left: 150px; width: 780px; top: 1150px;
+        color: var(--ink); font-size: 46px; font-weight: 700; line-height: 1.18;
+        text-align: center; text-wrap: balance;
+        text-shadow: 0 0 2px #000, 0 2px 0 #000, 0 0 14px rgba(0, 0, 0, 0.85);
+        z-index: 10;
+      }
+      .end {
+        position: absolute; left: 120px; width: 840px; text-align: center; color: var(--ink);
+        z-index: 11; text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
+      }
+      #end-a { top: 640px; font-size: 54px; font-weight: 700; line-height: 1.2; }
+      #end-b { top: 900px; font-size: 62px; white-space: nowrap; font-weight: 700; color: #ffe27a; line-height: 1.1; }
+      #shade { position: absolute; inset: 0; background: #070814; z-index: 9; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="60" data-width="1080" data-height="1920" data-fps="30">
+      <canvas id="gl" width="1080" height="1920"></canvas>
+
+      <!-- Régua de falas: o 3D lê data-speaker/data-start/data-duration daqui (fonte única de tempos) -->
+      <div id="captions" data-track-kind="captions">
+        <p id="c01" class="clip cap" data-speaker="rapaz" data-start="0.3" data-duration="3.5" data-track-index="2">Só mais uma partida. Depois eu estudo.</p>
+        <p id="c02" class="clip cap" data-speaker="diabo" data-start="4.2" data-duration="2.2" data-track-index="2">Boa! O jogo te recompensa agora.</p>
+        <p id="c03" class="clip cap" data-speaker="diabo" data-start="6.4" data-duration="2.4" data-track-index="2">Estudar? Só ansiedade!</p>
+        <p id="c04" class="clip cap" data-speaker="anjo" data-start="9.3" data-duration="2.7" data-track-index="2">Você não foge só do estudo.</p>
+        <p id="c05" class="clip cap" data-speaker="anjo" data-start="12" data-duration="2.8" data-track-index="2">Foge do medo de errar.</p>
+        <p id="c06" class="clip cap" data-speaker="rapaz" data-start="15.6" data-duration="3.2" data-track-index="2">É... e se eu não entender nada?</p>
+        <p id="c07" class="clip cap" data-speaker="diabo" data-start="19.2" data-duration="2.6" data-track-index="2">Então nem começa! Joga mais!</p>
+        <p id="c08" class="clip cap" data-speaker="anjo" data-start="22.3" data-duration="3.3" data-track-index="2">O jogo alivia a ansiedade por alguns minutos.</p>
+        <p id="c09" class="clip cap" data-speaker="anjo" data-start="25.6" data-duration="3.2" data-track-index="2">Mas a tarefa continua esperando.</p>
+        <p id="c10" class="clip cap" data-speaker="rapaz" data-start="29.5" data-duration="2.3" data-track-index="2">E depois vem a culpa...</p>
+        <p id="c11" class="clip cap" data-speaker="anjo" data-start="32.3" data-duration="4.5" data-track-index="2">Esse alívio imediato alimenta o ciclo da procrastinação.</p>
+        <p id="c12" class="clip cap" data-speaker="diabo" data-start="37.2" data-duration="2.6" data-track-index="2">Tá, mas uma partidinha não mata!</p>
+        <p id="c13" class="clip cap" data-speaker="anjo" data-start="40.3" data-duration="3.1" data-track-index="2">Em vez disso, estuda cinco minutos.</p>
+        <p id="c14" class="clip cap" data-speaker="anjo" data-start="43.4" data-duration="3.4" data-track-index="2">Só uma página, sem buscar perfeição.</p>
+        <p id="c15" class="clip cap" data-speaker="rapaz" data-start="47.3" data-duration="2.5" data-track-index="2">Cinco minutos... isso eu consigo.</p>
+        <p id="c16" class="clip cap" data-speaker="anjo" data-start="50.3" data-duration="2.6" data-track-index="2">Você não precisa querer começar.</p>
+        <p id="c17" class="clip cap" data-speaker="anjo" data-start="52.9" data-duration="2.9" data-track-index="2">Precisa tornar o começo menor.</p>
+      </div>
+
+      <div id="shade" class="clip" data-start="56" data-duration="4" data-track-index="3"></div>
+      <p id="end-a" class="clip end" data-start="56.2" data-duration="3.8" data-track-index="4">A procrastinação pode ser uma fuga do desconforto.</p>
+      <p id="end-b" class="clip end" data-start="57.2" data-duration="2.8" data-track-index="4">COMECE COM 5 MINUTOS.</p>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // legendas: entrada curta (sobe 12px), sem animação teatral
+      document.querySelectorAll(".cap").forEach((el) => {
+        const s = +el.dataset.start;
+        tl.fromTo(el, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, s);
+      });
+      tl.fromTo("#shade", { opacity: 0 }, { opacity: 0.62, duration: 0.6, ease: "power1.inOut" }, 56);
+      tl.fromTo("#end-a", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 56.2);
+      tl.fromTo("#end-b", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 57.2);
+      tl.set({}, {}, 60);
+      window.__timelines["main"] = tl;
+    </script>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
