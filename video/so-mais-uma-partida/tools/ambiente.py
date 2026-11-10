@@ -106,7 +106,8 @@ add(quarto, a, risco, db(-30))
 # ---- silêncio de quarto à noite: ruído marrom grave bem baixo, o tempo todo ----
 br = np.cumsum(rng.normal(0, 1, N)); br -= onepole(br, 3)  # ruído marrom sem deriva
 br = lp(br, 500); br /= np.abs(br).max()
-quarto += br * db(-44)
+# shortcut: sem ruído de fundo (pedido: nada de chiado); reative aqui se quiser "ar" de quarto
+# quarto += br * db(-44)
 
 for name, x in (("jogo", jogo), ("quarto", quarto)):
     x = x[:int(TOTAL * SR)]
