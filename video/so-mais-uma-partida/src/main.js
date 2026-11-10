@@ -1,6 +1,7 @@
 // Tudo é função do tempo t (segundos): o mesmo t gera sempre o mesmo quadro.
 import * as THREE from "three";
 import * as W from "./world.js";
+import { VOZ, VOZ_FPS, ANCHORS } from "./voz.js";
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const clamp01 = (x) => Math.min(1, Math.max(0, x));
@@ -160,19 +161,19 @@ document.fonts.ready.then(() => cycleTokens.forEach(({ ct, txt }, i) => {
   ct.tex.needsUpdate = true;
 }));
 
-// ---------- régua de falas (lida das legendas do index.html) ----------
-const lines = [...document.querySelectorAll(".cap")].map((el) => ({
-  who: el.dataset.speaker,
-  a: +el.dataset.start,
-  b: +el.dataset.start + +el.dataset.duration,
-}));
-// shortcut: boca sintética por sílabas; na Etapa 4 troca pelo envelope de volume dos áudios
+// ---------- voz real ----------
+// boca = volume da voz de cada personagem (src/voz.js, gerado dos áudios)
 function mouthOpen(who, t) {
-  const l = lines.find((l) => l.who === who && t >= l.a && t < l.b);
-  if (!l) return 0;
-  const edge = smooth((t - l.a) / 0.12) * smooth((l.b - t) / 0.12);
-  const syl = Math.max(0, Math.sin(t * Math.PI * 2 * 3.6 + who.length));
-  return edge * syl * (0.55 + 0.45 * hash(Math.floor(t * 7.2) + who.length * 13));
+  const e = VOZ[who], f = t * VOZ_FPS, i = Math.floor(f);
+  if (i < 0 || i + 1 >= e.length) return 0;
+  const v = e[i] + (e[i + 1] - e[i]) * (f - i);
+  return v < 0.08 ? 0 : Math.min(1, v * 1.15);
+}
+// a animação foi escrita na régua antiga; as âncoras levam o tempo real do áudio até ela
+function warp(t) {
+  const A = ANCHORS;
+  for (let i = 1; i < A.length; i++) if (t <= A[i][0]) return A[i - 1][1] + ((t - A[i - 1][0]) / (A[i][0] - A[i - 1][0])) * (A[i][1] - A[i - 1][1]);
+  return A[A.length - 1][1] + (t - A[A.length - 1][0]);
 }
 const blinkAmt = (t, seed) => {
   const p = 3.1, k = Math.floor((t + seed) / p), off = 0.4 + hash(k + seed * 7) * 2.2;
@@ -428,12 +429,13 @@ function faceToward(obj, from, toBoy, camPos, wBoy = 0.55) {
   obj.rotation.y = Math.atan2(d.x, d.z);
 }
 
-function renderAt(t) {
+function renderAt(tv) {
+  const t = warp(tv); // tv = tempo real do vídeo; t = régua da animação
   cameraAt(t);
 
   // rapaz
   const pose = track(boyPose, t);
-  const bOpen = mouthOpen("rapaz", t);
+  const bOpen = mouthOpen("rapaz", tv);
   const breathe = Math.sin(t * 2.2) * 0.008;
   boy.torso.rotation.set(pose.lean, pose.torso, 0);
   boy.torso.scale.set(1, 1 + breathe, 1);
@@ -451,7 +453,7 @@ function renderAt(t) {
 
   // diabinho
   const dScale = track([[0, 0], [3.95, 0], [4.4, 1, "back"], [50.2, 1], [55.6, 0.38, "s"]], t);
-  const dOpen = mouthOpen("diabo", t);
+  const dOpen = mouthOpen("diabo", tv);
   devil.root.visible = dScale > 0.01;
   devil.root.position.copy(devilPos(t));
   devil.root.scale.setScalar(Math.max(0.001, dScale));
@@ -469,7 +471,7 @@ function renderAt(t) {
 
   // anjo
   const aScale = track([[0, 0], [8.95, 0], [9.45, 1, "back"]], t);
-  const aOpen = mouthOpen("anjo", t);
+  const aOpen = mouthOpen("anjo", tv);
   angel.root.visible = aScale > 0.01;
   angel.root.position.copy(angelPos(t));
   angel.root.scale.setScalar(Math.max(0.001, aScale));
