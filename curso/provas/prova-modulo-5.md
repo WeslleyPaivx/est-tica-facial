@@ -27,7 +27,7 @@
 
 **4. (aberta)** O deploy na Vercel terminou. Segundo a aula, quais **três conferências** provam que o site está publicado e pronto para mostrar ao cliente? E, se o deploy der erro, onde você encontra a mensagem e o que faz com ela?
 
-**5.** O estúdio de tatuagem fechou e quer o site em "estudioexemplo.com.br". Qual conduta segue a aula?
+**5.** O estúdio de tatuagem fechou, aprovou o site no link da Vercel e quer o site em "estudioexemplo.com.br". Qual conduta segue a aula?
 
 - A) Você registra o domínio no seu CPF, para ter controle, e cobra do cliente depois.
 - B) O cliente registra o domínio (de preferência no nome dele). Você adiciona o domínio no projeto na Vercel, e no painel do registrador são criados exatamente os registros de DNS que a Vercel mostrou. Depois você espera a propagação e confere o HTTPS.
@@ -91,7 +91,7 @@
 **Resposta esperada:**
 1. O link (terminado em .vercel.app) **abre no computador e no celular**.
 2. **No celular de verdade, a rolagem está sem lag.**
-3. **Uma mudança enviada ao GitHub apareceu no link sozinha**, sem você fazer nada na Vercel.
+3. **Uma mudança enviada ao GitHub apareceu no link sozinha**, sem você fazer nada na Vercel (caminho A: Upload files de novo com o arquivo alterado; caminho B: commit e push pelo Claude Code).
 
 (Também vale citar rodar de novo o checklist da aula 5.2 no site publicado.)
 
@@ -101,19 +101,21 @@
 
 **Fonte:** Aula 5.4, seção Exercício: "o link abre no computador e no celular, a rolagem no celular está sem lag, e uma mudança enviada ao GitHub apareceu no link sem você fazer nada na Vercel." Seção Explicação: "Se der erro no deploy, a Vercel mostra os registros (logs) do build. Lembra da aula 4.4: copie a mensagem de erro, tire print e mande ao Claude junto com o link."
 
-**Auditoria:** OK. Ressalva: quem subiu pelo caminho A (site do GitHub) não aprendeu como "enviar uma mudança" depois. Ver auditoria.md (item 8).
+Passo a passo, item 10: "Faça uma pequena mudança, envie para o GitHub (caminho A: Upload files de novo com o arquivo alterado; caminho B: peça ao Claude Code o commit e o push) e confira se a Vercel publicou sozinha."
+
+**Auditoria:** OK. A ressalva anterior (caminho A sem instrução para enviar mudanças) foi resolvida nas aulas 5.3 e 5.4.
 
 ### Pergunta 5 — Aula 5.5 (Domínio)
 
 **Resposta correta: B.**
 
-**Por que está certa:** o domínio fica por conta do cliente, de preferência no nome dele. Ele é adicionado na Vercel, e no registrador se criam exatamente os registros mostrados pela Vercel. Depois vêm a propagação e a conferência do HTTPS.
+**Por que está certa:** o domínio só entra quando o cliente fecha e aprova o site, e fica por conta dele, de preferência no nome dele. Ele é adicionado no projeto na Vercel (na conta onde o site ficou hospedado), e no registrador se criam exatamente os registros mostrados pela Vercel. Depois vêm a propagação e a conferência do HTTPS.
 
 **Por que as outras estão erradas:**
 - A) "A compra do domínio fica por conta do cliente", e é boa prática ficar no nome dele, "porque o endereço é dele".
 - C) "Não peça senha por mensagem." O certo é o cliente criar os registros com a sua orientação, ou te dar acesso pelo próprio sistema do registrador.
 - D) "Não use valores de tutorial antigo, porque eles podem mudar." Copie da tela da Vercel.
 
-**Fonte:** Aula 5.5, seção Explicação: "A compra do domínio fica por conta do cliente. É uma boa prática o domínio ficar no nome do próprio cliente", "copie os valores dos registros direto da tela da Vercel. Não use valores de tutorial antigo" e "Não peça senha por mensagem."
+**Fonte:** Aula 5.5, seção Explicação: "O domínio só entra quando o cliente fecha e aprova o site.", "você adiciona o domínio nas configurações do projeto (na conta onde o site ficou hospedado; veja a aula 5.4)", "A compra do domínio fica por conta do cliente. É uma boa prática o domínio ficar no nome do próprio cliente", "copie os valores dos registros direto da tela da Vercel. Não use valores de tutorial antigo" e "Não peça senha por mensagem."
 
 **Auditoria:** OK.

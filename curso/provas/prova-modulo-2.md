@@ -29,8 +29,9 @@
 
 **5. (aberta/prática)** Uma loja de tênis quer o **tênis dela** girando em 3D no hero, reagindo ao mouse. Responda:
 (a) Qual é o nome desse tipo de elemento e qual tecnologia/biblioteca a aula diz que é usada no navegador?
-(b) O que você precisa providenciar, ou pedir ao cliente, para que o Claude consiga mostrar **o tênis da loja**, e não um objeto qualquer?
-(c) Que cuidado tomar com esse efeito, pensando no celular?
+(b) O que precisa existir para o Claude conseguir mostrar **o tênis da loja**, e não um objeto qualquer? Em que formato, normalmente? Cite os caminhos para conseguir isso e o que fazer se não houver como.
+(c) Como você deve abrir o site no computador para conferir essa cena 3D, e por quê?
+(d) Que cuidados tomar com esse efeito no celular?
 
 ---
 ---
@@ -67,7 +68,7 @@
 
 **Fonte:** Aula 2.3, seção Explicação, item 4: "Exemplos: um objeto 3D que gira conforme você rola, um texto que vai se preenchendo de cor" e "Diferença que cai em prova: scroll reveal dispara uma vez quando o elemento entra na tela; scrub acompanha a rolagem o tempo todo, para a frente e para trás."
 
-**Auditoria:** OK. Ressalva sobre o teste de identificação do passo a passo em auditoria.md (item 10). A pergunta não depende desse teste.
+**Auditoria:** OK. O passo a passo da 2.3 agora também separa scrub de parallax ("no parallax, camadas andam em velocidades diferentes; no scrub, uma animação (...) é controlada pela rolagem"), o que reforça a alternativa B.
 
 ### Pergunta 3 — Aula 2.4 (Efeitos de mouse)
 
@@ -102,17 +103,24 @@ Falta qualquer uma das 4 partes, ou o nome do efeito está errado: resposta inco
 
 **Auditoria:** OK.
 
-### Pergunta 5 — Aulas 2.2 e 2.5 (Elementos 3D) — aberta/prática
-
-**[FALHA NA AUDITORIA — não aplicar até o roteiro ser corrigido]**
+### Pergunta 5 — Aulas 2.2, 2.4 e 2.5 (Elementos 3D) — aberta/prática
 
 **Resposta esperada:**
-- (a) **Elemento 3D**. No navegador ele usa **WebGL**, e a biblioteca muito usada é **Three.js**. *Respondível pela aula 2.2.*
-- (b) **Um modelo 3D do produto do cliente** (um arquivo 3D do tênis), porque o Claude escreve o código da cena, mas não tem o objeto da loja. *Isso NÃO está em nenhum roteiro.*
-- (c) 3D é dos efeitos mais pesados. Use com motivo, teste no celular toda vez que adicionar e diga o que não quer (ex.: "desativa no celular"). *Respondível pelas aulas 2.2 e 2.5. A troca por imagem no celular só aparece na aula 5.1, fora do módulo.*
+- (a) **Elemento 3D**. No navegador ele usa **WebGL**, e uma biblioteca muito usada é **Three.js**.
+- (b) Um **modelo 3D do produto**, como arquivo, normalmente no formato **glTF/GLB**. O Claude escreve o código da cena, mas não tem o tênis da loja. Caminhos: (1) o cliente ou o fabricante já tem o modelo; (2) você compra ou contrata um modelo, conferindo a licença de uso; (3) formas que o próprio Claude cria por código (esferas, ondas, partículas, formas abstratas), que não precisam de arquivo. Sem arquivo, não se pede "o produto do cliente em 3D": pede-se uma forma abstrata ou usa-se foto.
+- (c) Por um **servidor local** (pedindo ao Claude Code para subir um), e não com dois cliques no index.html, porque aberto direto do disco o navegador costuma bloquear o arquivo 3D e a cena fica em branco.
+- (d) 3D é um dos efeitos **mais pesados**, principalmente no celular: use com motivo e teste no celular sempre que adicionar. O giro que **acompanha o mouse** não existe no celular: desligue ou troque por um efeito de rolagem leve, e diga isso no pedido (ex.: "desativa no celular").
 
-**Fonte do que existe:**
-- Aula 2.2, seção Explicação, item 6: "Elementos 3D: um objeto ou cena em três dimensões no fundo, que pode girar ou reagir ao mouse e à rolagem. No navegador isso usa uma tecnologia chamada WebGL, e uma biblioteca muito usada para isso se chama Three.js." e "Vídeo e 3D são os mais pesados."
+**Critérios de correção:** (a) nome + WebGL/Three.js (1 ponto). (b) arquivo de modelo do produto, formato glTF/GLB, pelo menos dois dos três caminhos e a saída "forma abstrata ou foto" (2 pontos). (c) servidor local com o motivo (1 ponto). (d) peso no celular e plano para o efeito de mouse (1 ponto). Dizer só "pedir ao Claude para fazer o tênis em 3D" na parte (b) zera a parte (b).
+
+**Erros comuns:** achar que o Claude "desenha" o produto do cliente sozinho; abrir com dois cliques e concluir que o código está errado porque a cena ficou em branco; esquecer que no celular não tem mouse.
+
+**Fonte:**
+- Aula 2.2, seção Explicação, item 6: "Elementos 3D: um objeto ou cena em três dimensões no fundo, que pode girar ou reagir ao mouse e à rolagem. No navegador isso usa uma tecnologia chamada WebGL, e uma biblioteca muito usada para isso se chama Three.js."
+- Aula 2.2, quadro "De onde vem o objeto 3D?": "O Claude escreve o código da cena 3D (por exemplo, com Three.js), mas ele não tem o produto do seu cliente. Para mostrar aquele tênis ou aquela garrafa em 3D, o modelo do produto precisa existir como arquivo, normalmente no formato glTF/GLB." e "Sem arquivo, não peça "o produto do cliente em 3D": peça uma forma abstrata ou use foto."
+- Aula 2.2, quadro "Atenção": "site com 3D precisa ser aberto por um servidor local (peça ao Claude Code para subir um), e não com dois cliques no index.html. Aberto direto do disco, o navegador costuma bloquear o arquivo 3D e a cena fica em branco."
+- Aula 2.2: "Vídeo e 3D são os mais pesados."
+- Aula 2.4, item 3 de "Elementos que seguem ou reagem ao mouse": "Em cenas 3D, é comum o objeto ou a "câmera" girar levemente acompanhando o mouse." E em "E no celular?": "Tilt, magnético e parallax de mouse: desligue no celular, ou troque por um efeito de rolagem leve."
 - Aula 2.5, seção Explicação: "Prefira os leves (scroll reveal, hover) e use os pesados (vídeo, 3D, pin) com motivo." e "Teste no celular sempre que adicionar um efeito."
 
-**Auditoria:** FALHA. A parte (b) é indispensável para um curso chamado "Como criar sites 3D com Claude", e o roteiro não diz de onde vem o objeto 3D. O 3D aparece só como "um tipo de fundo". Isso é buraco de roteiro, não pergunta difícil. Ver auditoria.md (item 1).
+**Auditoria:** OK (reauditada após a correção do roteiro; antes era FALHA). A parte (b), que não tinha fonte, agora está no quadro da aula 2.2.

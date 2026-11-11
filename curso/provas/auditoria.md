@@ -1,169 +1,119 @@
-# Auditoria das provas — "Como criar sites 3D com Claude"
+# Auditoria das provas — "Como criar seu site usando IA"
 
-**Critério:** uma pergunta é **OK** só se dá para respondê-la apenas com o que está escrito numa aula do próprio módulo, sem ambiguidade e com uma única alternativa defensável. É **FALHA** se a resposta exige algo que não está escrito, se o roteiro é ambíguo ou contraditório, ou se duas alternativas podem estar certas pelo texto. Nenhuma FALHA foi "consertada" com uma pergunta mais fácil: as FALHAs apontam buracos do roteiro em conceitos importantes.
+**Critério:** uma pergunta é **OK** só se dá para respondê-la apenas com o que está escrito numa aula do próprio módulo, sem ambiguidade e com uma única alternativa defensável. É **FALHA** se a resposta exige algo que não está escrito, se o roteiro é ambíguo ou contraditório, ou se duas alternativas podem estar certas pelo texto. Nenhuma FALHA foi "consertada" com uma pergunta mais fácil.
 
-Fonte auditada: `curso/roteiros/modulo-1.md` a `modulo-6.md`. Slides e Word não foram auditados.
+**Rodada 2 (reauditoria).** Fonte: `curso/roteiros/modulo-1.md` a `modulo-6.md` na versão do commit "Curso: roteiros corrigidos apos auditoria e Word regerado (Roteirista)", comparada com "Curso: roteiros das 28 aulas e Word por modulo (Roteirista)". Decisões do autor aplicadas (fim de `curso/entrevista.md`, "Respostas complementares"): nome novo do curso; 3D resolvido só dentro da aula 2.2, sem aula nova; dois caminhos de venda (pessoal: site antes; online: briefing, contrato e pagamento antes); pear.no feito com HTML, CSS e JavaScript. Todo trecho citado nos gabaritos foi conferido, palavra por palavra, contra os roteiros atuais. Slides e Word não foram auditados.
 
 ## Resultado por módulo
 
 | Módulo | OK | FALHA |
 |---|---|---|
-| 1 | 4 | 1 |
-| 2 | 4 | 1 |
+| 1 | 5 | 0 |
+| 2 | 5 | 0 |
 | 3 | 5 | 0 |
 | 4 | 5 | 0 |
 | 5 | 5 | 0 |
-| 6 | 3 | 2 |
-| **Total** | **26** | **4** |
+| 6 | 5 | 0 |
+| **Total** | **30** | **0** |
+
+As 6 provas podem ser aplicadas. A ressalva da M6-P5 (item 3 abaixo) não derruba a pergunta, porque ela não cobra o que o roteiro ainda não ensina, mas o buraco continua para o aluno que vai vender.
 
 ## Tabela por pergunta
 
-| Módulo | Pergunta | Aula(s) | Tema | Status | Justificativa |
+| Módulo | Pergunta | Aula(s) | Tema | Status | O que mudou nesta rodada |
 |---|---|---|---|---|---|
-| 1 | 1 | 1.1 | Por que um pedido claro funciona | OK | Resposta literal no Exemplo da 1.1. Distratores negados pelo texto. |
-| 1 | 2 | 1.2 | Ordem das 6 etapas e domínio | OK | Lista literal na Explicação da 1.2. |
-| 1 | 3 | 1.2 + 1.3 | Etapa 2 e uso do Claude | **FALHA** | A 1.2 diz "o Claude só entra na etapa 3". A 1.3 manda usar o claude.ai para estudar a referência (etapa 2). As alternativas B e C são defensáveis. |
-| 1 | 4 | 1.4 | Publicação automática GitHub → Vercel | OK | Literal na Explicação da 1.4. |
-| 1 | 5 | 1.5 | As 4 situações de observação; inspirar, não copiar | OK | Literal no Exercício e na Explicação da 1.5. |
-| 2 | 1 | 2.1 | Título e CTA obrigatórios no hero | OK | Literal na Explicação da 2.1. |
-| 2 | 2 | 2.3 | Scrub x scroll reveal | OK | Exemplo e diferença literais. O teste de identificação do passo a passo tem ressalva (item 10), mas a pergunta não depende dele. |
-| 2 | 3 | 2.4 | Hover e cursor no celular | OK | Literal no item 4 da Explicação e no Exemplo da 2.4. |
-| 2 | 4 | 2.5 | Pedido em 4 partes | OK | Estrutura literal na 2.5. Stagger definido na 2.3. |
-| 2 | 5 | 2.2 + 2.5 | 3D do produto do cliente | **FALHA** | (a) e (c) são respondíveis. (b), de onde vem o objeto 3D do cliente, não existe em nenhum roteiro. É o conceito central do título do curso. |
-| 3 | 1 | 3.1 | Como guardar referência | OK | Literal na Explicação e no Exemplo da 3.1. |
-| 3 | 2 | 3.2 | Estrutura x efeitos | OK | Literal na 3.2. |
-| 3 | 3 | 3.3 | Caso da ótica (certo x errado) | OK | O Exemplo da 3.3 dá o "Certo" e o "Errado" quase palavra por palavra. |
-| 3 | 4 | 3.4 | 4 filtros aplicados à advocacia | OK | Filtros literais. O caso da advocacia é citado na própria aula. |
-| 3 | 5 | 3.2 + 3.3 | Conferir o que a IA diz | OK | Literal na dica da 3.2. A alternativa C é negada pela 3.3. |
-| 4 | 1 | 4.1 | Final da primeira mensagem | OK | Literal no item 6 e na dica de repetir o plano. |
-| 4 | 2 | 4.2 | Ordem de construção | OK | Lista literal na 4.2. |
-| 4 | 3 | 4.3 | Pedido de ajuste fino | OK | Regras literais (onde, como está, como quer, print, claro em vez de formal). |
-| 4 | 4 | 4.4 | Mensagem de correção e DevTools/Console | OK | Literal na 4.4. Ressalva de redação no item 15. |
-| 4 | 5 | 4.5 | Outra IA reescreve o prompt | OK | Fluxo literal na 4.5. |
-| 5 | 1 | 5.1 | Modo de dispositivo x celular real | OK | Literal na 5.1. |
-| 5 | 2 | 5.2 | Otimização de imagem | OK | Literal na Explicação e no Passo a passo da 5.2. |
-| 5 | 3 | 5.3 | Repositório privado, index.html na raiz, sem senhas | OK | Literal na 5.3. |
-| 5 | 4 | 5.4 | As 3 conferências do deploy; logs | OK | Literal no Exercício e na Explicação da 5.4. Ressalva no item 8: o caminho A não ensina como enviar mudanças depois. |
-| 5 | 5 | 5.5 | Domínio do cliente, DNS da tela da Vercel, sem senha | OK | Literal na 5.5. |
-| 6 | 1 | 6.1 | Quem entra na lista de prospecção | OK | Literal na 6.1. |
-| 6 | 2 | 6.2 | Regras do combo | OK | Literal na 6.2. |
-| 6 | 3 | 6.3 | Pisos, prazo e condição | OK | Literal na 6.3. Ressalva no item 11: a resposta-modelo ao cliente omite o pagamento. |
-| 6 | 4 | 6.4 (x 1.2 e 5.5) | Construir antes ou depois do contrato | **FALHA** | A 6.4 manda começar só depois de briefing, contrato e pagamento. As aulas 1.2 e 5.5 ensinam construir, mostrar o link da Vercel e então o cliente "fechar". A e B são defensáveis pelo curso. |
-| 6 | 5 | 6.4 | Domínio e hospedagem no briefing | **FALHA** | A parte do domínio é respondível. A parte da hospedagem (conta, plano, custo, quem paga) não existe em nenhum roteiro, apesar do alerta da 1.4 sobre uso comercial do plano gratuito. |
+| 1 | 1 | 1.1 | Por que um pedido claro funciona | OK | Nada. Trechos conferidos. |
+| 1 | 2 | 1.2 | Ordem das 6 etapas e domínio | OK | Alternativa A e fonte atualizadas: domínio "quando o cliente fecha e aprova o site"; trecho do distrator B atualizado ("pula direto para o Claude construir"). Nota de correção: as duas abordagens não mudam a ordem das etapas. |
+| 1 | 3 | 1.2 + 1.3 | Etapa 2 e uso do claude.ai | **OK (era FALHA)** | A 1.2 agora diz que o Claude só começa a **construir** na etapa 3 e autoriza o claude.ai como ajudante na etapa 2. Gabarito passa a ser C, sem ambiguidade; a alternativa B virou o distrator da leitura antiga. |
+| 1 | 4 | 1.4 | Publicação automática GitHub → Vercel | OK | Nada. |
+| 1 | 5 | 1.5 | As 4 situações de observação; inspirar, não copiar | OK | Nada. A troca "HTML e CSS" → "HTML, CSS e JavaScript" não afeta a pergunta. |
+| 2 | 1 | 2.1 | Título e CTA obrigatórios no hero | OK | Nada. |
+| 2 | 2 | 2.3 | Scrub x scroll reveal | OK | Ressalva do item 10 removida: o passo a passo agora separa scrub de parallax. |
+| 2 | 3 | 2.4 | Hover e cursor no celular | OK | Nada. |
+| 2 | 4 | 2.5 | Pedido em 4 partes | OK | Nada. A grade agora também diz 4 partes. |
+| 2 | 5 | 2.2 + 2.4 + 2.5 | 3D do produto do cliente | **OK (era FALHA)** | O quadro "De onde vem o objeto 3D?" da 2.2 sustenta a parte (b). Pergunta ampliada para (a) a (d): nome/tecnologia, arquivo glTF/GLB e caminhos, servidor local, celular (peso e mouse). |
+| 3 | 1 | 3.1 | Como guardar referência | OK | Nada. |
+| 3 | 2 | 3.2 | Estrutura x efeitos | OK | Nada. |
+| 3 | 3 | 3.3 | Caso da ótica (certo x errado) | OK | Nada. O acréscimo sobre bancos de imagem reforça o distrator D. |
+| 3 | 4 | 3.4 | 4 filtros aplicados à advocacia | OK | Nada. |
+| 3 | 5 | 3.2 + 3.3 | Conferir o que a IA diz | OK | Nada. Coerente com a nova frase da 1.2 ("confere com os próprios olhos"). |
+| 4 | 1 | 4.1 | Final da primeira mensagem | OK | Nada. O exemplo ganhou "sem ferramenta de build", sem mexer na frase da alternativa B. |
+| 4 | 2 | 4.2 | Ordem de construção | OK | Nada. |
+| 4 | 3 | 4.3 | Pedido de ajuste fino | OK | Nada. |
+| 4 | 4 | 4.4 | Mensagem de correção e DevTools/Console | OK | Item 7 da resposta e critério atualizados para "descrever a referência" (feito pelo aluno); fonte inclui a frase nova. Ressalva do item 15 removida. |
+| 4 | 5 | 4.5 | Outra IA reescreve o prompt | OK | Nada. |
+| 5 | 1 | 5.1 | Modo de dispositivo x celular real | OK | Nada. |
+| 5 | 2 | 5.2 | Otimização de imagem | OK | Nada. |
+| 5 | 3 | 5.3 | Repositório privado, index.html na raiz, sem senhas | OK | Nada. |
+| 5 | 4 | 5.4 | As 3 conferências do deploy; logs | OK | Ressalva do item 8 removida; resposta e fonte incluem como enviar a mudança nos caminhos A e B. |
+| 5 | 5 | 5.5 | Domínio do cliente, DNS da tela da Vercel, sem senha | OK | Enunciado passa a dizer "fechou e aprovou o site no link da Vercel"; fonte inclui a regra nova e "na conta onde o site ficou hospedado". |
+| 6 | 1 | 6.1 | Quem entra na lista de prospecção | OK | Nada. |
+| 6 | 2 | 6.2 | Regras do combo | OK | Nada. |
+| 6 | 3 | 6.3 | Pisos, prazo e condição | OK | Ressalva do item 11 removida; fonte inclui a resposta-modelo corrigida. |
+| 6 | 4 | 6.1 + 6.4 | Abordagem pessoal x online | **OK (era FALHA)** | Reescrita pela decisão do autor: dois negócios, um por abordagem; só a alternativa A segue a 6.1 e a 6.4. |
+| 6 | 5 | 6.3 + 6.4 | Bloco "Domínio e hospedagem" | **OK (era FALHA)** | Reescrita sobre o bloco 10 novo (7 itens) e a linha nova da 6.3. Não cobra o que o módulo não ensina (motivo jurídico do plano, modelo de acesso pós-entrega). Ressalva: item 3. |
+
+## Status dos 15 itens da rodada 1
+
+| Item | Gravidade | Tema | Status | Conferência |
+|---|---|---|---|---|
+| 1 | Alta | 3D: de onde vem o objeto | **Resolvido** (no escopo decidido pelo autor) | Quadro na 2.2 com arquivo glTF/GLB, os três caminhos, "sem arquivo, forma abstrata ou foto" e o aviso do servidor local; resumo da 2.2 atualizado. O nome novo do curso tira o 3D da promessa. Os acréscimos sugeridos para 4.2 e 5.1 ficaram de fora pela decisão de resolver só na 2.2; a 5.1 já cobre "trocar um 3D por imagem no celular". |
+| 2 | Alta | Construir antes ou depois do contrato | **Resolvido** | Os dois caminhos aparecem de forma coerente em 1.2, 5.5, 6.1, 6.4, 6.5 e na grade; o portfólio aparece como terceiro site. Sobrou uma inconsistência pequena sobre o pagamento na abordagem pessoal (item 17). |
+| 3 | Alta | Hospedagem do site vendido | **Parcial** | Entraram: regra do plano Hobby na 5.4, ponte na 1.4, linha de custo na 6.3, bloco 10 com conta, plano, custo e acesso, critério do exercício da 6.4. Falta: como publicar na conta do cliente (ou passar para ela o site que está na sua), inclusive o site da abordagem pessoal; e qual resposta o curso recomenda para "quem fica com o acesso após a entrega". |
+| 4 | Média | "O Claude só entra na etapa 3" | **Resolvido** | 1.2 (Explicação, Exercício, Resumo) agora diz "começa a construir". Coerente com 1.3 e 3.2. |
+| 5 | Média | Caminho "só claude.ai" | **Resolvido** | Bloco na 1.3 (editor de texto, nome do arquivo, UTF-8, vários arquivos, dependência do Claude Code); 4.1 aponta para ele. Sobrou um descompasso de calendário (item 18). |
+| 6 | Média | Abrir o index.html x servidor local | **Resolvido** | 4.2 separa os dois jeitos e diz quando cada um vale. |
+| 7 | Média | Ferramenta de build (npm/Vite) | **Resolvido** | 4.1 item 5 e exemplo ("sem ferramenta de build"), 5.4 Explicação e passo 5 (package.json). |
+| 8 | Média | Caminho A sem enviar mudanças | **Resolvido** | Bloco na 5.3 e passo 10 da 5.4 com os dois caminhos. |
+| 9 | Baixa | "Token" nunca definido | **Resolvido** | Definição na Explicação da 1.1. |
+| 10 | Baixa | Teste do scrub x parallax | **Resolvido** | Passo 6 da 2.3. |
+| 11 | Baixa | Resposta-modelo sem pagamento | **Resolvido** | Exemplo da 6.3. |
+| 12 | Baixa | Revisão no celular fora do fluxo | **Resolvido** | Parágrafo da revisão na 1.2 e resumo; 5.1 diz o que fazer sem o link da Vercel. |
+| 13 | Baixa | pear.no "todo em HTML e CSS" | **Resolvido** | 1.5 (Explicação e Resumo) e grade: HTML, CSS e JavaScript, conforme o autor. |
+| 14 | Baixa | Onde achar imagem com licença | **Resolvido** | Acréscimo no item 3 de "O que você nunca copia", aula 3.3. |
+| 15 | Baixa | "Pedir" x "descrever" a referência | **Resolvido** | 4.4 (Explicação, Passo a passo, Resumo) e grade (descrição da aula 4.4). |
+
+## Varredura de contradições novas
+
+Conferi as aulas alteradas contra as que não mudaram. Não achei contradição que derrube pergunta. Achei três pontos, listados abaixo como itens 16 a 18, mais a continuação do item 3. Conferido e sem problema: "o Claude começa a construir na etapa 3" x 1.3 e 3.2; "domínio quando o cliente fecha e aprova" em 1.2, 5.5, 6.4 e 6.5; prazo "conteúdo e pagamento" em 6.3 (Explicação, Exemplo, Passo a passo, Resumo) e no briefing (blocos 5 e 8); "sem ferramenta de build" (4.1) x "Other" e package.json (5.4); servidor local em 2.2, 4.2 e 5.1; plano Hobby em 1.4, 5.4 e 6.3.
 
 ---
 
 ## DEVOLVER AO ROTEIRISTA
 
-Ordem: gravidade (Alta, Média, Baixa). Os itens 1 a 4 derrubaram perguntas. Os itens 5 a 15 são erros, contradições ou buracos vistos fora das perguntas, mas que afetam o aluno que vai criar e vender o site.
+Ordem: gravidade. Nenhum item derruba pergunta. Todos afetam o aluno que vai vender o site.
 
-### 1. [Alta] O "3D" do título do curso não é ensinado
-- **Arquivo:** `curso/roteiros/modulo-2.md`. **Aula:** 2.2 — Background: o fundo que trabalha. **Seção:** Explicação, item 6 "Elementos 3D". Reflexos em `modulo-4.md` (aula 4.2, Exemplo) e `modulo-5.md` (aula 5.1, Explicação).
-- **O que falta:** o curso se chama "Como criar sites 3D com Claude", mas o 3D aparece só como um tipo de fundo, em duas frases (WebGL/Three.js, "é pesado"). Nenhuma aula diz de onde vem o objeto 3D (o produto do cliente precisa existir como arquivo 3D), como pedir uma cena 3D ao Claude, que formato pedir, quanto ela pode pesar nem como abrir o site para o 3D carregar. Nenhum exemplo de construção do módulo 4 tem 3D. O aluno sai sem conseguir entregar o que o título promete.
-- **Texto sugerido** (novo bloco ao fim do item 6 da 2.2, ou uma aula nova "2.6 — 3D no site: o que pedir e o que providenciar"):
-  > **De onde vem o objeto 3D?** O Claude escreve o código da cena 3D (com Three.js), mas ele não tem o produto do seu cliente. Para mostrar **aquele** tênis, **aquela** garrafa ou **aquele** imóvel em 3D, alguém precisa fornecer um **modelo 3D**: um arquivo com o objeto, normalmente no formato **glTF/GLB**. Os caminhos: (1) o cliente ou o fabricante já tem o modelo; (2) você compra ou contrata um modelo, conferindo a licença de uso; (3) você usa formas que o próprio Claude cria por código (esferas, ondas, partículas, formas abstratas), que não precisam de arquivo e costumam ser mais leves. Sem arquivo, não peça "o produto do cliente em 3D". Peça uma forma abstrata ou use foto.
-  > **Como pedir:** "No hero, quero o modelo 3D [arquivo .glb que vou te mandar] girando devagar e inclinando um pouco conforme o mouse (nome + onde). Referência: [link] (referência). Arquivo leve, no máximo alguns MB; no celular, troca por uma imagem estática do produto (o que não quero)."
-  > **Atenção:** site com 3D precisa ser aberto por um servidor local (peça ao Claude Code), não clicando duas vezes no index.html. Aberto direto do disco, o navegador costuma bloquear o arquivo 3D e a cena fica em branco.
-- **Também:** incluir no Exemplo da aula 4.2 um passo "efeito 3D no hero" e, na aula 5.1, uma linha sobre limitar o peso do modelo e pausar a animação 3D quando ela sai da tela.
+### 3. [Média — continuação] Hospedagem: o curso diz onde não publicar, mas não ensina onde publicar
+- **Arquivos e aulas:** `modulo-5.md`, aula 5.4, seção Explicação ("Site de cliente pagante e o plano da Vercel": "publicar na conta da Vercel do próprio cliente (você configura com acesso dado por ele) ou num plano pago seu") e Passo a passo (só ensina a sua conta). `modulo-5.md`, aula 5.5, Passo a passo, item 2 ("Na Vercel, abra o projeto do site"). `modulo-6.md`, aula 6.4, seção Explicação ("Abordagem pessoal", itens 1 a 3) e bloco 10, item 7.
+- **O que falta:** (a) Nenhum passo ensina a publicar na conta do cliente. O aluno só aprendeu a importar o repositório na **própria** conta. (b) Na abordagem pessoal, o site de demonstração já está na conta do aluno, no plano gratuito, quando o cliente fecha. O curso não diz que, a partir daí, ele precisa ir para a conta do cliente ou para um plano pago, nem em que momento (antes de ligar o domínio). (c) O briefing pergunta "Quem fica com o acesso ao repositório (GitHub) e à hospedagem após a entrega", mas o curso não diz o que recomendar. O aluno vai preencher no chute.
+- **Texto sugerido** (5.4, logo depois do parágrafo "Site de cliente pagante e o plano da Vercel"; confirmar os nomes dos botões e as condições na documentação atual do GitHub e da Vercel antes de gravar):
+  > **Como passar o site para a conta do cliente.** O jeito mais simples: o cliente cria a conta dele no GitHub e na Vercel, num plano da Vercel que permita uso comercial. Você transfere o repositório para o GitHub dele (no GitHub existe a opção de transferir a propriedade do repositório, nas configurações) e ele importa esse repositório na Vercel dele, do mesmo jeito que você fez nesta aula. Outra opção é a Vercel transferir o projeto da sua conta para a dele, se o plano permitir. Na abordagem pessoal, o site de demonstração estava na sua conta: faça essa passagem depois que o cliente fechar e **antes** de ligar o domínio (aula 5.5).
+- **Texto sugerido** (6.4, bloco 10, item 7, como orientação; **confirmar com o autor qual é o modelo dele**):
+  > 7. Quem fica com o acesso ao repositório (GitHub) e à hospedagem após a entrega: recomendação, o cliente fica como dono das contas, e o prestador mantém o acesso combinado para manutenção, se houver.
+- Na 5.5, Passo a passo, item 2: "Na Vercel, abra o projeto do site **na conta onde ele está hospedado** e vá nas configurações...".
 
-### 2. [Alta] Dois modelos de venda incompatíveis: construir antes ou depois do contrato
-- **Arquivos e aulas:** `modulo-1.md`, aula 1.2, seções Explicação (etapa 6 e "o domínio é a última coisa, e só acontece se o cliente fechar") e Exemplo (doceria). `modulo-5.md`, aula 5.5, seções Abertura, Explicação (regra 1) e Exemplo ("O estúdio de tatuagem fechou"). `modulo-6.md`, aula 6.4, seção Explicação ("Ordem certa") e Passo a passo, item 7.
-- **O que está errado:** os módulos 1 e 5 ensinam construir o site, publicar, mostrar o link da Vercel e então o cliente "fechar". A aula 6.4 diz que o site só começa depois de briefing, contrato e pagamento. O curso não diz quando vale cada um. Para quem vende, isso decide se trabalha de graça. A fonte (entrevista, perguntas 4 e 9) também é ambígua. **Confirmar com o autor qual é o modelo real antes de reescrever.**
-- **Texto sugerido** (para reconciliar; inserir na 1.2, logo após a etapa 6, e repetir uma frase na 5.5 e na 6.4):
-  > **Dois sites diferentes, dois momentos diferentes.** Existe o **seu site de portfólio**, que você faz por conta própria, sem cliente, para mostrar o seu nível na prospecção (aula 6.1). E existe o **site do cliente**, que só começa depois que ele escolhe a opção do combo, preenche o briefing, assina o contrato e faz o pagamento combinado (aula 6.4). No site do cliente, o "fechar" da etapa 6 é a **aprovação final**: você mostra a versão pronta no link da Vercel, ele aprova, e só então entra o domínio, comprado por ele.
-- Ajustar o Exemplo da 1.2 ("só se uma doceria de verdade comprar...") para deixar claro que se trata do portfólio. Na 5.5, trocar "O domínio só entra quando o cliente fecha" por "O domínio só entra quando o cliente aprova o site (no link da Vercel)".
+### 16. [Média] Abordagem pessoal: com que conteúdo fazer o site de um negócio que ainda não é seu cliente
+- **Arquivos e aulas:** `modulo-6.md`, aula 6.1, seção Explicação ("Abordagem pessoal": "você faz o site daquele negócio primeiro") e Passo a passo, item 7. `modulo-1.md`, aula 1.2, "Construir antes ou depois de fechar?", item 1. Conflita com `modulo-3.md`, aula 3.3, "O que você nunca copia", item 3 ("Use as fotos do cliente ou imagens com licença que permita o uso").
+- **O que falta:** a decisão do autor criou um caso novo que o roteiro não cobre. Antes de abordar, o aluno não tem os textos, as fotos nem o logo do negócio, e o briefing (bloco 5) só vem depois. O caminho óbvio para ele é baixar as fotos e o logo do perfil do Google Maps ou do Instagram do negócio, sem autorização, e publicar num link aberto, o que contraria o espírito da 3.3. O curso também não diz o que fazer com esse link se o negócio não fechar, nem como fica o prazo da 6.3 quando o site já existe.
+- **Texto sugerido** (6.1, ao fim do item 1 da abordagem pessoal):
+  > Esse site é uma **demonstração**. Use só as informações públicas do perfil (nome, endereço, horário, serviços) e textos seus, provisórios. Para as imagens, use fotos com licença que permita uso comercial (aula 3.3) ou espaços marcados para as fotos do negócio. Não use as fotos e o logo do perfil ou das redes do negócio sem autorização dele. Mande o link só para o dono, e, se ele não fechar, tire o site do ar. Se ele fechar, você troca tudo pelo conteúdo do briefing (bloco 5), e o prazo da aula 6.3 passa a contar a partir desse conteúdo e do pagamento.
+- Na 1.2, item 1, acrescentar no fim: "(um site de demonstração, com conteúdo provisório; o módulo 6 mostra como montar)".
 
-### 3. [Alta] Hospedagem do site vendido: conta, plano, custo e quem paga
-- **Arquivos e aulas:** `modulo-6.md`, aula 6.4, seção Exemplo, bloco "10. Domínio". `modulo-6.md`, aula 6.3, seção Explicação. `modulo-5.md`, aula 5.4, seção Explicação. `modulo-1.md`, aula 1.4, Passo a passo, item 7.
-- **O que falta:** a aula 1.4 sugere o plano gratuito "para uso pessoal (hobby)" e só pede para "ler os termos sobre uso comercial". Depois o curso manda publicar o site do cliente pagante na conta do aluno (5.4) e ligar o domínio do cliente nela (5.5), sem nunca voltar ao assunto. O briefing cobre domínio, mas não hospedagem. O preço (6.3) não considera custo de hospedagem. E ninguém diz quem fica com o acesso ao GitHub e à Vercel depois da entrega. Pelos termos da Vercel na data desta revisão, o plano Hobby é restrito a uso pessoal e não comercial. **Confirmar nos termos atuais antes de gravar.**
-- **Texto sugerido** (na 5.4, Explicação, depois do parágrafo do link .vercel.app):
-  > **Site de cliente pagante e o plano da Vercel.** O plano gratuito (Hobby) serve para estudar e para o seu portfólio, mas os termos da Vercel o limitam a uso pessoal e não comercial (confira os termos atuais). Para o site de um cliente que te pagou, use um caminho que permita uso comercial: publicar na **conta da Vercel do próprio cliente** (você configura com acesso dado por ele) ou num **plano pago** seu que permita isso. Esse custo, se houver, entra no preço (aula 6.3) e no briefing (aula 6.4).
-- **Texto sugerido** (6.4, renomear o bloco 10 para "Domínio e hospedagem" e acrescentar):
-  > 5. Conta onde o site ficará hospedado: conta do cliente / conta do prestador.
-  > 6. Plano de hospedagem, custo mensal (se houver) e responsável pelo pagamento:
-  > 7. Quem fica com o acesso ao repositório (GitHub) e à hospedagem após a entrega:
-- Na 6.3, acrescentar a "O que faz o preço subir": "custo de hospedagem e manutenção, se ficarem por sua conta".
+### 17. [Baixa] Pagamento some da abordagem pessoal em três lugares
+- **Arquivos e aulas:** `modulo-1.md`, aula 1.2, "Construir antes ou depois de fechar?", item 1 ("Se ele fechar, aí entram o briefing e o contrato (aula 6.4) e, por último, o domínio."). `modulo-5.md`, aula 5.5, Explicação, regra 1 ("o cliente fecha, você formaliza (briefing e contrato, aula 6.4) e aí entra o domínio"). `modulo-6.md`, aula 6.4, Passo a passo, item 7 ("Na pessoal, o site já existe: o domínio só entra depois do briefing e do contrato.").
+- **O que está errado:** a Explicação da 6.4 diz que, na abordagem pessoal, entram briefing e contrato "do mesmo jeito, com o pagamento combinado". As três frases acima omitem o pagamento. O aluno que ligar o domínio sem receber entrega o site de graça.
+- **Texto sugerido:** nas três frases, trocar "briefing e contrato" por "briefing, contrato e pagamento combinado". Ex. (6.4, passo 7): "Na pessoal, o site já existe: o domínio só entra depois do briefing, do contrato e do pagamento combinado."
 
-### 4. [Média] "O Claude só entra na etapa 3" contradiz o uso do claude.ai para estudar
-- **Arquivo:** `curso/roteiros/modulo-1.md`. **Aula:** 1.2. **Seções:** Explicação ("Repara numa coisa: o Claude só entra na etapa 3. As duas primeiras são você estudando.") e Exercício ("disse que o Claude entra na etapa 3"). Conflita com a aula 1.3 (Explicação e Exemplo) e com a aula 3.2 (Dica).
-- **O que está errado:** a mesma aula que cobra "o Claude entra na etapa 3" é seguida por uma aula (1.3) que usa o claude.ai justamente na etapa 2.
-- **Texto sugerido** (substituir o parágrafo da 1.2):
-  > Repara numa coisa: o Claude só começa a **construir** na etapa 3. Nas etapas 1 e 2, quem estuda é você. Você pode usar o claude.ai como ajudante para listar seções e efeitos de uma referência (aula 1.3), mas quem escolhe a referência, confere com os próprios olhos e decide é você. É por isso que tanta gente se dá mal: pula direto para o Claude construir, sem referência e sem saber o que quer.
-- Ajustar o critério do Exercício: "disse que o Claude começa a construir na etapa 3".
-
-### 5. [Média] Caminho "só claude.ai" sem instrução de como o código vira arquivo
-- **Arquivos e aulas:** `modulo-1.md`, aula 1.3, seções Passo a passo e Exercício ("No Claude Code (ou no claude.ai, se ainda não tiver o Claude Code), peça a criação de um "index.html" simples"). `modulo-4.md`, aula 4.1, Passo a passo, item 4 ("ou uma conversa nova no claude.ai, se ainda estiver sem o Claude Code").
-- **O que falta:** o curso oferece o claude.ai como alternativa, mas nunca ensina a transformar a resposta em arquivos numa pasta. E o resultado do módulo 4 exige o "site rodando no próprio computador". Também não avisa que vários passos seguintes dependem do Claude Code (servidor local na 4.2 e na 5.1, conversão de imagens na 5.2, caminho B na 5.3). Para o público "iniciante que só usou o GPT para dúvida simples", é um bloqueio real.
-- **Texto sugerido** (na 1.3, depois do item 5 do Passo a passo):
-  > **Se você ainda está só no claude.ai:** ele te devolve o código, e você cria o arquivo. Crie uma pasta para o site. Abra um editor de texto simples (Bloco de Notas no Windows; no Mac, o TextEdit em modo "texto simples"), cole o código e salve com o nome exato que o Claude indicou (ex.: index.html), escolhendo "Todos os arquivos" e codificação UTF-8. Dê dois cliques no arquivo para abrir no navegador. Quando o site tiver mais de um arquivo (ex.: style.css, script.js, pasta de imagens), peça ao Claude o nome de cada arquivo e em que pasta ele fica. Esse caminho funciona para começar, mas o curso usa o Claude Code nas etapas seguintes (servidor local, imagens, GitHub). Planeje ter acesso a ele até o módulo 4.
-
-### 6. [Média] "Abrir o index.html no navegador" apresentado como equivalente ao servidor local
-- **Arquivo:** `curso/roteiros/modulo-4.md`. **Aula:** 4.2. **Seção:** Explicação ("você pode abrir o arquivo principal (normalmente o "index.html") no navegador, ou pedir para o Claude Code subir um servidor local").
-- **O que está errado:** as duas opções não são equivalentes. Abrindo o arquivo direto do disco, o navegador bloqueia scripts do tipo módulo e o carregamento de arquivos (modelos 3D, JSON). A página fica em branco ou o efeito some sem o aluno ter errado nada. Num curso de "sites 3D", é a primeira coisa que vai quebrar.
-- **Texto sugerido:**
-  > Se o site é só HTML e CSS, abrir o index.html direto funciona. Se ele usa JavaScript de bibliotecas, carrega arquivos ou tem 3D, use sempre o servidor local: aberto direto do disco, o navegador bloqueia parte desses recursos e a página pode ficar em branco, mesmo com o código certo.
-
-### 7. [Média] Ferramenta de build (npm/Vite) quebra o "index.html na raiz" e o "Other" da Vercel
-- **Arquivos e aulas:** `modulo-4.md`, aula 4.1, seção Explicação, item 5 (tecnologia). `modulo-5.md`, aula 5.3 (Passo a passo, caminho A, item 7) e aula 5.4 (Explicação: "Para um site em HTML e CSS puro, a Vercel não precisa de configuração especial" / "Other").
-- **O que está errado:** o curso cita GSAP, Lenis e Three.js. Para usar essas bibliotecas, o Claude Code frequentemente monta um projeto com npm e Vite. Nesse caso não existe "index.html pronto na raiz" para subir pelo site do GitHub, e escolher "Other" na Vercel publica os arquivos sem o build: o site sai quebrado. O roteiro não avisa o aluno de que deve evitar isso nem diz o que fazer se acontecer.
-- **Texto sugerido** (4.1, item 5):
-  > ...HTML e CSS (com JavaScript quando o efeito precisar). Diga também: "sem ferramenta de build: carrega as bibliotecas (como GSAP, Lenis ou Three.js) por link direto no HTML". Assim o site continua sendo uma pasta simples, que você sobe para o GitHub e a Vercel publica sem configuração.
-- **Texto sugerido** (5.4, Explicação):
-  > Se a pasta do projeto tiver um arquivo package.json, o site usa ferramenta de build. Não escolha "Other": deixe a Vercel detectar o framework e, se o deploy der erro, mande o log ao Claude (aula 4.4).
-
-### 8. [Média] Caminho A (upload pelo site) não ensina a enviar mudanças depois
-- **Arquivos e aulas:** `modulo-5.md`, aula 5.3 (Caminho A) e aula 5.4 (Passo a passo, item 10 "Faça uma pequena mudança, envie para o GitHub e confira se a Vercel publicou sozinha"; Exercício).
-- **O que falta:** quem subiu pelo site do GitHub não sabe como "enviar uma mudança". O exercício da 5.4 cobra exatamente isso.
-- **Texto sugerido** (5.3, ao fim do Caminho A):
-  > **Para mandar uma mudança depois:** abra o repositório, vá em **Add file** → **Upload files** e envie de novo o arquivo alterado, com o mesmo nome e na mesma pasta. O GitHub substitui o antigo e cria uma nova versão (commit), e a Vercel publica sozinha. Se a mudança mexer em muitos arquivos, prefira o caminho B.
-
-### 9. [Baixa] "Token" nunca é definido
-- **Arquivos e aulas:** `modulo-1.md`, aula 1.1, seção Exemplo ("você vai gastar token à toa"). `modulo-2.md`, Objetivo e aula 2.1 (Abertura). `modulo-4.md`, aula 4.1.
-- **O que falta:** "gastar token à toa" é um dos quatro erros centrais do curso (6.5), mas a palavra nunca é explicada para um público que só usou o GPT para dúvida simples.
-- **Texto sugerido** (1.1, Explicação, logo após a definição de prompt):
-  > **Token** é a unidade que a IA usa para medir o texto que ela lê e escreve. Os planos do Claude têm limite de uso: cada pedido confuso que precisa ser refeito consome esse limite (e o seu tempo). Por isso o curso insiste tanto em pedir certo da primeira vez.
-
-### 10. [Baixa] O teste "vai e volta = scrub" também vale para parallax
-- **Arquivo:** `curso/roteiros/modulo-2.md`. **Aula:** 2.3. **Seções:** Passo a passo, item 6 ("A animação vai e volta quando você rola para baixo e para cima? É scrub") e Exercício ("para o scrub, você testou rolar para cima e a animação voltou").
-- **O que está errado:** o parallax também acompanha a rolagem nos dois sentidos. O teste ensinado não separa os dois, e o aluno pode classificar um parallax como scrub.
-- **Texto sugerido** (acrescentar ao item 6):
-  > ...É scrub. Cuidado: o parallax também anda junto com a rolagem, para baixo e para cima. A diferença: no parallax, **camadas andam em velocidades diferentes**; no scrub, **uma animação** (girar, preencher, avançar etapas, encher uma barra) é controlada pela rolagem.
-
-### 11. [Baixa] Resposta-modelo ao cliente omite o pagamento na condição do prazo
-- **Arquivo:** `curso/roteiros/modulo-6.md`. **Aula:** 6.3. **Seção:** Exemplo ("contado a partir do recebimento dos textos e das fotos").
-- **O que está errado:** a Explicação da 6.3 e o briefing da 6.4 dizem "recebimento do conteúdo **e do pagamento combinado**". A frase que o aluno vai copiar para o cliente esquece o pagamento.
-- **Texto sugerido:**
-  > O prazo de entrega costuma ser de uma semana, contado a partir do recebimento dos textos e das fotos e do pagamento combinado.
-
-### 12. [Baixa] A revisão no celular não aparece no fluxo de 6 etapas, e o teste real depende de etapa posterior
-- **Arquivos e aulas:** `modulo-1.md`, aula 1.2, seção Explicação (6 etapas e mapa dos módulos). `modulo-5.md`, aula 5.1, seção Explicação, item 2 ("O jeito mais fácil é com o link da Vercel, que você vai ter nas aulas 5.3 e 5.4").
-- **O que está errado:** o próprio curso chama o lag no celular de "o erro principal", mas ele não aparece no fluxo da 1.2. E a 5.1 manda testar com um link que só existe duas aulas depois.
-- **Texto sugerido** (1.2, depois da lista de etapas):
-  > Dentro da etapa 3, e de novo depois da etapa 5, vem a **revisão**: testar no celular de verdade (lag) e rodar o checklist (aula 5.2). Ela não é uma etapa separada porque acontece o tempo todo, mas é a que mais faz perder cliente quando é pulada.
-- Na 5.1, deixar explícito: "Se ainda não tem o link da Vercel, use o servidor local na Wi-Fi agora e repita o teste com o link na aula 5.4."
-
-### 13. [Baixa] "pear.no foi feito todo em HTML e CSS": verificar antes de gravar
-- **Arquivo:** `curso/roteiros/modulo-1.md`. **Aula:** 1.5. **Seção:** Explicação ("Ele foi feito todo em HTML e CSS").
-- **O que verificar:** a frase vem do autor (entrevista, pergunta 8), mas a mesma aula manda o aluno observar o que se mexe ao rolar e ao passar o mouse. Sites com esse tipo de efeito costumam usar JavaScript também. O aluno curioso que abrir o DevTools pode ver scripts e perder confiança no material. Confirmar com o autor.
-- **Texto sugerido** (se não for 100% HTML e CSS):
-  > Ele foi feito com as tecnologias básicas da web (HTML, CSS e JavaScript), sem ferramenta complicada. O que faz diferença é o capricho.
-
-### 14. [Baixa] "Imagens com licença que permita o uso": falta dizer onde achar e como conferir
-- **Arquivo:** `curso/roteiros/modulo-3.md`. **Aula:** 3.3. **Seção:** Explicação, "O que você nunca copia", item 3.
-- **O que falta:** quando o cliente não tem fotos boas (caso comum), o aluno precisa saber onde buscar imagem que pode usar comercialmente.
-- **Texto sugerido:**
-  > Se o cliente não tiver fotos, use bancos de imagens que permitam uso comercial e **leia a licença de cada imagem** antes de usar (algumas exigem crédito, outras proíbem certos usos). Guarde o link de onde veio cada imagem. Se usar imagem gerada por IA, confira os termos da ferramenta. Na dúvida, prefira as fotos reais do negócio: elas vendem mais.
-
-### 15. [Baixa] "Pedir a referência em detalhes" sugere o contrário do que a aula quer
-- **Arquivo:** `curso/roteiros/modulo-4.md`. **Aula:** 4.4. **Seções:** Explicação (primeira frase e "E o quarto ponto: pedir a referência em detalhes") e Resumo.
-- **O que está errado:** "pedir a referência" dá a entender que se pede algo ao Claude. A própria aula explica que o aluno é quem **descreve** a referência ("Você explica, com detalhe, como aquilo deveria funcionar"). A redação literal da fala do autor confunde o aluno numa aula de procedimento.
-- **Texto sugerido:**
-  > E o quarto ponto: **descrever a referência em detalhes**. Não basta dizer "quebrou": explique como aquilo deveria funcionar, apontando na referência o que deveria aparecer, onde e como se mexe.
-  (Manter a fala original do autor entre aspas, se quiser, seguida dessa explicação.)
+### 18. [Baixa] Claude Code: "até o módulo 4" x módulo 4 aceitando só claude.ai
+- **Arquivos e aulas:** `modulo-1.md`, aula 1.3, bloco "Se você ainda está só no claude.ai" ("Planeje ter acesso a ele até o módulo 4."). `modulo-4.md`, aula 4.1, Passo a passo, item 4 ("ou uma conversa nova no claude.ai, se ainda estiver sem o Claude Code"). `modulo-4.md`, aula 4.2, Explicação ("Pedir para o Claude Code subir um servidor local (...): use sempre este se o site usa JavaScript de bibliotecas, carrega arquivos ou tem 3D").
+- **O que está errado:** a 1.3 manda ter o Claude Code até o módulo 4, mas a 4.1 ainda aceita o claude.ai. Logo depois, a 4.2 exige o servidor local, que o curso só ensina a subir pelo Claude Code. Quem seguir a 4.1 pelo claude.ai trava na 4.2 sem aviso.
+- **Texto sugerido** (4.1, item 4):
+  > 4. Abra o Claude Code nessa pasta. (Se ainda estiver só no claude.ai, dá para fazer esta primeira mensagem lá e salvar os arquivos como na aula 1.3, mas a partir da aula 4.2 você vai precisar do Claude Code para subir o servidor local.)
 
 ---
 
 ## Observações fora dos roteiros (para o time, não para o roteirista)
 
-- `curso/grade.md`, aula 2.5, descreve o pedido em **3 partes** ("nome do efeito + onde ele fica + referência"). O roteiro usa **4 partes** (acrescenta "o que não quer"). As provas seguem o roteiro. Vale conferir se slides e Word seguem as 4 partes.
-- As provas marcadas com FALHA (M1-P3, M2-P5, M6-P4, M6-P5) não devem ser aplicadas a alunos até o roteiro correspondente ser corrigido. Depois da correção, reauditar essas quatro perguntas.
+- `curso/grade.md`, "Origem do conteúdo", ainda diz "pedir a referência em detalhes". Ali é a fala original do autor e pode ficar, mas, se a grade for mostrada ao aluno, trocar por "descrever a referência em detalhes", como na aula 4.4.
+- Slides (`curso/slides/`) e Word (`curso/word/`) não foram auditados. Conferir se refletem o nome novo do curso, a 2.2 com o quadro do 3D, os dois caminhos de venda e o bloco 10 do briefing com 7 itens.
+- As 30 perguntas estão liberadas para aplicação. Se o roteirista mexer de novo nas aulas 1.2, 2.2, 5.4, 5.5, 6.1, 6.3 ou 6.4, reconferir os trechos citados em M1-P2, M1-P3, M2-P5, M5-P5, M6-P3, M6-P4 e M6-P5.

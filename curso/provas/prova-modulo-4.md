@@ -95,16 +95,16 @@
 4. **Print** (ou gravação de tela, se for movimento).
 5. **Mensagem de erro** inteira.
 6. **Link** de onde acontece **e** link da referência.
-7. **A referência em detalhes:** como deveria funcionar (o que aparece, onde, como se mexe).
+7. **A referência descrita em detalhes, por você:** como deveria funcionar (o que aparece, onde, como se mexe), apontando na referência.
 8. Pedir para **corrigir só aquilo**, sem mexer no resto.
 
 **Onde achar o erro:** abrir o **DevTools** com **F12** (ou Ctrl+Shift+I no Windows/Linux, Cmd+Option+I no Mac), ir na aba **Console**. Os erros aparecem **em vermelho**. Copiar o texto inteiro.
 
-**Critérios de correção:** tem os 3 itens obrigatórios (print, erro, link), o trio fez/esperava/aconteceu, a descrição da referência, o pedido de "só isso", e o caminho DevTools → Console.
+**Critérios de correção:** tem os 3 itens obrigatórios (print, erro, link), o trio fez/esperava/aconteceu, a descrição da referência feita pelo próprio aluno (não vale "pedi ao Claude a referência"), o pedido de "só isso", e o caminho DevTools → Console.
 
-**Fonte:** Aula 4.4, seção Explicação: "Uma mensagem de correção completa diz: o que você fez (o último pedido antes de quebrar), o que esperava, o que aconteceu, e anexa print, erro e link." e "abra as ferramentas do desenvolvedor (DevTools) com a tecla F12 (ou Ctrl+Shift+I no Windows/Linux, Cmd+Option+I no Mac) e vá na aba Console. Erros aparecem em vermelho. Copie o texto inteiro." Passo a passo, item 7: "peça para corrigir só aquilo, sem mexer no resto."
+**Fonte:** Aula 4.4, seção Explicação: "Uma mensagem de correção completa diz: o que você fez (o último pedido antes de quebrar), o que esperava, o que aconteceu, e anexa print, erro e link." e "abra as ferramentas do desenvolvedor (DevTools) com a tecla F12 (ou Ctrl+Shift+I no Windows/Linux, Cmd+Option+I no Mac) e vá na aba Console. Erros aparecem em vermelho. Copie o texto inteiro." e "E o quarto ponto: descrever a referência em detalhes. Quem descreve é você, não o Claude." Passo a passo, item 7: "peça para corrigir só aquilo, sem mexer no resto."
 
-**Auditoria:** OK. Ressalva de redação ("pedir a referência em detalhes") em auditoria.md (item 15).
+**Auditoria:** OK. A redação ambígua ("pedir a referência") foi corrigida no roteiro para "descrever a referência em detalhes".
 
 ### Pergunta 5 — Aula 4.5 (Quando o Claude insiste no erro)
 

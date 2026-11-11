@@ -13,17 +13,17 @@
 
 **2.** Qual sequência descreve corretamente o fluxo do autor, do zero ao site no ar?
 
-- A) Referências → estudo da base → construção com o Claude → GitHub → Vercel → domínio, que só entra se o cliente fechar e fica por conta dele.
+- A) Referências → estudo da base → construção com o Claude → GitHub → Vercel → domínio, que só entra quando o cliente fecha e aprova o site, e fica por conta dele.
 - B) Construção com o Claude → referências → GitHub → Vercel → domínio, que você compra antes para poder mostrar o site.
 - C) Referências → estudo da base → construção com o Claude → Vercel → GitHub → domínio, que fica por conta do cliente.
 - D) Domínio, comprado por você → referências → estudo da base → construção com o Claude → GitHub → Vercel.
 
-**3.** Você salvou um site premiado e agora quer listar as seções dele, na ordem, e os efeitos de cada uma. Em que etapa do fluxo você está, e o Claude participa dela?
+**3.** Você salvou um site premiado e agora quer listar as seções dele, na ordem, e os efeitos de cada uma. Em que etapa do fluxo você está, e qual é o papel do Claude nela?
 
 - A) Etapa 1 (referências); o Claude ainda não participa.
-- B) Etapa 2 (estudo da base); o Claude não participa, porque ele só entra na etapa 3.
-- C) Etapa 2 (estudo da base); você pode usar o claude.ai para ajudar a listar as seções e os efeitos.
-- D) Etapa 3 (construção); é o Claude Code que lista os efeitos, dentro da pasta do projeto.
+- B) Etapa 2 (estudo da base); o Claude não pode participar, porque ele só entra na etapa 3.
+- C) Etapa 2 (estudo da base); você pode usar o claude.ai como ajudante para listar as seções e os efeitos, mas quem confere com os próprios olhos e decide é você.
+- D) Etapa 3 (construção); é o Claude Code que lista os efeitos e decide o que vai entrar no site, dentro da pasta do projeto.
 
 **4.** Seu site já está conectado à Vercel. Você corrigiu o título do hero e enviou essa mudança para o GitHub. O que acontece?
 
@@ -60,34 +60,33 @@
 
 **Resposta correta: A.**
 
-**Por que está certa:** são 6 etapas, nesta ordem: referências, estudo da base, construção com o Claude, GitHub, Vercel e domínio. O domínio só entra se o cliente fechar e é pago por ele.
+**Por que está certa:** são 6 etapas, nesta ordem: referências, estudo da base, construção com o Claude, GitHub, Vercel e domínio. O domínio só entra quando o cliente fecha e aprova o site, e é pago por ele.
 
 **Por que as outras estão erradas:**
-- B) Começa pelo Claude, sem referência, que é justamente o erro que a aula aponta ("pula direto para o Claude sem referência"). Além disso, você não compra o domínio para mostrar o site.
+- B) Começa pelo Claude, sem referência, que é justamente o erro que a aula aponta ("pula direto para o Claude construir, sem referência e sem saber o que quer"). Além disso, você não compra o domínio para mostrar o site.
 - C) Inverte GitHub e Vercel. A Vercel pega o que já está no GitHub, então o GitHub vem antes.
 - D) Põe o domínio no começo e no seu bolso. A aula diz que o domínio é a última etapa e fica por conta do cliente.
 
-**Fonte:** Aula 1.2, seção Explicação: "6. Domínio: se o cliente fechar a compra, vem a compra do domínio (...), que fica por conta do cliente." e "5. Vercel: a Vercel pega o que está no GitHub". Também: "Você não precisa gastar com domínio para mostrar o site. O link da Vercel já serve para apresentar."
+**Fonte:** Aula 1.2, seção Explicação: "6. Domínio: quando o cliente fecha e aprova o site, vem a compra do domínio (...), que fica por conta do cliente." e "5. Vercel: a Vercel pega o que está no GitHub". Também: "Você não precisa gastar com domínio para mostrar o site. O link da Vercel já serve para apresentar."
+
+**Observação para a correção:** o aluno que lembrar das duas abordagens (pessoal e online) continua marcando A. A abordagem muda o momento de construir o site do cliente, não a ordem das 6 etapas.
 
 **Auditoria:** OK.
 
 ### Pergunta 3 — Aulas 1.2 e 1.3 (Etapa 2 e o uso do claude.ai)
 
-**[FALHA NA AUDITORIA — não aplicar até o roteiro ser corrigido]**
+**Resposta correta: C.**
 
-**Resposta pretendida pela aula 1.2: B.** A aula 1.3 sustenta a **C** com a mesma força.
+**Por que está certa:** listar as seções e os efeitos de uma referência é extrair a base, a etapa 2. A aula 1.2 diz que o Claude só começa a **construir** na etapa 3, mas que nas etapas 1 e 2 você pode usar o claude.ai como ajudante para listar seções e efeitos. A decisão continua sendo sua: quem escolhe a referência, confere e decide é você. A aula 1.3 mostra exatamente essa tarefa no claude.ai.
 
-**Por que B estaria certa:** a aula 1.2 diz que o Claude só entra na etapa 3 e que as duas primeiras são estudo seu. O critério do exercício da 1.2 ainda cobra que o aluno diga que "o Claude entra na etapa 3".
+**Por que as outras estão erradas:**
+- A) A etapa 1 é juntar referências. Listar seções e efeitos já é "extrair toda a base daquele site (estrutura e efeitos)", a etapa 2.
+- B) É a leitura antiga e errada. A aula diz que o Claude só começa a construir na etapa 3, não que ele é proibido antes: "Você pode usar o claude.ai como ajudante para listar seções e efeitos de uma referência".
+- D) A etapa 3 é construir o site. A 1.3 diz que o claude.ai (não o Claude Code) é a ferramenta para pensar: "Ótimo para estudar uma referência". E quem decide é você, não o Claude.
 
-**Por que C também estaria certa:** a aula 1.3 usa o claude.ai exatamente para essa tarefa, listando as seções e os efeitos de uma referência, que é o trabalho da etapa 2. (A aula 3.2 repete: "você pode usar o claude.ai para te ajudar a estudar.")
+**Fonte:** Aula 1.2, seção Explicação: "2. Estudo da base: pego as informações e tento extrair toda a base daquele site (estrutura e efeitos)" e "Repara numa coisa: o Claude só começa a construir na etapa 3. Nas etapas 1 e 2, quem estuda é você. Você pode usar o claude.ai como ajudante para listar seções e efeitos de uma referência (aula 1.3), mas quem escolhe a referência, confere com os próprios olhos e decide é você." Aula 1.3, seção Explicação: "claude.ai = conversar, pensar, planejar. Ótimo para estudar uma referência". Seção Exemplo: "Você achou uma referência e quer entender os efeitos dela. Abre o claude.ai, manda o print e o link e pergunta".
 
-**Por que A e D estão erradas:** A) a etapa 1 é juntar referências, e listar seções e efeitos já é estudo da base. D) a etapa 3 é construir o site, e a 1.3 diz que o claude.ai (não o Claude Code) é a ferramenta para "estudar uma referência".
-
-**Fonte do conflito:**
-- Aula 1.2, seção Explicação: "Repara numa coisa: o Claude só entra na etapa 3. As duas primeiras são você estudando."
-- Aula 1.3, seção Explicação: "claude.ai = conversar, pensar, planejar. Ótimo para estudar uma referência". Seção Exemplo: "Você achou uma referência e quer entender os efeitos dela. Abre o claude.ai, manda o print e o link e pergunta".
-
-**Auditoria:** FALHA. Há duas alternativas defensáveis pelo próprio módulo. Ver auditoria.md.
+**Auditoria:** OK (reauditada após a correção do roteiro; antes era FALHA).
 
 ### Pergunta 4 — Aula 1.4 (GitHub e Vercel em uma frase)
 
