@@ -56,3 +56,10 @@ Link: https://pear.no/
 - Prazo: geralmente uma semana.
 - Dados levantados num briefing antes, junto com a assinatura do contrato pelo cliente.
 - PEDIDO EXPLÍCITO DO AUTOR: o curso deve trazer um MODELO DE BRIEFING de exemplo, montado por nós.
+
+## 10. Tom de voz e escopo
+**P:** Como você fala? O que não entra no curso?
+**R:**
+- Escopo de efeitos: entra o BÁSICO, e o curso deve explicar: efeitos de scroll/rolagem, efeitos de mouse, hero, background e afins (pedido explícito: "você explica").
+- Tom: com o cliente, sempre fala sério; com a IA, descontraído.
+- (Observação do entrevistador: na conversa o autor escreve de forma informal, brasileira e bem-humorada.)
