@@ -16,6 +16,8 @@ Fala, bora começar! Antes de abrir qualquer ferramenta, eu preciso tirar uma co
 
 **Prompt** é o pedido que você escreve para a IA. Só isso. Não tem palavra mágica que faz o Claude entregar um site incrível sozinho.
 
+E já que a gente vai falar muito em "gastar token à toa": **token** é a unidade que a IA usa para medir o texto que ela lê e escreve. Os planos do Claude têm limite de uso, e cada pedido confuso que precisa ser refeito come esse limite (e o seu tempo). Por isso o curso insiste tanto em pedir certo da primeira vez.
+
 Por isso eu não uso prompt pronto. O site sai de três coisas:
 
 1. **Imaginação:** você precisa ter na cabeça o que quer ver na tela.
@@ -84,11 +86,22 @@ O fluxo tem **6 etapas**, nesta ordem:
 3. **Construção com o Claude:** converso com o Claude, ajustando detalhes visuais, travamentos e afins.
 4. **GitHub:** o projeto vai para um repositório no GitHub, que é onde o código do site fica guardado.
 5. **Vercel:** a Vercel pega o que está no GitHub, faz o deploy e hospeda o site, gerando um link para qualquer pessoa abrir.
-6. **Domínio:** se o cliente fechar a compra, vem a compra do domínio (o endereço tipo "nomedaempresa.com.br"), que **fica por conta do cliente**.
+6. **Domínio:** quando o cliente fecha e aprova o site, vem a compra do domínio (o endereço tipo "nomedaempresa.com.br"), que **fica por conta do cliente**.
 
-Repara numa coisa: o Claude só entra na etapa 3. As duas primeiras são você estudando. É por isso que tanta gente se dá mal: pula direto para o Claude sem referência e sem saber o que quer.
+Dentro da etapa 3, e de novo depois da etapa 5, vem a **revisão**: testar no celular de verdade (lag) e rodar o checklist (aulas 5.1 e 5.2). Ela não é uma etapa separada porque acontece o tempo todo, mas é a que mais faz perder cliente quando é pulada.
 
-E repara em outra: o domínio é a última coisa, e só acontece **se o cliente fechar**. Você não precisa gastar com domínio para mostrar o site. O link da Vercel já serve para apresentar.
+Repara numa coisa: o Claude só começa a **construir** na etapa 3. Nas etapas 1 e 2, quem estuda é você. Você pode usar o claude.ai como ajudante para listar seções e efeitos de uma referência (aula 1.3), mas quem escolhe a referência, confere com os próprios olhos e decide é você. É por isso que tanta gente se dá mal: pula direto para o Claude construir, sem referência e sem saber o que quer.
+
+E repara em outra: o domínio é a última coisa, e só acontece **quando o cliente fecha**. Você não precisa gastar com domínio para mostrar o site. O link da Vercel já serve para apresentar.
+
+#### Construir antes ou depois de fechar? Depende da abordagem
+
+O momento de construir o site do cliente muda conforme o jeito que você chega nele (o módulo 6 detalha):
+
+1. **Abordagem pessoal (você vai até o negócio):** você faz o site primeiro e depois vai lá abordar, mostrando o site pronto pelo link da Vercel. Se ele fechar, aí entram o briefing e o contrato (aula 6.4) e, por último, o domínio.
+2. **Abordagem online (mensagem ou ligação):** o site vem depois. Primeiro o cliente escolhe a opção, preenche o briefing, assina o contrato e faz o pagamento combinado (aula 6.4). Só então você roda as etapas 1 a 5 para ele, mostra a versão pronta no link da Vercel e, quando ele aprovar, entra o domínio.
+
+E existe um terceiro site, que não é de cliente nenhum: o **seu site de portfólio**, que você faz por conta própria para mostrar o seu nível na prospecção (é o que você vai construir neste curso).
 
 Cada etapa tem um módulo do curso:
 
@@ -106,7 +119,7 @@ Imagina que você quer fazer um site de exemplo para uma doceria, para usar como
 - Etapa 3: você manda a referência para o Claude e constrói o site seção por seção.
 - Etapa 4: você sobe o projeto para um repositório no GitHub.
 - Etapa 5: você conecta esse repositório na Vercel e ganha um link no ar.
-- Etapa 6: só se uma doceria de verdade comprar, ela compra o domínio e você liga ao site.
+- Etapa 6: como é portfólio, não tem domínio de cliente; o link da Vercel basta. Se um dia uma doceria de verdade fechar com você, ela compra o domínio e você liga ao site dela.
 
 ### Passo a passo
 
@@ -121,13 +134,13 @@ Imagina que você quer fazer um site de exemplo para uma doceria, para usar como
 
 **O que entregar:** o áudio (ou um texto curto, se preferir) com as 6 etapas.
 
-**Como saber que fez certo:** você falou as 6 etapas na ordem certa, disse que o Claude entra na etapa 3 e que o domínio só acontece se o cliente fechar e é pago por ele.
+**Como saber que fez certo:** você falou as 6 etapas na ordem certa, disse que o Claude começa a construir na etapa 3, que o domínio só acontece quando o cliente fecha e é pago por ele, e explicou quando o site vem antes de fechar (abordagem pessoal) e quando vem depois (abordagem online).
 
 ### Resumo
 
-- O fluxo tem 6 etapas: referências, estudo da base, construção com o Claude, GitHub, Vercel e domínio.
-- As duas primeiras etapas são estudo seu; o Claude entra só na terceira.
-- O domínio vem por último, só se o cliente fechar, e fica por conta do cliente.
+- O fluxo tem 6 etapas: referências, estudo da base, construção com o Claude, GitHub, Vercel e domínio, com a revisão no celular acontecendo dentro delas.
+- Nas duas primeiras etapas quem estuda é você; o Claude começa a construir na terceira.
+- Abordagem pessoal: site pronto antes de abordar; abordagem online: briefing, contrato e pagamento antes de construir. O domínio vem por último, por conta do cliente.
 
 ## Aula 1.3 — claude.ai e Claude Code: quando usar cada um
 
@@ -169,6 +182,8 @@ No primeiro caso você estava pensando. No segundo, construindo. (E lembra: são
 3. Procure, na página oficial do Claude, as instruções atuais de instalação do Claude Code e veja quais planos incluem ele.
 4. Se for usar o Claude Code agora, siga a instalação oficial e abra ele numa pasta vazia criada para o seu primeiro site.
 5. Peça para ele criar um arquivo de teste (um "index.html" com um "Olá") e veja o arquivo aparecer na pasta.
+
+**Se você ainda está só no claude.ai:** ele te devolve o código, e quem cria o arquivo é você. Crie uma pasta para o site. Abra um editor de texto simples (Bloco de Notas no Windows; no Mac, o TextEdit em modo "texto simples"), cole o código e salve com o nome exato que o Claude indicou (ex.: index.html), escolhendo "Todos os arquivos" e a codificação UTF-8. Dê dois cliques no arquivo para abrir no navegador. Quando o site tiver mais de um arquivo (ex.: style.css, script.js, pasta de imagens), peça ao Claude o nome de cada arquivo e em que pasta ele fica. Esse caminho serve para começar, mas o curso usa o Claude Code nas etapas seguintes (servidor local, imagens, GitHub). Planeje ter acesso a ele até o módulo 4.
 
 ### Exercício
 
