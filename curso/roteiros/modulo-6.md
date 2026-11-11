@@ -24,6 +24,11 @@ O que você procura no Maps:
 
 Um ponto de atenção: use só as **informações públicas** do perfil e respeite o tempo do negócio. O contato deve ser **profissional e sério**: com o cliente, o tom é sempre sério. Nada de mensagem em massa insistente.
 
+Depois da lista pronta, vem a abordagem. São dois jeitos, e cada um muda o momento de fazer o site (lembra da aula 1.2):
+
+1. **Abordagem pessoal (você vai até o negócio):** você faz o site daquele negócio primeiro e depois vai lá abordar, mostrando o site pronto pelo link da Vercel. Repara que aqui você investe o seu tempo antes de ter cliente, então escolha bem, na lista, qual negócio vai receber esse site.
+2. **Abordagem online (mensagem ou ligação):** você manda o link do seu site de portfólio como exemplo do seu nível. O site do cliente só vem depois: ele escolhe a opção do combo, preenche o briefing, assina o contrato e faz o pagamento combinado (aula 6.4).
+
 A ferramenta de organização é uma **lista de prospecção**, uma planilha simples com as colunas:
 
 1. Nome do negócio
@@ -38,7 +43,7 @@ A ferramenta de organização é uma **lista de prospecção**, uma planilha sim
 
 Você pesquisa no Google Maps "barbearia" e o nome do seu bairro. Aparecem vários resultados. Você abre um por um: uma barbearia bem avaliada não tem site no perfil; outra tem um site que demora muito para abrir no celular; uma terceira não tem nem horário de funcionamento cadastrado. As três vão para a lista.
 
-Mensagem de primeiro contato (tom sério, ilustração):
+Mensagem de primeiro contato pela abordagem online (tom sério, ilustração):
 
 > Bom dia, tudo bem? Meu nome é [seu nome], trabalho com criação de sites para negócios locais. Encontrei a [nome da barbearia] no Google Maps e vi que o perfil ainda não tem um site vinculado. Posso te enviar um exemplo de site que desenvolvi e as opções que tenho para negócios como o seu? Fico à disposição.
 
@@ -50,7 +55,7 @@ Mensagem de primeiro contato (tom sério, ilustração):
 4. Anote na lista de prospecção os negócios sem site, com site fraco ou com perfil incompleto.
 5. Preencha a observação: o que você ofereceria para aquele negócio.
 6. Monte uma lista de pelo menos 20 negócios antes de começar a contatar.
-7. Faça o primeiro contato com tom sério e profissional, mandando o link do seu site de exemplo.
+7. Escolha a abordagem de cada um. Online: faça o primeiro contato com tom sério e profissional, mandando o link do seu site de exemplo. Pessoal: faça o site do negócio primeiro e vá até lá mostrar, com o mesmo tom sério.
 8. Atualize o status de cada um na lista.
 
 ### Exercício
@@ -65,7 +70,7 @@ Mensagem de primeiro contato (tom sério, ilustração):
 
 - O autor prospecta clientes pelo Google Maps.
 - Procure negócios sem site, com site fraco ou com perfil incompleto, usando só informações públicas.
-- Organize tudo numa lista de prospecção e faça o contato sempre com tom sério e profissional.
+- Organize tudo numa lista de prospecção e faça o contato sempre com tom sério: pessoalmente, levando o site do negócio já pronto; online, mandando o seu portfólio, com o site do cliente feito só depois do briefing, contrato e pagamento.
 
 ## Aula 6.2 — Nunca só o site: o combo
 
@@ -152,6 +157,7 @@ Repara nas palavras: "no mínimo" e "para cima". São pisos, não tetos. **O val
 - Efeitos mais elaborados (lembra que mais efeito também é mais trabalho de revisão no celular).
 - Serviços a mais no combo (como o alinhamento do Google Meu Negócio).
 - O porte e a necessidade do negócio.
+- Custo de hospedagem e manutenção, se ficarem por sua conta (lembra da aula 5.4: site de cliente pagante não vai no plano gratuito).
 
 Diferença entre os dois tipos:
 
@@ -172,7 +178,7 @@ Aplicando no combo da barbearia (exemplo de como pensar, os valores finais são 
 
 Resposta ao cliente que pergunta o preço (tom sério):
 
-> O valor depende do que for incluído. Para uma landing page, o investimento parte de R$ 500; para um site completo do negócio, parte de R$ 2 mil. O prazo de entrega costuma ser de uma semana, contado a partir do recebimento dos textos e das fotos. Posso te enviar as opções detalhadas.
+> O valor depende do que for incluído. Para uma landing page, o investimento parte de R$ 500; para um site completo do negócio, parte de R$ 2 mil. O prazo de entrega costuma ser de uma semana, contado a partir do recebimento dos textos e das fotos e do pagamento combinado. Posso te enviar as opções detalhadas.
 
 ### Passo a passo
 
@@ -204,18 +210,29 @@ Resposta ao cliente que pergunta o preço (tom sério):
 
 ### Abertura
 
-O cliente se interessou. Antes de abrir o Claude, antes de qualquer referência, tem um passo que protege você e o cliente: o briefing. Eu levanto os dados num briefing antes, junto com a assinatura do contrato pelo cliente. E aqui o tom muda: com o cliente, sempre sério. Bora ver o modelo completo.
+O cliente se interessou. Agora tem um passo que protege você e o cliente: o briefing. Eu levanto os dados num briefing, junto com a assinatura do contrato pelo cliente. Na abordagem online, isso acontece antes de abrir o Claude, antes de qualquer referência. E aqui o tom muda: com o cliente, sempre sério. Bora ver o modelo completo.
 
 ### Explicação
 
 **Briefing** é o documento com todas as informações que você precisa para fazer o site: quem é o negócio, o que o site precisa fazer, o que o cliente gosta, o que ele vai mandar, o que foi combinado de preço e prazo. Ele evita retrabalho e mal-entendido.
 
-Ordem certa:
+A ordem depende da abordagem (aulas 1.2 e 6.1).
+
+**Abordagem online (mensagem ou ligação):** o site vem depois.
 
 1. Você apresenta o combo e o cliente escolhe a opção.
 2. Você preenche o **briefing** com o cliente (por chamada, reunião ou ele mesmo preenche e você revisa).
-3. O cliente assina o **contrato**, junto com o briefing.
-4. Só então você começa o fluxo: referências, estudo da base, Claude, GitHub, Vercel e domínio.
+3. O cliente assina o **contrato**, junto com o briefing, e faz o **pagamento combinado**.
+4. Só então você começa o fluxo: referências, estudo da base, Claude, GitHub e Vercel.
+5. Você mostra a versão pronta no link da Vercel, o cliente aprova e, por último, entra o domínio.
+
+**Abordagem pessoal (você vai até o negócio):** o site vem antes.
+
+1. Você faz o site do negócio e vai até lá mostrar, pelo link da Vercel.
+2. Se o cliente fechar, aí entram o **briefing** e o **contrato**, do mesmo jeito, com o pagamento combinado.
+3. Por último, entra o domínio.
+
+Nos dois casos, o domínio fica por conta do cliente e só entra quando ele fecha e aprova o site.
 
 Sobre o **contrato**: ele é assinado junto com o briefing, mas este curso não traz um modelo de contrato. Procure um modelo de contrato de prestação de serviços adequado à sua situação e, se puder, peça para um profissional da área jurídica revisar. O briefing não substitui o contrato.
 
@@ -305,12 +322,15 @@ Marque as seções que o site deve ter:
 3. Condição (ex.: valor integral no início, ou parte no início e o restante na entrega):
 4. Datas de pagamento:
 
-**10. Domínio**
+**10. Domínio e hospedagem**
 
 1. O cliente já tem domínio? Se sim, qual:
 2. Se não tem, qual endereço deseja (ex.: nomedaempresa.com.br):
 3. Responsável pela compra e renovação do domínio: **o cliente**, de preferência em seu próprio nome (CPF ou CNPJ).
 4. Quem vai configurar o DNS: o cliente, com orientação do prestador, ou o prestador, com acesso concedido pelo próprio registrador.
+5. Conta onde o site ficará hospedado: conta do cliente / conta do prestador.
+6. Plano de hospedagem, custo mensal (se houver) e responsável pelo pagamento:
+7. Quem fica com o acesso ao repositório (GitHub) e à hospedagem após a entrega:
 
 **11. Aprovação e revisões**
 
@@ -343,10 +363,10 @@ Este briefing é assinado junto com o contrato de prestação de serviços.
 1. Copie o modelo de briefing para um documento seu (Word, Google Docs ou formulário).
 2. Adapte as perguntas ao tipo de negócio que você mais atende.
 3. Revise o tom: tudo sério, claro e sem gíria.
-4. Quando o cliente escolher uma opção do combo, envie o briefing junto com o contrato.
+4. Quando o cliente escolher uma opção do combo (online) ou decidir fechar depois de ver o site (pessoal), envie o briefing junto com o contrato.
 5. Preencha com o cliente ou revise o que ele preencheu, conferindo se não ficou campo vazio importante.
-6. Confirme prazo, valor, forma de pagamento, domínio e revisões por escrito.
-7. Só comece o site depois do briefing preenchido, do contrato assinado e do pagamento combinado.
+6. Confirme prazo, valor, forma de pagamento, domínio, hospedagem e revisões por escrito.
+7. Na abordagem online, só comece o site depois do briefing preenchido, do contrato assinado e do pagamento combinado. Na pessoal, o site já existe: o domínio só entra depois do briefing e do contrato.
 8. Use o briefing como base para escolher as referências e escrever os pedidos ao Claude.
 
 ### Exercício
@@ -355,12 +375,12 @@ Este briefing é assinado junto com o contrato de prestação de serviços.
 
 **O que entregar:** o briefing com os 13 blocos preenchidos.
 
-**Como saber que fez certo:** todos os blocos estão preenchidos, o combo, o prazo e o valor batem com o que você definiu nas aulas 6.2 e 6.3, o domínio está por conta do cliente e o texto está em tom sério. Esse briefing é parte do resultado do módulo 6.
+**Como saber que fez certo:** todos os blocos estão preenchidos, o combo, o prazo e o valor batem com o que você definiu nas aulas 6.2 e 6.3, o domínio está por conta do cliente, a hospedagem está definida (conta, plano, custo e quem paga) e o texto está em tom sério. Esse briefing é parte do resultado do módulo 6.
 
 ### Resumo
 
-- O briefing levanta os dados do cliente antes de começar e é assinado junto com o contrato.
-- O modelo tem 13 blocos: dados do negócio, objetivo, público, referências, conteúdo, seções, combo, prazo, valor e pagamento, domínio, revisões, contato e assinaturas.
+- O briefing levanta os dados do cliente e é assinado junto com o contrato: na abordagem online, antes de começar o site; na pessoal, quando o cliente decide fechar.
+- O modelo tem 13 blocos: dados do negócio, objetivo, público, referências, conteúdo, seções, combo, prazo, valor e pagamento, domínio e hospedagem, revisões, contato e assinaturas.
 - Com o cliente o tom é sempre sério; procure um modelo de contrato adequado, porque o briefing não o substitui.
 
 ## Aula 6.5 — Próximos passos
@@ -379,8 +399,8 @@ O caminho inteiro, na ordem:
 2. **Vocabulário:** hero, background, efeitos de scroll (scroll reveal, parallax, sticky/pin, scrub) e de mouse (hover, custom cursor, follower, magnético, tilt), sempre com plano para o celular.
 3. **Referências:** TikTok e sites premiados; ficha de referência com estrutura e efeitos; inspirar-se, nunca copiar.
 4. **Construção com o Claude:** referência primeiro, construir por partes, ajuste fino; quando quebra, print, mensagem de erro e link; se insistir no erro, outra IA reescreve o prompt.
-5. **Revisão e publicação:** lag no celular, imagem pesada, checklist; GitHub, Vercel e, quando o cliente fecha, domínio por conta do cliente.
-6. **Venda:** Google Maps, combo, preço (landing page no mínimo R$ 500, site padrão de R$ 2 mil para cima), prazo de geralmente uma semana, briefing e contrato.
+5. **Revisão e publicação:** lag no celular, imagem pesada, checklist; GitHub, Vercel e, quando o cliente fecha e aprova, domínio por conta do cliente.
+6. **Venda:** Google Maps, abordagem pessoal (site pronto antes) ou online (briefing, contrato e pagamento antes do site), combo, preço (landing page no mínimo R$ 500, site padrão de R$ 2 mil para cima), prazo de geralmente uma semana, briefing e contrato.
 
 Os erros que você não pode mais cometer:
 

@@ -19,10 +19,10 @@ Sem promessa de atalho: não existe prompt milagroso que vai fazer seu site "ven
 **Aulas**
 
 - **1.1 Não existe prompt milagroso** — por que o curso não entrega prompt pronto: o site sai da sua imaginação, do estudo e da prática; olhar algo e imaginar aquilo virando um produto que vende.
-- **1.2 O fluxo completo, do zero ao site no ar** — visão geral do caminho que o curso segue: referências → estudo da base → construção com o Claude → GitHub → Vercel → domínio (pago pelo cliente).
+- **1.2 O fluxo completo, do zero ao site no ar** — visão geral do caminho que o curso segue: referências → estudo da base → construção com o Claude → GitHub → Vercel → domínio (pago pelo cliente); quando o site é feito antes de fechar (abordagem pessoal) ou depois (abordagem online).
 - **1.3 claude.ai e Claude Code: quando usar cada um** — o autor usa os dois; o que é cada ferramenta e onde cada uma entra no trabalho.
 - **1.4 GitHub e Vercel em uma frase** — GitHub guarda o repositório do site; Vercel faz o deploy e a hospedagem; criação das contas.
-- **1.5 O nível que a gente quer: pear.no** — análise de um site de referência feito em HTML e CSS e hospedado na Vercel (não foi feito pelo autor), usado como meta: "se eu comprasse um site e me entregassem algo naquele nível, eu ficaria muito feliz e recomendaria o serviço sempre".
+- **1.5 O nível que a gente quer: pear.no** — análise de um site de referência feito com HTML, CSS e JavaScript e hospedado na Vercel (não foi feito pelo autor), usado como meta: "se eu comprasse um site e me entregassem algo naquele nível, eu ficaria muito feliz e recomendaria o serviço sempre".
 
 **Resultado do módulo:** o aluno tem contas no Claude, no GitHub e na Vercel e sabe explicar, na ordem, cada etapa do caminho entre a ideia e o site no ar.
 
@@ -38,7 +38,7 @@ Sem promessa de atalho: não existe prompt milagroso que vai fazer seu site "ven
 - **2.2 Background: o fundo que trabalha** — tipos de fundo (cor, imagem, vídeo, fundo animado, elementos 3D) e como pedir cada um.
 - **2.3 Efeitos de scroll (rolagem)** — elementos que aparecem ao rolar, parallax, seções que ficam presas na tela enquanto o conteúdo muda e animações que acompanham a rolagem.
 - **2.4 Efeitos de mouse** — hover, cursor personalizado, elementos que seguem ou reagem ao mouse e o que fazer com esses efeitos no celular, onde não existe mouse.
-- **2.5 Do nome ao pedido** — como transformar o vocabulário em pedido claro ao Claude: nome do efeito + onde ele fica + referência; e um aviso: aqui é o básico, efeito demais pesa o site.
+- **2.5 Do nome ao pedido** — como transformar o vocabulário em pedido claro ao Claude: nome do efeito + onde ele fica + referência + o que não quer; e um aviso: aqui é o básico, efeito demais pesa o site.
 
 **Resultado do módulo:** o aluno olha um site, identifica pelo nome o hero, o background e os efeitos de scroll e de mouse, e escreve um pedido ao Claude usando esses nomes.
 
@@ -68,7 +68,7 @@ Sem promessa de atalho: não existe prompt milagroso que vai fazer seu site "ven
 - **4.1 Referência primeiro, pedido depois** — o erro mais comum: pedir tudo de uma vez sem mandar referência do que quer; como abrir a conversa com a referência e a estrutura estudada.
 - **4.2 Construir por partes** — montar o site seção por seção (hero, background, seções, efeitos) em vez de um pedidão só.
 - **4.3 Ajuste fino** — conversar com o Claude para acertar detalhes visuais, travamentos e afins; com a IA o tom pode ser descontraído.
-- **4.4 Quando quebra: print, erro e link** — o que o autor manda ao Claude: o print, a mensagem de erro e o link, pedindo a referência em detalhes.
+- **4.4 Quando quebra: print, erro e link** — o que o autor manda ao Claude: o print, a mensagem de erro e o link, descrevendo a referência em detalhes.
 - **4.5 Quando o Claude insiste no erro** — pedir para outra IA analisar o problema e reescrever o prompt, e levar esse prompt de volta ao Claude para corrigir.
 
 **Resultado do módulo:** o aluno tem rodando no próprio computador um site com hero, background e pelo menos um efeito de scroll e um de mouse, construído a partir de uma referência, e já corrigiu ao menos um erro mandando print, mensagem de erro e link.
@@ -100,7 +100,7 @@ Sem promessa de atalho: não existe prompt milagroso que vai fazer seu site "ven
 - **6.1 Prospecção pelo Google Maps** — como usar o Google Maps para encontrar negócios que podem precisar de site.
 - **6.2 Nunca só o site: o combo** — montar opções de oferta (site + alinhamento do Google Meu Negócio, etc.) e deixar o cliente escolher qual quer.
 - **6.3 Quanto cobrar e em quanto tempo entregar** — o valor depende do negócio: landing page básica, no mínimo R$ 500; site de algo padrão, de R$ 2 mil para cima; prazo geralmente de uma semana.
-- **6.4 Modelo de briefing** — modelo de briefing de exemplo para levantar os dados do cliente antes de começar, mais o contrato assinado pelo cliente; com o cliente, o tom é sempre sério.
+- **6.4 Modelo de briefing** — modelo de briefing de exemplo para levantar os dados do cliente (antes de construir, na abordagem online; ao fechar, na abordagem pessoal), incluindo domínio e hospedagem, mais o contrato assinado pelo cliente; com o cliente, o tom é sempre sério.
 - **6.5 Próximos passos** — revisão do caminho inteiro e onde continuar estudando; para ir além do básico em efeitos, o autor tem um outro curso sobre o tema.
 
 **Resultado do módulo:** o aluno tem uma lista de negócios prospectados no Google Maps, uma oferta em combo com preço e prazo definidos e o briefing preenchido de um cliente (real ou de treino), pronto para fechar com contrato.
