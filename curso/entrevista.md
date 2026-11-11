@@ -6,3 +6,7 @@ Público (informado pelo autor): Iniciantes no vibecoding.
 ## 1. Experiência e ferramentas
 **P:** Que sites você já criou e que ferramentas usa?
 **R:** Já criei vários tipos de site, de página básica a sistema interativo 3D. Geralmente uso o GitHub pra repositório, a Vercel pra deploy e hospedagem e o Claude pra fazer todo o trabalho.
+
+## 2. Aluno ideal
+**P:** Quem é o aluno ideal? Já programou? Já usou IA? Quer o site para quê?
+**R:** Aquele entusiasmado em aprender e ansioso por vender sites. Usa só o GPT para coisa básica, dúvidas simples; nunca explorou a fundo o poder das IAs, seja GPT ou Claude. Objetivo: criar sites para vender.
