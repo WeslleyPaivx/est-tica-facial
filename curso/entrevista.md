@@ -24,3 +24,8 @@ Público (informado pelo autor): Iniciantes no vibecoding.
 4. GitHub.
 5. Vercel.
 6. Se o cliente fechar a compra: compra do domínio, que fica por conta do cliente.
+
+## 5. Como conversa com o Claude
+**P:** Que prompts você usa? Claude.ai, Claude Code ou os dois?
+**R:** Uso os dois. Não uso um prompt pronto: não existe prompt milagroso, vai tudo da sua imaginação. Quando você olha algo, imagine aquilo virando um produto que vende. Não acredite em prompt milagroso que vai fazer seu site vender rios; tudo é questão de estudo, de aprender os efeitos no nosso outro curso e usar na prática.
+(Observação: o autor menciona um "outro curso" dele, sobre efeitos.)
