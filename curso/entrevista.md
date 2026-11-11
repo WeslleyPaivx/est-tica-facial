@@ -37,3 +37,7 @@ Público (informado pelo autor): Iniciantes no vibecoding.
 - Não estudar os efeitos nem saber o nome de cada um antes de pedir; assim você só gasta token à toa.
 - Principalmente: não revisar os lags (travamentos) do site no celular. Isso faz perder cliente.
 - Não revisar cada detalhe: defeitos como imagem grande demais e afins.
+
+## 7. Como corrige quando quebra/trava
+**P:** O que você faz e manda para o Claude quando algo quebra?
+**R:** Mando o print, a mensagem de erro e o link, e peço a referência em detalhes. Se vejo que ele continua errando, peço para outra IA corrigir e refazer um prompt para eu mandar ao Claude corrigir.
