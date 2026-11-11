@@ -14,3 +14,13 @@ Público (informado pelo autor): Iniciantes no vibecoding.
 ## 3. Resultado final do aluno
 **P:** O que o aluno terá feito e saberá fazer sozinho ao terminar?
 **R:** Vai saber criar o próprio site do zero usando o Claude e outras ferramentas, podendo ter renda extra com isso ou até usar como renda principal.
+
+## 4. Passo a passo real (da ideia ao site no ar)
+**P:** Qual é o seu processo, na ordem?
+**R:**
+1. Vejo várias referências no TikTok ou no site onde ficam os sites premiados como os melhores do mundo.
+2. Pego as informações e tento extrair toda a base daquele site, para entregar algo no mesmo nível.
+3. Converso com o Claude, ajustando detalhes visuais, travamentos e afins.
+4. GitHub.
+5. Vercel.
+6. Se o cliente fechar a compra: compra do domínio, que fica por conta do cliente.
