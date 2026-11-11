@@ -29,3 +29,11 @@ Público (informado pelo autor): Iniciantes no vibecoding.
 **P:** Que prompts você usa? Claude.ai, Claude Code ou os dois?
 **R:** Uso os dois. Não uso um prompt pronto: não existe prompt milagroso, vai tudo da sua imaginação. Quando você olha algo, imagine aquilo virando um produto que vende. Não acredite em prompt milagroso que vai fazer seu site vender rios; tudo é questão de estudo, de aprender os efeitos no nosso outro curso e usar na prática.
 (Observação: o autor menciona um "outro curso" dele, sobre efeitos.)
+
+## 6. Erros mais comuns de iniciantes
+**P:** Quais erros você mais vê?
+**R:**
+- Querer pedir tudo de uma vez ao Claude sem antes mandar uma referência do que quer.
+- Não estudar os efeitos nem saber o nome de cada um antes de pedir; assim você só gasta token à toa.
+- Principalmente: não revisar os lags (travamentos) do site no celular. Isso faz perder cliente.
+- Não revisar cada detalhe: defeitos como imagem grande demais e afins.
