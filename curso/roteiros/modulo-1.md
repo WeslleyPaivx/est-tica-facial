@@ -204,6 +204,13 @@ Ordem que você nunca esquece: **o código vai para o GitHub, e a Vercel pega do
 
 Os passos para subir o site de verdade ficam para o módulo 5. Hoje é só criar as contas.
 
+Dois cuidados que evitam dor de cabeça na hora de criar as contas:
+
+1. **Confirme o e-mail.** Conta sem e-mail confirmado costuma travar alguma função lá na frente.
+2. **Entre na Vercel usando o GitHub.** Se você criar a Vercel com outro e-mail, sem ligar ao GitHub, depois vai ter que fazer essa ligação manualmente para a Vercel enxergar seus repositórios. Entrando direto com o GitHub, isso já fica resolvido.
+
+E por que não mandar o site para o cliente num arquivo, pelo WhatsApp? Porque arquivo no celular dele não é site no ar. O cliente precisa de um link que qualquer pessoa abra, de qualquer lugar. É isso que a Vercel te dá.
+
 ### Exemplo
 
 Pensa assim: o GitHub é a gaveta onde fica guardada a versão oficial do site. A Vercel é a vitrine da loja: ela pega o que está na gaveta e expõe para todo mundo ver. Mudou o que tem na gaveta? A vitrine atualiza sozinha.
@@ -258,6 +265,14 @@ Importante: a gente usa ele para **estudar e se inspirar**, não para copiar. Na
 ### Exemplo
 
 Em vez de eu te contar o que tem no site, quero que você abra e observe. Olhar com os próprios olhos treina muito mais. Abre o pear.no no computador e repara: como é a primeira tela? O que acontece quando você rola? O que acontece quando passa o mouse em cima das coisas? Depois abre no celular e compara.
+
+Enquanto observa, use estas perguntas como guia (elas servem para qualquer site de referência, não só para esse):
+
+1. O que o meu olho vê primeiro quando a página abre?
+2. Tem muita coisa na tela ou pouca coisa bem cuidada?
+3. O que se mexe tem um motivo (guiar o olhar, mostrar algo) ou parece só enfeite?
+4. No celular, a experiência continua boa ou fica pesada?
+5. Eu confiaria num negócio que tivesse um site assim?
 
 Você ainda não sabe o nome de todos os efeitos, e tudo bem. No módulo 2 você vai aprender esses nomes e vai voltar aqui com outros olhos.
 
