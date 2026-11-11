@@ -63,3 +63,8 @@ Link: https://pear.no/
 - Escopo de efeitos: entra o BÁSICO, e o curso deve explicar: efeitos de scroll/rolagem, efeitos de mouse, hero, background e afins (pedido explícito: "você explica").
 - Tom: com o cliente, sempre fala sério; com a IA, descontraído.
 - (Observação do entrevistador: na conversa o autor escreve de forma informal, brasileira e bem-humorada.)
+
+## Respostas complementares (após a auditoria do Professor)
+- **Nome do curso:** o curso passa a se chamar **"COMO CRIAR SEU SITE USANDO IA"**.
+- **Construir antes ou depois de fechar:** depende do tipo de abordagem. Se for abordar o cliente **pessoalmente**, faz o site primeiro e depois aborda. Se a abordagem for **online (mensagem ou ligação)**, o site vem depois (briefing, contrato, pagamento).
+- **pear.no:** escrever como feito com **HTML, CSS e JavaScript**.

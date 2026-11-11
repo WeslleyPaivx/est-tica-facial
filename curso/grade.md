@@ -1,4 +1,4 @@
-# Como criar sites 3D com Claude — Grade do curso
+# Como criar seu site usando IA — Grade do curso
 
 ## Público
 
