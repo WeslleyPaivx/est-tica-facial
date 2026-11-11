@@ -41,3 +41,8 @@ Público (informado pelo autor): Iniciantes no vibecoding.
 ## 7. Como corrige quando quebra/trava
 **P:** O que você faz e manda para o Claude quando algo quebra?
 **R:** Mando o print, a mensagem de erro e o link, e peço a referência em detalhes. Se vejo que ele continua errando, peço para outra IA corrigir e refazer um prompt para eu mandar ao Claude corrigir.
+
+## 8. Exemplos e projetos de referência
+**P:** Que exemplos você usa para ensinar?
+**R:** Um site que uso bastante de referência, feito todo em HTML e CSS, que uso como inspiração para um dia chegar naquele nível: o "Pear" (da maçã), hospedado na Vercel. Não foi feito por mim. Penso que, se eu comprasse um site e me entregassem algo naquele nível, eu ficaria muito feliz e recomendaria o serviço sempre.
+Link: https://pear.no/
