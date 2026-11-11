@@ -24,7 +24,7 @@ A primeira mensagem de um projeto deve ter:
 2. **A referência:** o link e os prints do site que você estudou.
 3. **A estrutura estudada:** o plano de site do módulo 3 (seções na ordem e efeitos de cada uma).
 4. **O que não copiar:** deixar claro que da referência vem só estrutura e efeitos.
-5. **A tecnologia:** por exemplo, HTML e CSS (com JavaScript quando o efeito precisar), que é simples e roda em qualquer lugar, inclusive na Vercel.
+5. **A tecnologia:** por exemplo, HTML e CSS (com JavaScript quando o efeito precisar), que é simples e roda em qualquer lugar, inclusive na Vercel. Diga também: "sem ferramenta de build: carrega as bibliotecas (como GSAP, Lenis ou Three.js) por link direto no HTML". Assim o site continua sendo uma pasta simples, que você sobe para o GitHub e a Vercel publica sem configuração (aulas 5.3 e 5.4).
 6. **O primeiro passo:** e aqui está o segredo, você **não** pede o site inteiro. Pede para ele entender o plano e começar só pela primeira parte.
 
 Essa primeira mensagem serve para alinhar. Uma dica ótima é pedir para o Claude **repetir o plano com as palavras dele** antes de começar. Se ele entendeu errado, você corrige ali, antes de ter código para jogar fora.
@@ -41,14 +41,14 @@ Primeira mensagem para o Claude (ilustração de como estruturar, não fórmula)
 >
 > Plano do site: (1) hero escuro com CTA "Agendar pelo WhatsApp"; (2) estilos em cards com fade up em stagger; (3) galeria com hover de zoom, no celular com legenda fixa; (4) como funciona, com imagem sticky; (5) contato; (6) rodapé.
 >
-> Vamos fazer em HTML e CSS, com JavaScript só onde o efeito precisar. Antes de escrever qualquer código, me explica com suas palavras o que você entendeu do plano. Depois a gente começa só pelo hero.
+> Vamos fazer em HTML e CSS, com JavaScript só onde o efeito precisar, sem ferramenta de build: se precisar de biblioteca, carrega por link direto no HTML. Antes de escrever qualquer código, me explica com suas palavras o que você entendeu do plano. Depois a gente começa só pelo hero.
 
 ### Passo a passo
 
 1. Separe o plano de site e a ficha de referência do módulo 3.
 2. Separe o link e os prints da referência.
 3. Crie uma pasta vazia para o projeto no seu computador (ex.: "site-estudio-tatuagem").
-4. Abra o Claude Code nessa pasta (ou uma conversa nova no claude.ai, se ainda estiver sem o Claude Code).
+4. Abra o Claude Code nessa pasta (ou uma conversa nova no claude.ai, se ainda estiver sem o Claude Code; nesse caso, salve cada arquivo na pasta como mostrado na aula 1.3).
 5. Escreva a primeira mensagem com os 6 itens: contexto, referência, estrutura, o que não copiar, tecnologia e primeiro passo.
 6. Peça para ele repetir o plano com as palavras dele.
 7. Leia a resposta. Se algo estiver errado, corrija antes de deixar ele começar.
@@ -92,7 +92,12 @@ A ordem que funciona bem:
 5. **Efeitos:** um efeito por vez. Primeiro os de scroll, depois os de mouse.
 6. **Versão do celular:** conferir cada seção no celular e ajustar.
 
-Depois de **cada** passo, você abre o site e confere. Para ver o site rodando no seu computador, você pode abrir o arquivo principal (normalmente o "index.html") no navegador, ou pedir para o Claude Code subir um servidor local e te passar o endereço para abrir (algo como "localhost" com um número). Depois de cada mudança, recarregue a página.
+Depois de **cada** passo, você abre o site e confere. Para ver o site rodando no seu computador, existem dois jeitos, e eles não são iguais:
+
+- **Abrir o arquivo principal** (normalmente o "index.html") direto no navegador: funciona se o site é só HTML e CSS.
+- **Pedir para o Claude Code subir um servidor local** e te passar o endereço para abrir (algo como "localhost" com um número): use sempre este se o site usa JavaScript de bibliotecas, carrega arquivos ou tem 3D. Aberto direto do disco, o navegador bloqueia parte desses recursos e a página pode ficar em branco, mesmo com o código certo.
+
+Depois de cada mudança, recarregue a página.
 
 Use o pedido de efeito que você aprendeu no módulo 2: **nome do efeito + onde fica + referência + o que não quer.**
 
@@ -209,7 +214,7 @@ Vai quebrar. Eu te garanto. Uma hora a página fica em branco, o efeito some, o 
 
 ### Explicação
 
-Quando algo quebra, eu mando para o Claude: **o print, a mensagem de erro e o link, e peço a referência em detalhes.**
+Quando algo quebra, eu mando para o Claude: **o print, a mensagem de erro e o link, e descrevo a referência em detalhes.**
 
 1. **O print:** a captura de tela mostrando o problema. O Claude vê o que você está vendo. Se o problema é um movimento (animação travando), uma gravação de tela curta ou vários prints ajudam.
 2. **A mensagem de erro:** o texto que o sistema mostra quando algo dá errado. Onde achar:
@@ -218,7 +223,7 @@ Quando algo quebra, eu mando para o Claude: **o print, a mensagem de erro e o li
    - Na Vercel (depois do módulo 5): na tela do deploy existem os registros do build (logs), onde aparece o erro.
 3. **O link:** o endereço onde o problema acontece (o link do site no ar, se já estiver na Vercel) e o link da **referência** que mostra como deveria ser.
 
-E o quarto ponto: **pedir a referência em detalhes.** Ou seja, não basta dizer "quebrou". Você explica, com detalhe, como aquilo deveria funcionar, apontando na referência: o que deveria aparecer, onde e como se mexe.
+E o quarto ponto: **descrever a referência em detalhes.** Quem descreve é você, não o Claude. Não basta dizer "quebrou": explique como aquilo deveria funcionar, apontando na referência o que deveria aparecer, onde e como se mexe.
 
 Uma mensagem de correção completa diz: **o que você fez** (o último pedido antes de quebrar), **o que esperava**, **o que aconteceu**, e anexa **print, erro e link**.
 
@@ -261,7 +266,7 @@ Mensagem de correção (ilustração de como estruturar):
 
 ### Resumo
 
-- Quando quebra, mande ao Claude o print, a mensagem de erro e o link, e peça a referência em detalhes.
+- Quando quebra, mande ao Claude o print, a mensagem de erro e o link, e descreva a referência em detalhes.
 - A mensagem de erro do navegador fica no DevTools (F12), na aba Console.
 - Diga o que fez, o que esperava e o que aconteceu, e peça para corrigir só aquilo.
 

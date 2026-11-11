@@ -19,7 +19,7 @@ Se você levar uma coisa só deste curso, leva esta: revise os lags do site no c
 São dois jeitos de testar, e você usa **os dois**:
 
 1. **Modo de dispositivo do navegador (DevTools):** no navegador do computador (por exemplo, o Chrome), abra o DevTools com **F12** (ou Ctrl+Shift+I no Windows/Linux, Cmd+Option+I no Mac) e clique no ícone de celular e tablet, o **modo de dispositivo** (atalho Ctrl+Shift+M, ou Cmd+Shift+M no Mac). A tela vira do tamanho de um celular e você escolhe modelos de aparelho. **Serve para ver o layout** (se algo está cortado, apertado, fora do lugar). Mas atenção: ele **não mostra o desempenho real** do celular, porque quem está rodando continua sendo o computador.
-2. **Celular de verdade:** abrir o link do site **no seu próprio celular** e usar como um cliente usaria. **Esse é o teste de lag.** O jeito mais fácil é com o link da Vercel, que você vai ter nas aulas 5.3 e 5.4. Se quiser testar antes, peça ao Claude Code para abrir o site num servidor local acessível pela sua rede Wi-Fi e te passar o endereço para abrir no celular conectado na mesma rede.
+2. **Celular de verdade:** abrir o link do site **no seu próprio celular** e usar como um cliente usaria. **Esse é o teste de lag.** O jeito mais fácil é com o link da Vercel, que você só vai ter nas aulas 5.3 e 5.4. Então, se ainda não tem o link da Vercel, faça o teste agora pelo servidor local na Wi-Fi: peça ao Claude Code para abrir o site num servidor local acessível pela sua rede e te passar o endereço para abrir no celular conectado na mesma rede. Depois, repita o teste com o link da Vercel na aula 5.4.
 
 O que costuma causar lag no celular:
 
@@ -182,6 +182,8 @@ Pedido ao Claude Code para o caminho B (ilustração):
 8. Escreva uma mensagem curta para essa versão (ex.: "primeira versão do site") e confirme (algo como **Commit changes**).
 9. Confira se os arquivos e pastas aparecem no repositório e se o "index.html" está no primeiro nível.
 
+**Para mandar uma mudança depois (caminho A):** abra o repositório, vá em **Add file** → **Upload files** e envie de novo o arquivo alterado, com o mesmo nome e na mesma pasta. O GitHub substitui o antigo e cria uma nova versão (commit), e a Vercel publica sozinha. Se a mudança mexer em muitos arquivos, prefira o caminho B.
+
 **Caminho B (pelo Claude Code):**
 
 1. Crie o repositório vazio no GitHub (passos 1 a 5 do caminho A).
@@ -221,7 +223,11 @@ Depois que você conecta o repositório:
 - A Vercel gera um **link** do site, normalmente terminando em **.vercel.app**. Esse é o link que você mostra para o cliente.
 - **Cada vez que você manda uma mudança para o GitHub** (um novo commit e push), **a Vercel publica de novo automaticamente.** Você não precisa repetir nada.
 
+**Site de cliente pagante e o plano da Vercel.** O plano gratuito (Hobby) serve para estudar e para o seu portfólio, mas os termos da Vercel o limitam a uso pessoal e não comercial (confira os termos atuais da Vercel, porque isso pode mudar). Para o site de um cliente que te pagou, use um caminho que permita uso comercial: publicar na **conta da Vercel do próprio cliente** (você configura com acesso dado por ele) ou num **plano pago** seu que permita isso. Esse custo, se houver, entra no preço (aula 6.3) e no briefing (aula 6.4).
+
 Para um site em HTML e CSS puro, a Vercel não precisa de configuração especial: ela publica os arquivos como estão. Se ela perguntar qual é o "framework", a opção para site sem framework costuma se chamar **Other** (outro).
+
+Mas atenção: se a pasta do projeto tiver um arquivo **package.json**, o site usa ferramenta de build. Aí não escolha "Other": deixe a Vercel detectar o framework e, se o deploy der erro, mande o log ao Claude (aula 4.4). É por isso que, na aula 4.1, a gente pede ao Claude "sem ferramenta de build".
 
 Se der erro no deploy, a Vercel mostra os registros (logs) do build. Lembra da aula 4.4: copie a mensagem de erro, tire print e mande ao Claude junto com o link.
 
@@ -241,12 +247,12 @@ Pedido ao Claude Code depois de um ajuste (ilustração):
 2. Procure a opção de criar um novo projeto (algo como **Add New…** e depois **Project**).
 3. Na lista de repositórios do GitHub, encontre o do seu site e clique para importar (algo como **Import**).
 4. Se o repositório não aparecer, procure a opção para ajustar as permissões do GitHub e dar acesso da Vercel a esse repositório.
-5. Na tela de configuração, mantenha o padrão; se ela perguntar o framework, escolha **Other** para site em HTML e CSS.
+5. Na tela de configuração, mantenha o padrão; se ela perguntar o framework, escolha **Other** para site em HTML e CSS (sem package.json). Se tiver package.json, deixe a Vercel detectar.
 6. Clique em **Deploy** e espere terminar.
 7. Abra o link gerado (terminado em .vercel.app) no computador.
 8. Abra o mesmo link no seu celular e role o site inteiro.
 9. Rode o checklist da aula 5.2 de novo, agora no site publicado.
-10. Faça uma pequena mudança, envie para o GitHub e confira se a Vercel publicou sozinha.
+10. Faça uma pequena mudança, envie para o GitHub (caminho A: **Upload files** de novo com o arquivo alterado; caminho B: peça ao Claude Code o commit e o push) e confira se a Vercel publicou sozinha.
 
 ### Exercício
 
@@ -258,7 +264,7 @@ Pedido ao Claude Code depois de um ajuste (ilustração):
 
 ### Resumo
 
-- A Vercel importa o repositório do GitHub, faz o deploy e gera um link terminado em .vercel.app.
+- A Vercel importa o repositório do GitHub, faz o deploy e gera um link terminado em .vercel.app; site de cliente pagante vai na conta da Vercel do cliente ou num plano pago que permita uso comercial.
 - Cada mudança enviada ao GitHub é publicada de novo automaticamente.
 - Sempre abra o link da Vercel no próprio celular para conferir o site no ar.
 
@@ -268,7 +274,7 @@ Pedido ao Claude Code depois de um ajuste (ilustração):
 
 ### Abertura
 
-Última etapa do fluxo: o domínio. Lembra do módulo 1? O domínio só entra se o cliente fechar a compra, e ele fica por conta do cliente. Para mostrar o site, o link da Vercel já basta. Mas quando o cliente fechar, você precisa saber ligar o domínio dele ao site. Bora ver.
+Última etapa do fluxo: o domínio. Lembra do módulo 1? O domínio só entra quando o cliente fecha e aprova o site, e ele fica por conta do cliente. Para mostrar o site, o link da Vercel já basta. Mas quando chegar essa hora, você precisa saber ligar o domínio dele ao site. Bora ver.
 
 ### Explicação
 
@@ -276,12 +282,12 @@ Pedido ao Claude Code depois de um ajuste (ilustração):
 
 Duas regras do meu fluxo:
 
-1. **O domínio só entra quando o cliente fecha.** Antes disso, você mostra o site pelo link da Vercel.
+1. **O domínio só entra quando o cliente fecha e aprova o site.** Antes disso, você mostra o site pelo link da Vercel. Na abordagem pessoal, o site já estava pronto quando você foi até o negócio: o cliente fecha, você formaliza (briefing e contrato, aula 6.4) e aí entra o domínio. Na abordagem online, briefing, contrato e pagamento vieram antes de você construir: você mostra a versão pronta no link da Vercel, o cliente aprova e aí entra o domínio.
 2. **A compra do domínio fica por conta do cliente.** É uma boa prática o domínio ficar no nome do próprio cliente, porque o endereço é dele. Isso vai no briefing (aula 6.4).
 
 Para ligar o domínio ao site, você mexe em dois lugares:
 
-1. **Na Vercel:** você adiciona o domínio nas configurações do projeto. A Vercel então mostra **quais registros de DNS** precisam ser configurados. **DNS** é o sistema que faz o endereço digitado apontar para o servidor certo. Os registros mais comuns nesse caso são do tipo **A** e **CNAME**; a Vercel também pode oferecer a opção de trocar os **nameservers** (servidores de nome) do domínio para os dela.
+1. **Na Vercel:** você adiciona o domínio nas configurações do projeto (na conta onde o site ficou hospedado; veja a aula 5.4). A Vercel então mostra **quais registros de DNS** precisam ser configurados. **DNS** é o sistema que faz o endereço digitado apontar para o servidor certo. Os registros mais comuns nesse caso são do tipo **A** e **CNAME**; a Vercel também pode oferecer a opção de trocar os **nameservers** (servidores de nome) do domínio para os dela.
 2. **No registrador do domínio:** no painel de DNS do domínio, você (ou o cliente) cria exatamente os registros que a Vercel mostrou.
 
 Depois disso, é preciso esperar a **propagação**: a mudança pode levar de alguns minutos a algumas horas (às vezes mais) para valer. Quando estiver tudo certo, a Vercel mostra o domínio como configurado e ativa o **HTTPS** (o cadeadinho) automaticamente.
@@ -292,7 +298,7 @@ Sobre o acesso: o painel do domínio é do cliente. O melhor é ele mesmo criar 
 
 ### Exemplo
 
-O estúdio de tatuagem fechou. O dono registra "estudioexemplo.com.br" no Registro.br, no CNPJ dele. Você adiciona o domínio no projeto na Vercel, a Vercel mostra os registros de DNS, você manda para o cliente, com tom sério, as instruções; ele cria os registros no painel do Registro.br. Algumas horas depois a Vercel mostra o domínio configurado, com HTTPS.
+O estúdio de tatuagem fechou e aprovou o site no link da Vercel. O dono registra "estudioexemplo.com.br" no Registro.br, no CNPJ dele. Você adiciona o domínio no projeto na Vercel, a Vercel mostra os registros de DNS, você manda para o cliente, com tom sério, as instruções; ele cria os registros no painel do Registro.br. Algumas horas depois a Vercel mostra o domínio configurado, com HTTPS.
 
 Mensagem para o cliente (tom sério):
 
@@ -300,7 +306,7 @@ Mensagem para o cliente (tom sério):
 
 ### Passo a passo
 
-1. Confirme que o cliente fechou e que o domínio foi registrado por ele (de preferência no nome dele).
+1. Confirme que o cliente fechou, aprovou o site no link da Vercel e registrou o domínio (de preferência no nome dele).
 2. Na Vercel, abra o projeto do site e vá nas configurações (**Settings**), na parte de domínios (**Domains**).
 3. Adicione o domínio do cliente (ex.: "nomedaempresa.com.br"). A Vercel pode sugerir adicionar também a versão com "www"; siga a recomendação dela.
 4. Copie os registros de DNS que a Vercel mostrar (tipo, nome e valor).
@@ -315,10 +321,10 @@ Mensagem para o cliente (tom sério):
 
 **O que entregar:** um roteiro com os passos na ordem (domínio do cliente, adicionar na Vercel, copiar registros de DNS, criar no registrador, esperar propagação, conferir HTTPS) e a mensagem séria que você mandaria ao cliente pedindo a configuração.
 
-**Como saber que fez certo:** seu roteiro deixa claro que o domínio só entra quando o cliente fecha, fica por conta dele, e que os registros vêm da tela da Vercel.
+**Como saber que fez certo:** seu roteiro deixa claro que o domínio só entra quando o cliente fecha e aprova o site, fica por conta dele, e que os registros vêm da tela da Vercel.
 
 ### Resumo
 
-- O domínio só entra quando o cliente fecha, e a compra fica por conta do cliente (de preferência no nome dele).
+- O domínio só entra quando o cliente fecha e aprova o site (no link da Vercel), e a compra fica por conta do cliente (de preferência no nome dele).
 - Adicione o domínio na Vercel e crie no registrador os registros de DNS (A, CNAME ou nameservers) que a Vercel mostrar.
 - Espere a propagação e confira o domínio com HTTPS no computador e no celular.

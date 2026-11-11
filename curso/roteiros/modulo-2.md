@@ -82,6 +82,10 @@ Fundo parece detalhe, né? Não é. O fundo, o background, é o que dá clima pa
 5. **Fundo animado (animated background):** um fundo que se mexe sozinho, como um gradiente que muda de cor devagar, formas flutuando ou partículas.
 6. **Elementos 3D:** um objeto ou cena em três dimensões no fundo, que pode girar ou reagir ao mouse e à rolagem. No navegador isso usa uma tecnologia chamada **WebGL**, e uma biblioteca muito usada para isso se chama **Three.js**. Você não precisa saber programar isso; precisa saber o nome para pedir.
 
+> **De onde vem o objeto 3D?** O Claude escreve o código da cena 3D (por exemplo, com Three.js), mas ele não tem o produto do seu cliente. Para mostrar **aquele** tênis ou **aquela** garrafa em 3D, o modelo do produto precisa existir como arquivo, normalmente no formato **glTF/GLB**. Os caminhos: (1) o cliente ou o fabricante já tem o modelo; (2) você compra ou contrata um modelo, conferindo a licença de uso; (3) você usa formas que o próprio Claude cria por código (esferas, ondas, partículas, formas abstratas), que não precisam de arquivo e costumam ser mais leves. Sem arquivo, não peça "o produto do cliente em 3D": peça uma forma abstrata ou use foto.
+>
+> **Atenção:** site com 3D precisa ser aberto por um **servidor local** (peça ao Claude Code para subir um), e não com dois cliques no index.html. Aberto direto do disco, o navegador costuma bloquear o arquivo 3D e a cena fica em branco.
+
 Uma regra que vale para todos: **quanto mais o fundo se mexe, mais pesado o site fica**, principalmente no celular. Vídeo e 3D são os mais pesados. Cor sólida e gradiente são os mais leves. Guarda isso, porque no módulo 5 a gente vai caçar lag.
 
 E outra regra: **o fundo trabalha para o conteúdo, não contra ele.** Se o texto ficou difícil de ler, o fundo está errado.
@@ -115,7 +119,7 @@ Pedido ao Claude (ilustração de como estruturar):
 ### Resumo
 
 - Tipos de background: cor sólida, gradiente (linear ou radial), imagem (com overlay), vídeo, fundo animado e elementos 3D (WebGL/Three.js).
-- Quanto mais o fundo se mexe, mais pesado o site fica; vídeo e 3D são os mais pesados.
+- Quanto mais o fundo se mexe, mais pesado o site fica; vídeo e 3D são os mais pesados, e o 3D de um produto precisa de um arquivo de modelo (glTF/GLB) e de servidor local para abrir.
 - O fundo trabalha para o conteúdo: se o texto ficou difícil de ler, o fundo está errado.
 
 ## Aula 2.3 — Efeitos de scroll (rolagem)
@@ -181,7 +185,7 @@ Pedido ao Claude (ilustração de como estruturar):
 3. Pergunte: apareceu uma vez quando entrou na tela? É **scroll reveal**.
 4. Camadas andando em velocidades diferentes? É **parallax**.
 5. Algo ficou preso na tela enquanto o resto mudava? É **sticky** ou **pin**.
-6. A animação vai e volta quando você rola para baixo e para cima? É **scrub** (animação que acompanha a rolagem).
+6. A animação vai e volta quando você rola para baixo e para cima? É **scrub** (animação que acompanha a rolagem). Cuidado: o parallax também anda junto com a rolagem, para baixo e para cima. A diferença: no parallax, **camadas andam em velocidades diferentes**; no scrub, **uma animação** (girar, preencher, avançar etapas, encher uma barra) é controlada pela rolagem.
 7. Anote o nome do efeito e a seção onde ele aparece.
 
 ### Exercício

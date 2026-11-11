@@ -159,7 +159,7 @@ O que você **nunca** copia:
 
 1. **Código:** não copie o código de outro site, nem peça ao Claude para copiar o código de um site.
 2. **Textos:** títulos, frases, descrições. O texto é do cliente, e é sobre o negócio dele.
-3. **Imagens e vídeos:** fotos, ilustrações, vídeos do outro site. Use as fotos do cliente ou imagens com licença que permita o uso.
+3. **Imagens e vídeos:** fotos, ilustrações, vídeos do outro site. Use as fotos do cliente ou imagens com licença que permita o uso. Se o cliente não tiver fotos, use bancos de imagens que permitam uso comercial e **leia a licença de cada imagem** antes de usar (algumas exigem crédito, outras proíbem certos usos). Guarde o link de onde veio cada imagem. Se usar imagem gerada por IA, confira os termos da ferramenta. Na dúvida, prefira as fotos reais do negócio: elas mostram o negócio de verdade.
 4. **Logo e marca:** nome, logotipo, identidade visual (aquela combinação de cores, fontes e estilo que faz você reconhecer a marca de longe).
 
 Por que isso importa tanto?

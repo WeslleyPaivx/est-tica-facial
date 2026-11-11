@@ -238,7 +238,7 @@ Pensa assim: o GitHub é a gaveta onde fica guardada a versão oficial do site. 
 4. Entre no site da Vercel (vercel.com) e procure a opção de criar conta ("Sign Up").
 5. Quando ela oferecer formas de entrar, escolha continuar com o GitHub. Assim as duas contas já ficam ligadas.
 6. Autorize a Vercel a acessar sua conta do GitHub quando ela pedir.
-7. Se aparecer escolha de plano, para estudar e fazer os primeiros projetos use o plano gratuito para uso pessoal (hobby); antes de usar com cliente, leia os termos atuais da Vercel sobre uso comercial, porque as regras dos planos podem mudar.
+7. Se aparecer escolha de plano, para estudar e fazer os primeiros projetos use o plano gratuito para uso pessoal (hobby); antes de usar com cliente, leia os termos atuais da Vercel sobre uso comercial, porque as regras dos planos podem mudar. (Na aula 5.4 a gente vê onde publicar o site de um cliente que te pagou.)
 
 ### Exercício
 
@@ -269,7 +269,7 @@ Por que ter uma referência de nível? Porque sem meta você se contenta com qua
 O que você precisa saber sobre o pear.no:
 
 - O endereço é **pear.no**.
-- Ele foi feito **todo em HTML e CSS**. Ou seja: dá para chegar num resultado muito alto sem ferramenta complicada; o que faz diferença é o capricho.
+- Ele foi feito com **HTML, CSS e JavaScript**, as tecnologias básicas da web. Ou seja: dá para chegar num resultado muito alto sem ferramenta complicada; o que faz diferença é o capricho.
 - Ele está **hospedado na Vercel**, a mesma ferramenta que você vai usar.
 - **Não foi feito pelo autor do curso.** É uma referência de nível, não um trabalho meu.
 
@@ -311,6 +311,6 @@ Você ainda não sabe o nome de todos os efeitos, e tudo bem. No módulo 2 você
 
 ### Resumo
 
-- pear.no é a referência de nível: feito todo em HTML e CSS, hospedado na Vercel, e não foi feito pelo autor.
+- pear.no é a referência de nível: feito com HTML, CSS e JavaScript, hospedado na Vercel, e não foi feito pelo autor.
 - A meta é entregar algo que faça o cliente ficar feliz e recomendar o serviço sempre.
 - A gente estuda a referência abrindo e observando (computador e celular), para se inspirar, nunca para copiar.
