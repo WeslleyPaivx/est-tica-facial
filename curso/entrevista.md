@@ -46,3 +46,13 @@ Público (informado pelo autor): Iniciantes no vibecoding.
 **P:** Que exemplos você usa para ensinar?
 **R:** Um site que uso bastante de referência, feito todo em HTML e CSS, que uso como inspiração para um dia chegar naquele nível: o "Pear" (da maçã), hospedado na Vercel. Não foi feito por mim. Penso que, se eu comprasse um site e me entregassem algo naquele nível, eu ficaria muito feliz e recomendaria o serviço sempre.
 Link: https://pear.no/
+
+## 9. Dinheiro: primeiro cliente, preço e venda
+**P:** Como conseguir o primeiro cliente e quanto cobrar?
+**R:**
+- Prospecção pelo Google Maps.
+- Nunca oferecer só o site e acabou: geralmente é um combo (site + alinhamento do Google Meu Negócio, etc.), e o cliente escolhe qual quer.
+- Valores dependem do negócio: site de algo padrão, de R$ 2 mil para cima; landing page básica, no mínimo R$ 500.
+- Prazo: geralmente uma semana.
+- Dados levantados num briefing antes, junto com a assinatura do contrato pelo cliente.
+- PEDIDO EXPLÍCITO DO AUTOR: o curso deve trazer um MODELO DE BRIEFING de exemplo, montado por nós.
