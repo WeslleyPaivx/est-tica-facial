@@ -5,7 +5,9 @@ const fs = require("fs");
 const path = require("path");
 const { chromium } = require("playwright");
 
-const SR = 48000, DUR = 37.5, N = SR * DUR;
+// node audio/make.cjs [html] [duração] [saída] — padrão: o filme principal
+const [HTML = "index.html", D = "37.5", OUT = "trilha.wav"] = process.argv.slice(2);
+const SR = 48000, DUR = +D, N = Math.round(SR * DUR);
 const L = new Float32Array(N), R = new Float32Array(N);
 let seed = 7; // PRNG fixo: a trilha sai idêntica a cada execução
 const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32) * 2 - 1;
@@ -72,10 +74,10 @@ function music() {
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  await page.goto("file://" + path.resolve(__dirname, "../index.html"));
+  await page.goto("file://" + path.resolve(__dirname, "..", HTML));
   const cues = await page.evaluate(() => window.__cues);
   await browser.close();
-  if (!cues || !cues.length) throw new Error("film.js não expôs window.__cues");
+  if (!cues || !cues.length) throw new Error(HTML + " não expôs window.__cues");
 
   music();
   for (const [k, t, p] of cues) { if (!FX[k]) throw new Error("efeito desconhecido: " + k); FX[k](t, p); }
@@ -87,12 +89,12 @@ function music() {
   buf.writeUInt16LE(4, 32); buf.writeUInt16LE(16, 34); buf.write("data", 36); buf.writeUInt32LE(N * 4, 40);
   let peak = 0;
   for (let i = 0; i < N; i++) {
-    const f = Math.min(1, (N - i) / (SR * 1.2));
+    const f = Math.min(1, (N - i) / (SR * Math.min(1.2, DUR * 0.05)));
     const l = Math.tanh(L[i] * 1.4) * f, r = Math.tanh(R[i] * 1.4) * f;
     peak = Math.max(peak, Math.abs(l), Math.abs(r));
     buf.writeInt16LE(Math.round(l * 29000), 44 + i * 4); buf.writeInt16LE(Math.round(r * 29000), 46 + i * 4);
   }
   if (!(peak > 0.2 && peak <= 1)) throw new Error("pico fora do esperado: " + peak);
-  fs.writeFileSync(path.resolve(__dirname, "../assets/trilha.wav"), buf);
-  console.log(`trilha.wav: ${cues.length} efeitos, pico ${peak.toFixed(2)}`);
+  fs.writeFileSync(path.resolve(__dirname, "../assets", OUT), buf);
+  console.log(`${OUT}: ${cues.length} efeitos, pico ${peak.toFixed(2)}`);
 })();

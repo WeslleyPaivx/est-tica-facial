@@ -1,4 +1,5 @@
 .hyperframes/
 node_modules/
 # gerado por: node audio/make.cjs
-assets/trilha.wav
+assets/*.wav
+renders/gancho.mp4

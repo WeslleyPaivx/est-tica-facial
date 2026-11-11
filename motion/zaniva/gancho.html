@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .clock { position: absolute; left: 90px; top: 170px; font-family: "JB", monospace; font-size: 40px; color: var(--lv); letter-spacing: 0.06em; }
+      .nt { position: absolute; left: 90px; width: 900px; height: 170px; border-radius: 34px; background: rgba(28, 18, 58, 0.96); border: 2px solid var(--line); display: flex; align-items: center; gap: 28px; padding: 0 34px; }
+      .nt > i { width: 92px; height: 92px; flex: none; border-radius: 28px; background: #25d366; position: relative; }
+      .nt > i::after { content: ""; position: absolute; inset: 24px; border-radius: 50%; border: 8px solid #fff; border-bottom-left-radius: 4px; }
+      .nt span { display: block; font-size: 30px; color: rgba(255, 255, 255, 0.62); }
+      .nt b { display: block; margin-top: 6px; font-size: 44px; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
+      .q { position: absolute; left: 90px; top: 1010px; font-size: 128px; font-weight: 700; line-height: 1.04; letter-spacing: -0.045em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="gancho" data-start="0" data-duration="3.6" data-fps="60" data-width="1080" data-height="1920">
+      <audio id="som" src="assets/gancho.wav" data-start="0" data-duration="3.6" data-volume="1"></audio>
+      <div id="bg" class="clip" data-start="0" data-duration="3.6" data-layout-ignore>
+        <i class="beam b1"></i><i class="beam b2"></i><i class="beam b4"></i>
+        <div class="dots"></div>
+        <div class="vig"></div>
+      </div>
+      <section id="g" class="clip scene" data-start="0" data-duration="3.6">
+        <div class="clock">23:47</div>
+        <div class="nt" style="top:280px"><i></i><div><span>Cliente novo · agora</span><b>Oi, vocês ainda atendem?</b></div></div>
+        <div class="nt" style="top:480px"><i></i><div><span>Cliente novo · agora</span><b>Queria fazer um orçamento</b></div></div>
+        <div class="nt" style="top:680px"><i></i><div><span>Cliente novo · agora</span><b>Alô? Tem alguém aí?</b></div></div>
+        <h1 class="q" data-layout-allow-overlap><span class="ln">Quem responde</span><span class="ln">seu cliente</span><span class="ln mg">às 23h?</span></h1>
+      </section>
+    </div>
+    <script src="gancho.js"></script>
+  </body>
+</html>
