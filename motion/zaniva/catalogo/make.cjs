@@ -29,8 +29,8 @@ const CSS = `
   #cat li { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-top: 2px solid var(--line); }
   #cat li::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--mg); flex: none; }
   #cat .b { margin-top: auto; display: flex; align-items: center; justify-content: space-between; }
-  #cat .b b { font-size: 46px; letter-spacing: -.03em; }
-  #cat .b span { padding: 14px 26px; border-radius: 40px; background: #fff; color: #140a26; font-size: 24px; font-weight: 700; }
+  #cat .b b { font-size: 42px; letter-spacing: -.03em; }
+  #cat .b span { white-space: nowrap; padding: 14px 24px; border-radius: 40px; background: #fff; color: #140a26; font-size: 24px; font-weight: 700; }
   #capa { position: absolute; left: 0; right: 0; top: 940px; text-align: center; font-size: 30px; font-weight: 500; color: rgba(255,255,255,.8); z-index: 9; }
 `;
 
