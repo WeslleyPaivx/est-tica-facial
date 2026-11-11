@@ -10,3 +10,7 @@ Público (informado pelo autor): Iniciantes no vibecoding.
 ## 2. Aluno ideal
 **P:** Quem é o aluno ideal? Já programou? Já usou IA? Quer o site para quê?
 **R:** Aquele entusiasmado em aprender e ansioso por vender sites. Usa só o GPT para coisa básica, dúvidas simples; nunca explorou a fundo o poder das IAs, seja GPT ou Claude. Objetivo: criar sites para vender.
+
+## 3. Resultado final do aluno
+**P:** O que o aluno terá feito e saberá fazer sozinho ao terminar?
+**R:** Vai saber criar o próprio site do zero usando o Claude e outras ferramentas, podendo ter renda extra com isso ou até usar como renda principal.
