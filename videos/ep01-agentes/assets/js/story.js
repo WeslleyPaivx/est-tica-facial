@@ -39,7 +39,7 @@ EV.ctaC = S("l21") + 1.15;
 
 export const AGENT_ORDER = ["blue", "green", "purple", "yellow", "red"];
 const CLUSTER = { blue: [-0.6, 0, 1.05], green: [-0.3, 0, 1.42], purple: [0, 0, 1.58], yellow: [0.3, 0, 1.42], red: [0.6, 0, 1.05] };
-const WORK = { blue: [-1.1, 0, 0.45], green: [-0.6, 0.74, -1.17], purple: [-0.55, 0, 1.25], yellow: [0.95, 0, 0.6], red: [1.3, 0, -0.35] };
+const WORK = { blue: [-1.1, 0, 0.45], green: [-0.86, 0.74, -1.12], purple: [-0.55, 0, 1.25], yellow: [0.95, 0, 0.6], red: [1.3, 0, -0.35] };
 export const BEAMS = CLUSTER;
 const HEAD = [0, 1.29, -0.42];
 
@@ -51,7 +51,7 @@ const orbitC = [0, 0, 1.25];
 // Rostos ficam no terço superior (alvo abaixo da cabeça), longe da faixa de legenda.
 const LCU = (z = -2.08, fov = 30, dx = 0.08) => C([dx, 1.78, z], [0, 1.12, -0.45], fov);           // Lucas de frente (de cima dos monitores)
 const LRM = (z = 1.25, fov = 30, dx = -0.16) => C([dx, 1.5, z], [0, 1.15, -0.42], fov);            // Lucas virado para a sala
-const OTS_SCREEN = (k = 0) => C([0.58 - k * 0.04, 1.86 - k * 0.03, 0.22 - k * 0.06], [-0.33, 1.08, -1.63], 30 - k * 4);
+const OTS_SCREEN = (k = 0) => C([-0.58 + k * 0.03, 1.86 - k * 0.03, 0.22 - k * 0.06], [-0.33, 1.08, -1.63], 30 - k * 4); // pelo ombro esquerdo, longe do Nexo
 const SHOTS = [
   // C1 — empurrão rápido até o rosto
   shot(0, EV.papers, C([0.0, 2.0, -2.3], [0, 1.2, -0.42], 46), LCU(-2.08, 30), ease.out5),
@@ -61,7 +61,7 @@ const SHOTS = [
   shot(S("l04"), S("l05"), LRM(1.3, 31), LRM(1.22, 29)),
   shot(S("l05"), S("l06"), C([-0.78, 1.62, -1.02], [0.38, 1.3, 0.25], 34), C([-0.74, 1.6, -0.95], [0.38, 1.3, 0.25], 31)),
   shot(S("l06"), S("l07"), LRM(1.15, 28), LRM(1.1, 27)),
-  shot(S("l07"), S("l08"), C([-0.74, 1.6, -0.95], [0.38, 1.32, 0.25], 27), C([-0.7, 1.6, -0.9], [0.38, 1.32, 0.25], 25)),
+  shot(S("l07"), S("l08"), C([-0.95, 1.62, -0.85], [0.38, 1.32, 0.25], 27), C([-0.92, 1.62, -0.8], [0.38, 1.32, 0.25], 25)),
   shot(S("l08"), EV.snap - 0.05, LRM(1.25, 34, -0.15), LRM(1.05, 27, -0.13), ease.out5),
   shot(EV.snap - 0.05, EV.intro.blue, C([0.55, 2.0, -1.95], [0.0, 0.75, 1.0], 50), C([0.52, 1.95, -1.85], [0.0, 0.68, 1.1], 48)),
   // C3 — órbita durante a apresentação dos agentes
@@ -69,8 +69,8 @@ const SHOTS = [
   shot(S("l14"), S("l14") + 0.75, LRM(1.25, 31, 0.15), LRM(1.12, 28, 0.13), ease.out5),
   shot(S("l14") + 0.75, EV.regroup, C([2.0, 1.75, -1.75], [0.25, 0.85, 0.5], 54), C([1.92, 1.72, -1.66], [0.25, 0.85, 0.5], 52)),
   // C4 — reviravolta
-  shot(EV.regroup, EV.swivelDesk, C([0.62, 1.15, -0.32], [0.05, 0.98, 1.0], 30), C([0.58, 1.15, -0.26], [0.05, 0.98, 1.0], 27)),
-  shot(EV.swivelDesk, EV.reveal, C([-1.95, 1.4, -0.35], [-0.6, 0.92, -1.2], 36), C([-1.85, 1.38, -0.4], [-0.6, 0.92, -1.2], 33)),
+  shot(EV.regroup, EV.swivelDesk, C([0.62, 1.15, -0.32], [0.05, 0.88, 1.0], 30), C([0.58, 1.15, -0.26], [0.05, 0.88, 1.0], 27)),
+  shot(EV.swivelDesk, EV.reveal, C([-2.05, 1.4, -0.2], [-0.8, 0.92, -1.12], 36), C([-1.95, 1.38, -0.26], [-0.8, 0.92, -1.12], 33)),
   shot(EV.reveal, S("l17"), OTS_SCREEN(0), OTS_SCREEN(1.6), ease.out5),
   shot(S("l17"), S("l18"), LCU(-2.08, 31), LCU(-2.02, 28)),
   shot(S("l18"), EV.facepalm, C([-0.45, 1.85, -2.15], [0.24, 1.25, -0.25], 37), C([-0.4, 1.83, -2.08], [0.24, 1.25, -0.25], 34)),
@@ -90,8 +90,8 @@ function camAt(t, agentPos) {
   let pos, target, fov;
   if (s.orbit) {
     const k = clamp((t - s.t0) / (s.t1 - s.t0));
-    const th = lerp(-0.95, 0.95, ease.inOut(k));
-    pos = [orbitC[0] + Math.sin(th) * 2.05, 1.08 + Math.sin(k * Math.PI) * 0.1, orbitC[2] - Math.cos(th) * 1.3];
+    const th = lerp(-0.5, 0.5, ease.inOut(k)); // arco por dentro do semicírculo: ninguém cobre ninguém
+    pos = [orbitC[0] + Math.sin(th) * 1.45, 1.2 + Math.sin(k * Math.PI) * 0.06, orbitC[2] - Math.cos(th) * 1.45];
     target = agentPos; fov = 40;
   } else {
     const k = s.e(clamp((t - s.t0) / (s.t1 - s.t0)));

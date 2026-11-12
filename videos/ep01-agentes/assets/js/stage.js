@@ -124,7 +124,7 @@ export async function createStage(canvas, W = 1080, H = 1920) {
       }
       const b = s.beams[k];
       A.beam.visible = b > 0.001;
-      A.beamM.opacity = b * 0.16; A.coreM.opacity = b * 0.32; A.floorGlow.material.opacity = b * 0.9;
+      A.beamM.opacity = b * 0.08; A.coreM.opacity = b * 0.2; A.floorGlow.material.opacity = b * 0.45;
       A.beam.scale.set(0.6 + 0.4 * b + Math.sin(t * 20) * 0.03, 1, 0.6 + 0.4 * b);
     }
 
