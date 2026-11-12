@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- Etapa 1: teste de renderização de 2 s (Three.js local + relógio da timeline). Não faz parte do episódio. -->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/lib/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b1324; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #rt-canvas { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="render-test" data-start="0" data-duration="2" data-width="1080" data-height="1920">
+      <canvas id="rt-canvas" width="1080" height="1920"></canvas>
+    </div>
+    <script>
+      (function () {
+        const clock = { t: 0 };
+        const host = { clock, render: null };
+        window.__rt = host;
+        window.__hf = window.__hf || {};
+        window.__hf.buildReady = window.__hf.buildReady || {};
+        window.__hf.buildReady["render-test"] = new Promise((r) => (host.ready = r));
+        const tl = gsap.timeline({ paused: true });
+        tl.to(clock, { t: 2, duration: 2, ease: "none", onUpdate: () => host.render && host.render(clock.t) });
+        window.__timelines = window.__timelines || {};
+        window.__timelines["render-test"] = tl;
+      })();
+    </script>
+    <script type="module">
+      import * as THREE from "./assets/lib/three.module.js";
+      const host = window.__rt;
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("rt-canvas"), antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(1080, 1920, false);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color("#0b1324");
+      scene.fog = new THREE.Fog("#0b1324", 6, 16);
+      const camera = new THREE.PerspectiveCamera(35, 1080 / 1920, 0.1, 50);
+      camera.position.set(0, 1.4, 6);
+      camera.lookAt(0, 1.1, 0);
+
+      scene.add(new THREE.HemisphereLight("#6b8cff", "#1a1020", 0.6));
+      const key = new THREE.DirectionalLight("#ffb46b", 2.2);
+      key.position.set(-3, 5, 3); key.castShadow = true;
+      key.shadow.mapSize.set(1024, 1024); key.shadow.radius = 6;
+      scene.add(key);
+      const rim = new THREE.DirectionalLight("#7fb2ff", 3.0);
+      rim.position.set(3, 3, -4); scene.add(rim);
+
+      const floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.MeshStandardMaterial({ color: "#1d2740", roughness: 0.9 }));
+      floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+
+      const orange = new THREE.MeshPhysicalMaterial({ color: "#ff7a1a", roughness: 0.35, clearcoat: 0.6, clearcoatRoughness: 0.3 });
+      const bot = new THREE.Group();
+      const body = new THREE.Mesh(new THREE.SphereGeometry(0.6, 64, 48), orange);
+      body.scale.set(1, 0.92, 0.9); body.castShadow = true; bot.add(body);
+      const visor = new THREE.Mesh(new THREE.SphereGeometry(0.42, 48, 32), new THREE.MeshPhysicalMaterial({ color: "#10141f", roughness: 0.15, clearcoat: 1 }));
+      visor.scale.set(1.1, 0.7, 0.5); visor.position.set(0, 0.06, 0.38); bot.add(visor);
+      const eyeMat = new THREE.MeshBasicMaterial({ color: "#9ff3ff" });
+      const eyes = [-0.16, 0.16].map((x) => { const e = new THREE.Mesh(new THREE.CapsuleGeometry(0.06, 0.08, 6, 16), eyeMat); e.position.set(x, 0.08, 0.6); bot.add(e); return e; });
+      scene.add(bot);
+
+      host.render = (t) => {
+        bot.position.y = 1.2 + Math.sin(t * Math.PI * 2 * 0.75) * 0.08;
+        bot.rotation.y = Math.sin(t * Math.PI) * 0.4;
+        const blink = Math.max(0, 1 - Math.abs(t - 1.2) / 0.06); // uma piscada em 1,2 s
+        eyes.forEach((e) => (e.scale.y = 1 - blink * 0.9));
+        renderer.render(scene, camera);
+      };
+      await renderer.compileAsync(scene, camera);
+      host.render(host.clock.t);
+      renderer.getContext().readPixels(0, 0, 1, 1, renderer.getContext().RGBA, renderer.getContext().UNSIGNED_BYTE, new Uint8Array(4));
+      host.ready();
+    </script>
+  </body>
+</html>

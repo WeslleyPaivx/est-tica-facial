@@ -1,0 +1,5 @@
+# saídas e temporários do episódio
+renders/
+scratch/
+.hyperframes/
+node_modules/
