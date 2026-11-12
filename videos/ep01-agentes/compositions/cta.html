@@ -1,0 +1,26 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .cta { position: absolute; left: 0; width: 1080px; display: flex; justify-content: center; overflow: visible; }
+    #cta-q { top: 250px; height: 260px; }
+    #cta-c { top: 500px; height: 150px; }
+    .q-in { width: 880px; text-align: center; font-family: "Inter", sans-serif; font-weight: 900; font-size: 92px; line-height: 1.02; letter-spacing: -0.02em; color: #ffffff;
+      -webkit-text-stroke: 12px rgba(8, 10, 18, 0.92); paint-order: stroke fill; text-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); }
+    .c-in { padding: 22px 48px; border-radius: 999px; background: #ffd84d; color: #14161c; font-family: "Inter", sans-serif; font-weight: 900; font-size: 66px;
+      letter-spacing: -0.01em; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1080" data-height="1920"
+    data-composition-variables='[{"id":"cta_question","type":"string","label":"CTA pergunta","default":"QUER SUA EQUIPE DE IA?"},{"id":"cta_comment","type":"string","label":"CTA comentário","default":"COMENTE: AGENTES"}]'>
+    <div id="cta-q" class="clip cta" data-start="42.4" data-duration="2.6" data-track-index="0"><div class="q-in" data-var-text="cta_question">QUER SUA EQUIPE DE IA?</div></div>
+    <div id="cta-c" class="clip cta" data-start="43.5" data-duration="1.5" data-track-index="1"><div class="c-in" data-var-text="cta_comment">COMENTE: AGENTES</div></div>
+  </div>
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#cta-q .q-in", { opacity: 0, y: 40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(1.8)" }, 42.4);
+      tl.fromTo("#cta-c .c-in", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.32, ease: "back.out(2.6)" }, 43.5);
+      tl.fromTo("#cta-c .c-in", { rotation: 0 }, { rotation: -3, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 1 }, 43.82);
+      window.__timelines["cta"] = tl;
+    })();
+  </script>
+</template>

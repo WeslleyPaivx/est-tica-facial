@@ -28,3 +28,5 @@ assert prev_end<=45.0
 json.dump(dict(fps=30,width=1080,height=1920,duration=45.0,scenes=[dict(id=a,name=b,start=c,end=d) for a,b,c,d in scenes],
   lines=lines,actions=[dict(t=a,what=b) for a,b in sorted(actions)]),open("timeline.json","w"),ensure_ascii=False,indent=1)
 for l in lines: print(f"{l['id']}\t{l['scene']}\t{l['speaker']}\t{l['start']:.2f}\t{l['end']:.2f}\t{l['duration']:.2f}\t{l['text']}")
+# módulo JS para o palco 3D e as legendas (sem fetch em tempo de render)
+open("assets/js/timeline-data.js","w").write("// gerado por scripts/build_timeline.py — não editar\nexport default " + json.dumps(json.load(open("timeline.json")), ensure_ascii=False) + ";\n")

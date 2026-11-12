@@ -22,3 +22,4 @@ while IFS=$'\t' read -r id who voice speed text; do
   printf "%s\t%s\t%.2f\t%s\n" "$id" "$who" "$d" "$text" >> assets/vo/durations.tsv
 done < assets/vo/lines.tsv
 python3 scripts/build_timeline.py
+python3 scripts/mouth.py
