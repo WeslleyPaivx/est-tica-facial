@@ -89,8 +89,10 @@ export async function createStage(canvas, W = 1080, H = 1920) {
   const tmp = new THREE.Vector3();
   const lastScreen = ["", ""];
 
-  function render(t) {
+  // mod: ajuste opcional do estado (usado só pela capa; o vídeo chama render(t))
+  function render(t, mod) {
     const s = frame(t);
+    if (mod) mod(s);
     // câmera
     camera.position.set(...s.cam.pos);
     camera.fov = s.cam.fov; camera.updateProjectionMatrix();
