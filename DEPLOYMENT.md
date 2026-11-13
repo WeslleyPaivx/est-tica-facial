@@ -15,7 +15,7 @@ O proprietário pediu a publicação mesmo com as pendências da auditoria abert
 - Variáveis na Vercel: só as três públicas (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `NEXT_PUBLIC_SITE_URL=https://zaniva-crm.vercel.app`). Nenhum segredo.
 - Proteção da Vercel (login Vercel) só nas URLs de preview; produção aberta.
 - Publicado da branch `claude/ecstatic-heisenberg-gh50i5`; novos pushes geram previews protegidos. Para atualizar produção: novo deploy de produção do commit desejado (ou mesclar na branch padrão do repositório).
-- Supabase Auth (aplicado via API de gestão em 2026-11-13): Site URL `https://zaniva-crm.vercel.app`, Redirect URLs `https://zaniva-crm.vercel.app/**` e `http://localhost:3000/**`, senha mínima 8. **Pendente:** SMTP próprio (o proprietário configura no painel; a senha nunca passa pelo repositório nem pelo chat) e, depois dele, os quatro modelos de `supabase/templates/` (o plano gratuito só aceita modelos personalizados com SMTP próprio).
+- Supabase Auth (aplicado via API de gestão em 2026-11-13): Site URL `https://zaniva-crm.vercel.app`, Redirect URLs `https://zaniva-crm.vercel.app/**` e `http://localhost:3000/**`, senha mínima 8, os quatro modelos de `supabase/templates/` (confirmação, senha, troca de e-mail, link de acesso). SMTP próprio configurado pelo proprietário no painel (Gmail com senha de app, remetente "ZANIVA", 60 e-mails/hora); a senha nunca passou pelo repositório nem pelo chat. Trocar por um provedor com domínio próprio antes de uso real.
 
 ## Homologação (quando autorizado)
 
