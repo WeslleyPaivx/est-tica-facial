@@ -19,6 +19,7 @@ export async function enrollTotpAction(): Promise<EnrollState> {
   }
   const { data, error } = await supabase.auth.mfa.enroll({
     factorType: "totp",
+    issuer: "Zaniva CRM",
     friendlyName: `Autenticador ${new Date().toISOString().slice(0, 10)}`,
   });
   if (error || !data) return { error: "Não foi possível iniciar o cadastro do autenticador." };

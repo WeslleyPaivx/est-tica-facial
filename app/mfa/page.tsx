@@ -28,6 +28,12 @@ export default async function MfaPage() {
             : "Proteja sua conta com um aplicativo autenticador."}
       </p>
       {factor ? <VerifyFactor factorId={factor.id} /> : <EnrollFactor />}
+      {factor ? (
+        <p className="mt-5 text-xs text-muted">
+          O código está no app autenticador (Google Authenticator, Microsoft Authenticator…), na entrada &quot;Zaniva CRM&quot; com o
+          seu e-mail. Perdeu o acesso ao app? Peça ao suporte da Zaniva para redefinir a verificação da sua conta.
+        </p>
+      ) : null}
       <div className="mt-5 flex justify-between text-sm text-muted">
         {!mandatory && !factor ? <Link href="/" className="hover:text-fg">Agora não</Link> : <span />}
         <form action={signOutAction}>

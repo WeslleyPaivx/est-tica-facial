@@ -39,7 +39,7 @@ export async function signUpAction(_: ActionState, form: FormData): Promise<Acti
     console.error("signUp failed", { status: error.status, code: error.code });
     return { error: "Não foi possível criar a conta agora. Tente novamente." };
   }
-  return { ok: true, message: "Se o e-mail puder ser usado, enviamos um link de confirmação." };
+  return { ok: true, message: "Pronto. Se este e-mail ainda não tinha conta, enviamos um link de confirmação (confira também o spam). Se ele já tem conta, nenhum e-mail novo é enviado: use Entrar ou Esqueci a senha." };
 }
 
 export async function requestPasswordResetAction(_: ActionState, form: FormData): Promise<ActionState> {
