@@ -1,9 +1,0 @@
-.fecho { padding: var(--s-folga) var(--s-margem) calc(130 * var(--su)); display: flex; flex-direction: column; align-items: center; text-align: center; }
-.fecho__titulo { font-size: calc(68 * var(--su)); line-height: 1.02; }
-.fecho__sub { margin-top: calc(18 * var(--su)); font-size: var(--s-corpo); color: var(--texto-2); letter-spacing: -0.012em; }
-.fecho__acoes { display: flex; gap: 14px; margin-top: calc(32 * var(--su)); }
-@media (max-width: 760px) {
-  .fecho__titulo { font-size: calc(39 * var(--su)); }
-  .fecho__acoes { flex-direction: column; width: 100%; }
-  .fecho__acoes .botao { width: 100%; }
-}

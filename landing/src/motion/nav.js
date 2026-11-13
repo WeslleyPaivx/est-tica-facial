@@ -1,20 +1,13 @@
-import { rolagem } from './rolagem.js';
-
-// A nav sai para cima quando o rodapé encosta nela: o rodapé (grade + nome gigante) é mais alto que a tela de um
-// notebook menos a nav, e o vidro dela por cima da linha do logo repetiria o "Zaniva". Volta quando o rodapé desce.
-export function nav() {
+// Nav: ganha vidro depois do topo; some ao descer e volta ao subir.
+export function nav({ getScroll = () => window.scrollY } = {}) {
   const el = document.querySelector('[data-nav]');
-  if (!el) return;
-  const rodape = document.querySelector('.rodape');
-  let limite = Infinity;
-  const mede = () => {
-    if (rodape) limite = rodape.getBoundingClientRect().top + scrollY - el.offsetHeight;
+  let last = 0;
+  return () => {
+    const y = getScroll();
+    el.classList.toggle('is-scrolled', y > 40);
+    if (Math.abs(y - last) > 6) {
+      el.classList.toggle('is-hidden', y > last && y > window.innerHeight * 0.6);
+      last = y;
+    }
   };
-  mede();
-  new ResizeObserver(mede).observe(document.body);
-  rolagem((y) => {
-    el.classList.toggle('rolou', y > 24);
-    el.classList.toggle('saiu', y > limite);
-  });
-  requestAnimationFrame(() => el.classList.add('entrou'));
 }
