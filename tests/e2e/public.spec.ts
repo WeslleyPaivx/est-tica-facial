@@ -8,7 +8,7 @@ test("rotas protegidas redirecionam anônimo para login com next seguro", async 
 });
 
 test("rotas do CRM exigem login", async ({ page }) => {
-  for (const path of ["/deals", "/deals/new", "/deals/00000000-0000-4000-8000-000000000000", "/contacts", "/contacts/new", "/companies", "/companies/00000000-0000-4000-8000-000000000000"]) {
+  for (const path of ["/tasks", "/tasks/new", "/tasks/00000000-0000-4000-8000-000000000000", "/deals", "/deals/new", "/deals/00000000-0000-4000-8000-000000000000", "/contacts", "/contacts/new", "/companies", "/companies/00000000-0000-4000-8000-000000000000"]) {
     await page.goto(path);
     await expect(page, path).toHaveURL(/\/login\?next=/);
   }

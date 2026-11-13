@@ -2,6 +2,13 @@
 
 ## Fase 2 — CRM core · **em andamento**
 
+### Entrega 2.6 — Tarefas (2026-11-13)
+
+- Migration `20261113000400_tasks.sql` (não destrutiva; aplicada na homologação; advisors sem achado novo): `tasks` (título, descrição, prazo, prioridade, responsável, vínculo opcional com contato/empresa/oportunidade, recorrência diária/semanal/mensal), `task_checklist_items` e `task_comments`. Conclusão (data e autor) definida pelo banco; ao concluir uma recorrente nasce a próxima ocorrência com o checklist desmarcado, uma vez só; comentário não é editável e só o autor apaga; FKs compostas contra vínculo entre organizações; limite de escrita e antiduplicação. Permissões: owner/admin leem, escrevem e excluem; member lê e escreve; limited só lê.
+- Telas: `/tasks` agrupada por prazo (atrasadas, hoje, próximas, sem prazo; dia de São Paulo), filtros Abertas/Concluídas e Minhas/Todas, busca, concluir com um clique; `/tasks/new` (aceita `?deal=`, `?contact=`, `?company=`), `/tasks/[id]` com checklist e comentários. Contador no menu com as minhas tarefas atrasadas ou para hoje; atalho "Nova tarefa para esta oportunidade".
+- Notificações por e-mail/push ainda não existem (o contador do menu é o aviso disponível).
+- Testes: SQL 220/220 (+34), Vitest 83/83 (+9), Playwright 24/24 (rotas exigem login), lint, typecheck, build, scan:bundle; conferência visual com dados sintéticos (desktop e celular, sem rolagem lateral, console limpo).
+
 ### Entrega 2.5 — Leads e oportunidades no funil Kanban (2026-11-13)
 
 - Migration `20261113000300_deals_pipelines.sql` (não destrutiva; aplicada na homologação; advisors sem achado novo): `pipelines`, `pipeline_stages`, `deals` (título, valor em centavos, origem, status aberta/ganha/perdida com motivo obrigatório na perda, próxima ação e data, responsável, contato, empresa) e `deal_events` (histórico imutável escrito só por trigger). FKs compostas impedem etapa/contato/empresa/funil de outra organização e etapa de outro funil; `organization_id` imutável; responsável precisa ser membro; limite de escrita e `request_id` antiduplicação; funil padrão "Vendas" (Novo lead, Qualificado, Proposta enviada, Negociação) criado para toda organização nova e para as existentes. Permissões: owner/admin leem, escrevem e excluem; member lê e escreve; limited só lê.

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { buttonClass } from "@/design-system/components/button";
 import { notFound, redirect } from "next/navigation";
 import { PageHeader, Section } from "@/design-system/components/layout";
 import { Badge } from "@/design-system/components/feedback";
@@ -41,6 +43,9 @@ export default async function DealPage({ params }: { params: Promise<{ id: strin
         <DealForm values={deal} stages={o.stages} contacts={o.contacts} companies={o.companies} owners={o.owners} readOnly={!canWrite} />
         <div className="flex flex-col gap-6">
           {canWrite ? <Section title="Fechamento"><CloseDeal id={deal.id} status={deal.status} /></Section> : null}
+          {can(s, "tasks.write") ? (
+            <Link href={`/tasks/new?deal=${deal.id}`} className={buttonClass("secondary", "sm", "self-start")}>Nova tarefa para esta oportunidade</Link>
+          ) : null}
           <Section title="Histórico">
             <ol className="flex flex-col gap-3 text-sm">
               {events.map((e) => (

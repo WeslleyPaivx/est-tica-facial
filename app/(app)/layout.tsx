@@ -3,11 +3,12 @@ import { AppShell } from "@/components/shell/app-shell";
 import { OrgSwitcher, UserMenu } from "@/components/shell/header-menus";
 import { Alert } from "@/design-system/components/feedback";
 import { requireOrgSession } from "@/server/session";
+import { myDueTaskCount } from "@/server/tasks";
 import { ROLE_LABEL } from "@/lib/security/permissions";
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const s = await requireOrgSession();
-  const cookieStore = await cookies();
+  const [cookieStore, dueTasks] = await Promise.all([cookies(), myDueTaskCount(s)]);
   const themeCookie = cookieStore.get("zaniva_theme")?.value;
   const theme = themeCookie === "light" || themeCookie === "dark" ? themeCookie : "system";
   const toOption = (m: (typeof s.memberships)[number]) => ({
@@ -19,6 +20,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <AppShell
       permissions={s.permissions}
+      badges={{ "/tasks": dueTasks }}
       initialCollapsed={cookieStore.get("zaniva_sidebar")?.value === "1"}
       header={
         <>

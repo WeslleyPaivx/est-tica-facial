@@ -3,15 +3,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
-import { Briefcase, Building2, Contact, History, House, PanelLeft, ShieldCheck, Users, X, SquareKanban } from "lucide-react";
+import { Briefcase, Building2, Contact, History, House, PanelLeft, ShieldCheck, Users, X, SquareKanban, ListChecks } from "lucide-react";
 import { cx } from "@/design-system/components/cx";
 import { Logo } from "@/design-system/components/logo";
 import { NAV, type NavItem } from "./nav";
 
-const ICONS = { home: House, kanban: SquareKanban, contact: Contact, briefcase: Briefcase, building: Building2, users: Users, history: History, shield: ShieldCheck };
+const ICONS = { home: House, kanban: SquareKanban, tasks: ListChecks, contact: Contact, briefcase: Briefcase, building: Building2, users: Users, history: History, shield: ShieldCheck };
 const COLLAPSE_COOKIE = "zaniva_sidebar";
 
-function NavLinks({ permissions, collapsed, onNavigate }: { permissions: string[]; collapsed: boolean; onNavigate?: () => void }) {
+// badges: contador por rota (ex.: minhas tarefas atrasadas ou para hoje em /tasks)
+function NavLinks({ permissions, badges, collapsed, onNavigate }: { permissions: string[]; badges: Record<string, number>; collapsed: boolean; onNavigate?: () => void }) {
   const pathname = usePathname();
   const visible = (i: NavItem) => !i.permission || permissions.includes(i.permission);
   return (
@@ -30,13 +31,19 @@ function NavLinks({ permissions, collapsed, onNavigate }: { permissions: string[
                 aria-current={active ? "page" : undefined}
                 title={collapsed ? item.label : undefined}
                 className={cx(
-                  "flex h-9 items-center gap-2.5 rounded-full px-3 text-sm transition-colors duration-100",
+                  "relative flex h-9 items-center gap-2.5 rounded-full px-3 text-sm transition-colors duration-100",
                   active ? "bg-accent-wash text-fg" : "text-muted hover:bg-surface-2 hover:text-fg",
                   collapsed && "justify-center",
                 )}
               >
                 <Icon aria-hidden className="size-4 shrink-0" strokeWidth={1.75} />
                 {!collapsed ? <span className="truncate">{item.label}</span> : <span className="sr-only">{item.label}</span>}
+                {badges[item.href] ? (
+                  <span className={cx("rounded-full bg-accent px-1.5 text-[11px] leading-5 text-accent-fg tabular", collapsed ? "absolute ml-5 -mt-5" : "ml-auto")}>
+                    {badges[item.href]}
+                    <span className="sr-only"> {badges[item.href] === 1 ? "pendente" : "pendentes"}</span>
+                  </span>
+                ) : null}
               </Link>
             );
           })}
@@ -49,11 +56,13 @@ function NavLinks({ permissions, collapsed, onNavigate }: { permissions: string[
 export function AppShell({
   header,
   permissions,
+  badges = {},
   initialCollapsed,
   children,
 }: {
   header: ReactNode;
   permissions: string[];
+  badges?: Record<string, number>;
   initialCollapsed: boolean;
   children: ReactNode;
 }) {
@@ -93,7 +102,7 @@ export function AppShell({
             <PanelLeft aria-hidden className="size-4" strokeWidth={1.75} />
           </button>
         </div>
-        <NavLinks permissions={permissions} collapsed={collapsed} />
+        <NavLinks permissions={permissions} badges={badges} collapsed={collapsed} />
       </aside>
 
       {mobileOpen ? (
@@ -106,7 +115,7 @@ export function AppShell({
                 <X aria-hidden className="size-4" />
               </button>
             </div>
-            <NavLinks permissions={permissions} collapsed={false} onNavigate={() => setMobileOpen(false)} />
+            <NavLinks permissions={permissions} badges={badges} collapsed={false} onNavigate={() => setMobileOpen(false)} />
           </div>
         </div>
       ) : null}

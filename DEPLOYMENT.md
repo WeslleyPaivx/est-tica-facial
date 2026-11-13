@@ -11,7 +11,7 @@ O proprietário pediu a publicação mesmo com as pendências da auditoria abert
 | `zaniva-crm` | https://zaniva-crm.vercel.app | CRM (Next.js, raiz do repositório), funções em `gru1` (São Paulo, junto do Supabase `sa-east-1`), Node 22 |
 | `zaniva-crm-site` | https://zaniva-crm-site.vercel.app | Landing (Vite, pasta `landing/`), "Entrar" e "Começar grátis" levam ao CRM |
 
-- Banco: Supabase `zaniva-crm-homolog` (migrations até `20261113000300` aplicadas).
+- Banco: Supabase `zaniva-crm-homolog` (migrations até `20261113000400` aplicadas).
 - Variáveis na Vercel: só as três públicas (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `NEXT_PUBLIC_SITE_URL=https://zaniva-crm.vercel.app`). Nenhum segredo.
 - Proteção da Vercel (login Vercel) só nas URLs de preview; produção aberta.
 - Publicado da branch `claude/ecstatic-heisenberg-gh50i5`; novos pushes geram previews protegidos. Para atualizar produção: novo deploy de produção do commit desejado (ou mesclar na branch padrão do repositório).
