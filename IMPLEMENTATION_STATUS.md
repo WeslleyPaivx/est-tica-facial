@@ -2,6 +2,13 @@
 
 ## Fase 2 — CRM core · **em andamento**
 
+### Entrega 2.4 — Cores e logo da Zaniva no CRM; mostrar senha (2026-11-13)
+
+- Tokens do design system trocados pelas cores da logo (decisão do proprietário, registrada no CLAUDE.md): fundo #090716 / #F7F6FA, texto #F2EFFA / #090716, rosa #DF5EB0 como ação principal, `brand` (#B8338A claro / #E77BC2 escuro) para gráficos e destaques, ameixa como segundo acento. Tokens renomeados: `forest` → `brand`, `butter` → `plum`.
+- Logo "zaniva." (monograma "z." com o menu recolhido) no lugar do "Z" verde; fundo das telas de entrada com o brilho rosa/ameixa da logo.
+- Botão de mostrar/ocultar senha em login, cadastro e redefinição (`PasswordInput`); só troca o tipo do campo.
+- Testes: Playwright 24/24 (+2: mostrar senha; tema escuro com o novo fundo), Vitest 57/57, lint, typecheck, build e scan:bundle. Conferência visual do login e do painel, claro e escuro.
+
 ### Entrega 2.3 — Painel inicial em bento (2026-11-13)
 
 - Visão geral refeita como bento de 9 blocos (4 colunas a partir de 1024 px de largura do painel, 2 a partir de 640 px, 1 abaixo; container queries), nas cores e tipografia do design system, claro e escuro: saudação com total de contatos e cadastros por dia (30 dias), equipe por papel e convites, progresso de configuração (meia-lua), crescimento acumulado (contatos ou empresas; 7D/30D/12M, cursor), contatos por responsável, qualidade do cadastro, módulos, cadastros recentes e auditoria.

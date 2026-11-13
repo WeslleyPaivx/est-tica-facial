@@ -84,7 +84,7 @@ export function DashboardView({ d, firstName, orgName, role, mfaOn, canWrite, ac
           <div className="flex flex-wrap items-start justify-between gap-6">
             <div className="min-w-0">
               <h1 className="text-[32px] leading-tight">
-                Olá, <span className="text-forest">{firstName}</span>
+                Olá, <span className="text-brand">{firstName}</span>
               </h1>
               <p className="mt-1 text-sm text-muted">
                 {orgName} · {ROLE_LABEL[role]}

@@ -46,7 +46,7 @@ test("HTML não expõe segredos nem chaves privadas", async ({ request }) => {
 test("login com falha mostra erro genérico (sem enumeração)", async ({ page }) => {
   await page.goto("/login");
   await page.getByLabel("E-mail").fill("ninguem@exemplo.test");
-  await page.getByLabel("Senha").fill("qualquer-senha-123");
+  await page.getByLabel("Senha", { exact: true }).fill("qualquer-senha-123");
   await page.getByRole("button", { name: "Entrar" }).click();
   await expect(page.locator("form [role=alert]")).toContainText("E-mail ou senha inválidos");
 });
@@ -55,7 +55,7 @@ test("cadastro valida senha fraca no servidor", async ({ page }) => {
   await page.goto("/signup");
   await page.getByLabel("Nome").fill("Pessoa Teste");
   await page.getByLabel("E-mail profissional").fill("pessoa@exemplo.test");
-  await page.getByLabel("Senha").fill("curta");
+  await page.getByLabel("Senha", { exact: true }).fill("curta");
   await page.getByRole("button", { name: "Criar conta" }).click();
   await expect(page.locator("form [role=alert]")).toContainText("8 caracteres");
 });
@@ -70,7 +70,7 @@ test("tema escuro aplicado via preferência salva", async ({ page, context, base
   await page.goto("/login");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-  expect(bg).toBe("rgb(15, 16, 17)");
+  expect(bg).toBe("rgb(9, 7, 22)"); // #090716, o fundo da logo
 });
 
 test("layout sem rolagem horizontal", async ({ page }) => {
@@ -79,4 +79,16 @@ test("layout sem rolagem horizontal", async ({ page }) => {
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     expect(overflow, path).toBe(false);
   }
+});
+
+test("botão de mostrar senha troca o tipo do campo sem enviar nada", async ({ page }) => {
+  await page.goto("/login");
+  const campo = page.getByLabel("Senha", { exact: true });
+  await campo.fill("segredo-de-teste");
+  await expect(campo).toHaveAttribute("type", "password");
+  await page.getByRole("button", { name: "Mostrar senha" }).click();
+  await expect(campo).toHaveAttribute("type", "text");
+  await page.getByRole("button", { name: "Ocultar senha" }).click();
+  await expect(campo).toHaveAttribute("type", "password");
+  await expect(page).toHaveURL(/\/login$/);
 });

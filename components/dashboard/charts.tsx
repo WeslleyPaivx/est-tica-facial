@@ -4,7 +4,7 @@ import { useEffect, useId, useState, useSyncExternalStore } from "react";
 import { cx } from "@/design-system/components/cx";
 import type { DailyPoint } from "@/server/dashboard";
 
-// Peças vivas do painel inicial: SVG e DOM, sem biblioteca. Uma série por gráfico (verde-floresta da marca, que passa
+// Peças vivas do painel inicial: SVG e DOM, sem biblioteca. Uma série por gráfico (rosa da marca (brand), que passa
 // no contraste nos dois temas); texto sempre nas cores de texto. Com "reduzir movimento", tudo aparece pronto.
 
 const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
@@ -98,7 +98,7 @@ export function DailyBars({ points }: { points: DailyPoint[] }) {
             className="group relative flex h-full flex-1 items-end"
           >
             <span
-              className={cx("block w-full rounded-t-[4px]", t > 0 ? "bg-forest" : "bg-border-strong")}
+              className={cx("block w-full rounded-t-[4px]", t > 0 ? "bg-brand" : "bg-border-strong")}
               style={{
                 height: mounted ? (t > 0 ? `${12 + (t / max) * 88}%` : "4px") : "4px",
                 opacity: hover === null || hover === i ? 1 : 0.35,
@@ -186,8 +186,8 @@ export function GrowthChart({ daily, before }: { daily: DailyPoint[]; before: { 
         <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" aria-hidden className="absolute inset-0 size-full">
           <defs>
             <linearGradient id={`${uid}-f`} x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0" style={{ stopColor: "var(--z-forest)", stopOpacity: 0.16 }} />
-              <stop offset="1" style={{ stopColor: "var(--z-forest)", stopOpacity: 0 }} />
+              <stop offset="0" style={{ stopColor: "var(--z-brand)", stopOpacity: 0.16 }} />
+              <stop offset="1" style={{ stopColor: "var(--z-brand)", stopOpacity: 0 }} />
             </linearGradient>
           </defs>
           {[0.25, 0.5, 0.75].map((f) => (
@@ -204,7 +204,7 @@ export function GrowthChart({ daily, before }: { daily: DailyPoint[]; before: { 
             vectorEffect="non-scaling-stroke"
             pathLength={1}
             style={{
-              stroke: "var(--z-forest)",
+              stroke: "var(--z-brand)",
               strokeDasharray: 1,
               strokeDashoffset: mounted || reduced ? 0 : 1,
               transition: reduced ? "none" : `stroke-dashoffset 700ms ${EASE}`,
@@ -214,7 +214,7 @@ export function GrowthChart({ daily, before }: { daily: DailyPoint[]; before: { 
         <span aria-hidden className="pointer-events-none absolute inset-y-0 w-px -translate-x-1/2 bg-border-strong" style={{ left: `${(curXY[0] / W) * 100}%`, opacity: hover === null ? 0 : 1 }} />
         <span
           aria-hidden
-          className="pointer-events-none absolute size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-surface bg-forest"
+          className="pointer-events-none absolute size-3 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-surface bg-brand"
           style={{ left: `${(curXY[0] / W) * 100}%`, top: `${(curXY[1] / H) * 100}%` }}
         />
       </div>
@@ -244,7 +244,7 @@ export function HBars({ items, unit = "" }: { items: { label: string; value: num
           </div>
           <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-surface-2">
             <div
-              className="h-full rounded-full bg-forest"
+              className="h-full rounded-full bg-brand"
               style={{ width: mounted ? `${it.max ? (it.value / it.max) * 100 : 0}%` : "0%", transition: `width 600ms ${EASE} ${150 + i * 60}ms` }}
             />
           </div>
@@ -268,7 +268,7 @@ export function Gauge({ done, total }: { done: number; total: number }) {
         strokeWidth="10"
         strokeLinecap="round"
         strokeDasharray={len}
-        style={{ stroke: "var(--z-forest)", strokeDashoffset: len * (1 - (mounted ? t : 0)), transition: `stroke-dashoffset 800ms ${EASE}` }}
+        style={{ stroke: "var(--z-brand)", strokeDashoffset: len * (1 - (mounted ? t : 0)), transition: `stroke-dashoffset 800ms ${EASE}` }}
       />
     </svg>
   );

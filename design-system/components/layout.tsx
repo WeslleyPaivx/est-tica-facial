@@ -26,7 +26,7 @@ export function Section({ title, description, children, className }: { title: st
   );
 }
 
-const ACCENT_BAR = { forest: "bg-forest", pink: "bg-pink", accent: "bg-accent", butter: "bg-butter" } as const;
+const ACCENT_BAR = { brand: "bg-brand", pink: "bg-pink", accent: "bg-accent", plum: "bg-plum" } as const;
 
 // Card de métrica: barra de 4px à esquerda é o único uso de cor. Só para números reais.
 export function StatCard({ value, label, accent }: { value: ReactNode; label: string; accent: keyof typeof ACCENT_BAR }) {

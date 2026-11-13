@@ -5,6 +5,7 @@ import { useActionState } from "react";
 import { Button } from "@/design-system/components/button";
 import { Field, Input } from "@/design-system/components/field";
 import { FormStatus } from "@/design-system/components/feedback";
+import { PasswordInput } from "@/design-system/components/password-input";
 import {
   requestPasswordResetAction,
   signInAction,
@@ -21,7 +22,7 @@ export function SignInForm({ next }: { next?: string }) {
         <Input id="email" name="email" type="email" autoComplete="email" required />
       </Field>
       <Field label="Senha" htmlFor="password">
-        <Input id="password" name="password" type="password" autoComplete="current-password" required />
+        <PasswordInput id="password" name="password" autoComplete="current-password" required />
       </Field>
       <FormStatus state={state} />
       <Button type="submit" disabled={pending}>{pending ? "Entrando…" : "Entrar"}</Button>
@@ -45,7 +46,7 @@ export function SignUpForm() {
         <Input id="email" name="email" type="email" autoComplete="email" required />
       </Field>
       <Field label="Senha" htmlFor="password" hint="Mínimo de 8 caracteres, com uma letra maiúscula e um símbolo.">
-        <Input id="password" name="password" type="password" autoComplete="new-password" required minLength={8} />
+        <PasswordInput id="password" name="password" autoComplete="new-password" required minLength={8} />
       </Field>
       <FormStatus state={state} />
       <Button type="submit" disabled={pending}>{pending ? "Criando…" : "Criar conta"}</Button>
@@ -75,10 +76,10 @@ export function NewPasswordForm() {
   return (
     <form action={action} className="flex flex-col gap-4" noValidate>
       <Field label="Nova senha" htmlFor="password" hint="Mínimo de 8 caracteres, com uma letra maiúscula e um símbolo.">
-        <Input id="password" name="password" type="password" autoComplete="new-password" required minLength={8} />
+        <PasswordInput id="password" name="password" autoComplete="new-password" required minLength={8} />
       </Field>
       <Field label="Confirmar senha" htmlFor="confirm">
-        <Input id="confirm" name="confirm" type="password" autoComplete="new-password" required />
+        <PasswordInput id="confirm" name="confirm" autoComplete="new-password" required />
       </Field>
       <FormStatus state={state} />
       <Button type="submit" disabled={pending}>{pending ? "Salvando…" : "Salvar senha"}</Button>

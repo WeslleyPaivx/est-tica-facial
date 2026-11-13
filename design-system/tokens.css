@@ -1,58 +1,59 @@
-/* Tokens Zaniva — "galeria à luz do dia": canvas off-white, cards brancos, texto quase preto,
-   quatro acentos (floresta, pervinca, rosa, manteiga) usados só como pontuação.
-   Light é o padrão; dark via data-theme="dark" ou preferência do sistema (data-theme="system"). */
+/* Tokens Zaniva — as cores da logo (decisão do proprietário em 2026-11-13): quase-preto violeta #090716,
+   branco-lilás #f2effa e o rosa #df5eb0; ameixa #3d1c3a como segundo acento. O rosa é a ação principal (texto escuro
+   sobre ele) e a pontuação; "brand" é o rosa mais fundo no claro (contraste ≥ 4,5:1 no branco) para gráficos e
+   destaques. Light é o padrão; dark via data-theme="dark" ou preferência do sistema (data-theme="system"). */
 :root {
-  --z-bg: #f9f9f9;
+  --z-bg: #f7f6fa;
   --z-surface: #ffffff;
-  --z-surface-2: #f2f2f1;
-  --z-fg: #0a0b0c;
-  --z-muted: #5c5f63;
-  --z-border: rgb(10 11 12 / 0.1);
-  --z-border-strong: rgb(10 11 12 / 0.18);
-  --z-ink: #0a0b0c;
-  --z-ink-fg: #ffffff;
-  --z-accent: #abcbf9;
-  --z-accent-fg: #0a0b0c;
-  --z-accent-wash: rgb(171 203 249 / 0.35);
-  --z-forest: #00543d;
-  --z-pink: #ffbbfc;
-  --z-butter: #fce88b;
+  --z-surface-2: #f0eef5;
+  --z-fg: #090716;
+  --z-muted: #5e5a6e;
+  --z-border: rgb(9 7 22 / 0.1);
+  --z-border-strong: rgb(9 7 22 / 0.18);
+  --z-ink: #090716;
+  --z-ink-fg: #f2effa;
+  --z-accent: #df5eb0;
+  --z-accent-fg: #090716;
+  --z-accent-wash: rgb(223 94 176 / 0.14);
+  --z-brand: #b8338a;
+  --z-pink: #f3b4db;
+  --z-plum: #3d1c3a;
   --z-danger: #a8322a;
   --z-danger-bg: #fbecea;
   --z-success: #00543d;
   --z-success-bg: #e3f1ea;
   --z-warning: #7a5a00;
   --z-warning-bg: #fdf6d8;
-  --z-focus: #3d6fd6;
+  --z-focus: #b8338a;
   --z-glass-tint: rgb(255 255 255 / 0.68);
   --z-glass-edge: rgb(255 255 255 / 0.75);
-  --z-glass-line: rgb(10 11 12 / 0.08);
+  --z-glass-line: rgb(9 7 22 / 0.08);
 }
 
 [data-theme="dark"] {
-  --z-bg: #0f1011;
-  --z-surface: #17181a;
-  --z-surface-2: #202124;
-  --z-fg: #f4f4f2;
-  --z-muted: #a3a6aa;
+  --z-bg: #090716;
+  --z-surface: #14121f;
+  --z-surface-2: #1c1a29;
+  --z-fg: #f2effa;
+  --z-muted: #b1adc0;
   --z-border: rgb(255 255 255 / 0.1);
   --z-border-strong: rgb(255 255 255 / 0.18);
-  --z-ink: #f4f4f2;
-  --z-ink-fg: #0a0b0c;
-  --z-accent: #abcbf9;
-  --z-accent-fg: #0a0b0c;
-  --z-accent-wash: rgb(171 203 249 / 0.16);
-  --z-forest: #4fb08b;
-  --z-pink: #ffbbfc;
-  --z-butter: #fce88b;
+  --z-ink: #f2effa;
+  --z-ink-fg: #090716;
+  --z-accent: #df5eb0;
+  --z-accent-fg: #090716;
+  --z-accent-wash: rgb(223 94 176 / 0.18);
+  --z-brand: #e77bc2;
+  --z-pink: #df5eb0;
+  --z-plum: #8e5687;
   --z-danger: #f0928a;
   --z-danger-bg: #3a1f1d;
   --z-success: #7fd1ad;
   --z-success-bg: #18302a;
   --z-warning: #f2d36b;
   --z-warning-bg: #332b12;
-  --z-focus: #abcbf9;
-  --z-glass-tint: rgb(23 24 26 / 0.66);
+  --z-focus: #e77bc2;
+  --z-glass-tint: rgb(20 18 31 / 0.66);
   --z-glass-edge: rgb(255 255 255 / 0.08);
   --z-glass-line: rgb(255 255 255 / 0.06);
 }
@@ -60,29 +61,29 @@
 @media (prefers-color-scheme: dark) {
   [data-theme="system"] {
     color-scheme: dark;
-    --z-bg: #0f1011;
-    --z-surface: #17181a;
-    --z-surface-2: #202124;
-    --z-fg: #f4f4f2;
-    --z-muted: #a3a6aa;
+    --z-bg: #090716;
+    --z-surface: #14121f;
+    --z-surface-2: #1c1a29;
+    --z-fg: #f2effa;
+    --z-muted: #b1adc0;
     --z-border: rgb(255 255 255 / 0.1);
     --z-border-strong: rgb(255 255 255 / 0.18);
-    --z-ink: #f4f4f2;
-    --z-ink-fg: #0a0b0c;
-    --z-accent: #abcbf9;
-    --z-accent-fg: #0a0b0c;
-    --z-accent-wash: rgb(171 203 249 / 0.16);
-    --z-forest: #4fb08b;
-    --z-pink: #ffbbfc;
-    --z-butter: #fce88b;
+    --z-ink: #f2effa;
+    --z-ink-fg: #090716;
+    --z-accent: #df5eb0;
+    --z-accent-fg: #090716;
+    --z-accent-wash: rgb(223 94 176 / 0.18);
+    --z-brand: #e77bc2;
+    --z-pink: #df5eb0;
+    --z-plum: #8e5687;
     --z-danger: #f0928a;
     --z-danger-bg: #3a1f1d;
     --z-success: #7fd1ad;
     --z-success-bg: #18302a;
     --z-warning: #f2d36b;
     --z-warning-bg: #332b12;
-    --z-focus: #abcbf9;
-    --z-glass-tint: rgb(23 24 26 / 0.66);
+    --z-focus: #e77bc2;
+    --z-glass-tint: rgb(20 18 31 / 0.66);
     --z-glass-edge: rgb(255 255 255 / 0.08);
     --z-glass-line: rgb(255 255 255 / 0.06);
   }
