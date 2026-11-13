@@ -22,7 +22,7 @@
 :where(html:not(.is-scrolling):not(.toque)) .periodo__op[aria-checked='false']:hover { color: var(--branco); }
 .periodo__op:active { transform: scale(0.96); }
 .periodo__op:focus-visible { outline-offset: 0; }
-.periodo__selo { padding: 2px 7px; border-radius: var(--r-pilula); background: rgba(255, 187, 252, 0.16); color: var(--texto); font-size: 12px; font-weight: 600; transition: background 0.45s, color 0.45s; }
+.periodo__selo { padding: 2px 7px; border-radius: var(--r-pilula); background: rgba(223, 94, 176, 0.16); color: var(--texto); font-size: 12px; font-weight: 600; transition: background 0.45s, color 0.45s; }
 .periodo__op[aria-checked='true'] .periodo__selo { background: var(--rosa); color: #0a0b0c; }
 
 .planos__lista {
@@ -53,14 +53,14 @@
 .plano__itens svg { width: 18px; height: 18px; flex: none; padding: 3px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: var(--branco); }
 
 /* o plano em destaque é claro, como os painéis de interface da página */
-.plano--destaque { background: #f4f4f5; color: #111114; box-shadow: 0 30px 60px -30px rgba(255, 187, 252, 0.35); }
+.plano--destaque { background: #f4f4f5; color: #111114; box-shadow: 0 30px 60px -30px rgba(223, 94, 176, 0.35); }
 .plano--destaque .plano__icone { background: #111114; color: var(--branco); }
 .plano--destaque .plano__desc, .plano--destaque .plano__moeda { color: #5d5d64; }
 .plano--destaque .plano__per { color: #8b8b92; }
 .plano--destaque .plano__itens { box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.08); }
 .plano--destaque .plano__itens li { color: #2c2c31; }
 .plano--destaque .plano__itens svg { background: #111114; color: var(--branco); }
-:where(html:not(.is-scrolling):not(.toque)) .plano--destaque:hover { box-shadow: 0 34px 70px -30px rgba(255, 187, 252, 0.5); }
+:where(html:not(.is-scrolling):not(.toque)) .plano--destaque:hover { box-shadow: 0 34px 70px -30px rgba(223, 94, 176, 0.5); }
 .plano__selo {
   position: absolute; top: calc(26 * var(--su)); right: calc(28 * var(--su));
   padding: 5px 11px; border-radius: var(--r-pilula); background: var(--rosa); color: #0a0b0c;

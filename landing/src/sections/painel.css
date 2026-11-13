@@ -66,7 +66,7 @@
 .app__ladrilho--branco { background: #fff; color: var(--ui-tinta); }
 .app__ladrilho--verde { background: var(--ui-verde); color: #fff; }
 .app__ladrilho--roxo { background: #fce88b; color: var(--ui-tinta); }
-.app__ladrilho--laranja { background: #abcbf9; color: var(--ui-tinta); }
+.app__ladrilho--laranja { background: #df5eb0; color: var(--ui-tinta); }
 .app__chev { width: 14px !important; height: 14px !important; margin-left: auto; color: #77777f; }
 .app__item--ativo { color: #fff; }
 .app__item--ativo::before { content: ''; position: absolute; left: -8px; top: 7px; bottom: 7px; width: 2.5px; border-radius: 2px; background: #fff; }
@@ -159,9 +159,9 @@
 .tela__mundo { position: absolute; left: 0; top: 0; width: 654px; height: 560px; transform-origin: 0 0; transition: transform 0.6s var(--ease); }
 .tela__fios { position: absolute; inset: 0; width: 654px; height: 560px; overflow: visible; }
 .tela__fios path { fill: none; stroke: #cdcdd3; stroke-width: 1.5; }
-.tela__fios path.fio--ativo { stroke: #a9c4f2; }
+.tela__fios path.fio--ativo { stroke: #ec9fd0; }
 .tela__fios path.fio--aceso { stroke: var(--ui-laranja); stroke-width: 1.8; transition: stroke 0.3s; }
-.tela__luz { fill: var(--ui-laranja); filter: drop-shadow(0 0 4px rgba(110, 152, 224, 0.85)); opacity: 0; }
+.tela__luz { fill: var(--ui-laranja); filter: drop-shadow(0 0 4px rgba(223, 94, 176, 0.85)); opacity: 0; }
 .tela__rotulo {
   position: absolute; padding: 1px 5px; border-radius: 4px;
   background: var(--ui-fundo); font-size: 12px; color: #9b9ba3; letter-spacing: 0;
@@ -181,17 +181,17 @@
 .no__icone { display: grid; place-items: center; width: 17px; height: 17px; border-radius: 50%; flex: none; }
 .no__icone svg { width: 11px; height: 11px; }
 .no__icone--preto { background: #141416; color: #fff; }
-.no__icone--laranja { background: var(--pervinca); color: var(--ui-tinta); }
+.no__icone--laranja { background: var(--rosa); color: var(--ui-tinta); }
 .no__icone--rosa { background: var(--ui-rosa); color: #fff; }
 .no__icone--cinza { background: #8d8d95; color: #fff; }
 .no__campos { display: flex; gap: 4px; padding: 0 10px 10px; margin-top: -3px; }
 .no__campos i { white-space: nowrap; padding: 2px 4px; border-radius: 5px; background: #f1f1f3; font-style: normal; font-size: 12px; color: var(--ui-texto-2); transition: background 0.35s var(--ease), color 0.35s var(--ease); }
 .no__campos i.ok { background: var(--ui-verde-claro); color: #00432f; }
-.no--selecionado { box-shadow: 0 0 0 1.5px #9dbdf2, 0 8px 20px -10px rgba(110, 152, 224, 0.45); }
-.no--selecionado .no__topo { background: var(--ui-laranja-claro); box-shadow: inset 0 -1px 0 #d6e4fb; color: #1e3a63; }
+.no--selecionado { box-shadow: 0 0 0 1.5px #e88cc6, 0 8px 20px -10px rgba(223, 94, 176, 0.45); }
+.no--selecionado .no__topo { background: var(--ui-laranja-claro); box-shadow: inset 0 -1px 0 #f6cfe8; color: #8a2466; }
 .no--pilula { flex-direction: row; align-items: center; gap: 7px; height: 30px; padding: 0 12px 0 7px; border-radius: 999px; font-size: 12px; font-weight: 500; white-space: nowrap; }
 :where(html:not(.is-scrolling):not(.toque)) .no:hover { box-shadow: 0 0 0 1px var(--ui-borda-forte), 0 10px 22px -12px rgba(20, 20, 30, 0.28); transform: translateY(-1px); }
-:where(html:not(.is-scrolling):not(.toque)) .no--selecionado:hover { box-shadow: 0 0 0 1.5px #9dbdf2, 0 12px 24px -12px rgba(110, 152, 224, 0.5); }
+:where(html:not(.is-scrolling):not(.toque)) .no--selecionado:hover { box-shadow: 0 0 0 1.5px #e88cc6, 0 12px 24px -12px rgba(223, 94, 176, 0.5); }
 .no:active { transform: scale(0.98); }
 .no.aceso { box-shadow: 0 0 0 1.5px var(--ui-verde), 0 8px 20px -10px rgba(0, 84, 61, 0.45); }
 .no__ok {
@@ -271,7 +271,7 @@
 .app__plano strong { font-size: 13px; font-weight: 600; color: #fff; }
 .app__plano span { font-size: 12px; color: var(--ui-menu-texto-2); }
 .app__barra { display: block; height: 5px; margin-top: 10px; border-radius: 3px; background: #2a2a2f; overflow: hidden; }
-.app__barra b { display: block; width: 60%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--rosa), #ffd9fd); }
+.app__barra b { display: block; width: 60%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--rosa), #f5c2e3); }
 .app__perfil { display: flex; align-items: center; gap: 9px; margin-top: 10px; padding: 6px 4px; }
 .app__perfil img { width: 30px; height: 30px; }
 .app__perfil span { display: grid; line-height: 1.25; }

@@ -29,11 +29,11 @@
 .botao__seta svg { width: 16px; height: 16px; transition: transform 0.55s var(--ease); }
 .botao__seta svg + svg { position: absolute; inset: 0; transform: translateX(-130%); }
 
-/* principal (pervinca Zaniva, texto escuro): um pervinca mais claro sobe por dentro */
-.botao--branco { background: var(--pervinca); color: #0a0b0c; }
+/* principal: o branco-lilás da logo; um rosa muito claro sobe por dentro */
+.botao--branco { background: var(--branco); color: #090716; }
 .botao--branco::before {
   content: ''; position: absolute; inset: 0; z-index: 0; border-radius: inherit;
-  background: radial-gradient(120% 140% at 50% 120%, var(--rosa-claro) 0%, var(--pervinca-claro) 46%, var(--pervinca) 82%);
+  background: radial-gradient(120% 140% at 50% 120%, #f5c2e3 0%, var(--rosa-claro) 46%, var(--branco) 80%);
   transform: translateY(102%);
   transition: transform 0.6s var(--ease);
 }
@@ -45,29 +45,29 @@
 }
 .botao--grafite::before {
   content: ''; position: absolute; inset: -1px; z-index: 0; border-radius: inherit;
-  background: linear-gradient(100deg, transparent 20%, rgba(255, 187, 252, 0.28) 45%, rgba(255, 255, 255, 0.16) 52%, transparent 75%);
+  background: linear-gradient(100deg, transparent 20%, rgba(223, 94, 176, 0.28) 45%, rgba(255, 255, 255, 0.16) 52%, transparent 75%);
   transform: translateX(-110%);
   transition: transform 0.9s var(--ease);
 }
 
 :where(html:not(.is-scrolling):not(.toque)) .botao--branco:hover::before { transform: none; }
-:where(html:not(.is-scrolling):not(.toque)) .botao--branco:hover { box-shadow: 0 10px 30px -12px rgba(171, 203, 249, 0.55); }
-:where(html:not(.is-scrolling):not(.toque)) .botao--grafite:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26), 0 10px 30px -14px rgba(255, 187, 252, 0.45); }
+:where(html:not(.is-scrolling):not(.toque)) .botao--branco:hover { box-shadow: 0 10px 30px -12px rgba(223, 94, 176, 0.55); }
+:where(html:not(.is-scrolling):not(.toque)) .botao--grafite:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26), 0 10px 30px -14px rgba(223, 94, 176, 0.45); }
 :where(html:not(.is-scrolling):not(.toque)) .botao--grafite:hover::before { transform: translateX(110%); }
 :where(html:not(.is-scrolling):not(.toque)) .botao:hover .botao__seta svg:first-child { transform: translateX(130%); }
 :where(html:not(.is-scrolling):not(.toque)) .botao:hover .botao__seta svg + svg { transform: none; }
 .botao:active, .botao.apertou { transform: scale(0.97); transition-duration: 0.12s; }
 .botao:focus-visible { outline: 2px solid var(--branco); outline-offset: 4px; }
 
-/* símbolo: o Z branco num círculo floresta (a cor da marca), no escuro e no claro */
+/* símbolo: o monograma "z." da logo, escuro num círculo claro (no claro, o contrário) */
 .simbolo {
   display: inline-grid; place-items: center;
   width: 26px; height: 26px; border-radius: 50%;
-  background: var(--floresta); color: var(--branco);
+  background: var(--branco); color: var(--pagina);
   flex: none;
 }
 .simbolo svg { width: 76%; height: 76%; }
-.simbolo--escuro { background: var(--floresta); color: var(--branco); }
+.simbolo--escuro { background: var(--pagina); color: var(--branco); }
 
 /* chip de categoria (hero) */
 .chip {

@@ -104,9 +104,9 @@ out[..., 2] *= (1 + 0.06 * frio)[:, None]
 copa = smoothstep(-2, 8, d)
 l = lum[..., None]
 luz = smoothstep(0.10, 0.42, lum)[..., None]  # quanto da folha pega luz
-alvo_luz = np.array([1.12, 0.92, 1.14])  # realce: rosa Zaniva (#ffbbfc), mais azul que o pêssego da demo
-alvo_meio = np.array([1.06, 0.74, 0.92])  # meio-tom: ameixa
-alvo_sombra = np.array([0.92, 0.74, 0.80])  # sombra: quase preto, frio
+alvo_luz = np.array([1.16, 0.86, 1.10])  # realce: o rosa da logo (#df5eb0), mais claro
+alvo_meio = np.array([1.10, 0.66, 0.92])  # meio-tom: magenta queimado
+alvo_sombra = np.array([0.90, 0.70, 0.86])  # sombra: ameixa quase preta (#3d1c3a)
 ganho = alvo_sombra * (1 - luz) + (alvo_meio * (1 - luz) + alvo_luz * luz) * luz
 # levanta os meios-tons (mais copas acesas, como no fim de tarde) sem estourar o branco
 levanta = np.power(np.clip(out, 0, 1), 0.86) * 1.1

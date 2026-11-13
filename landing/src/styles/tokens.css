@@ -1,27 +1,25 @@
-/* Zaniva: tokens (paleta dark da Zaniva + acentos floresta, pervinca, rosa e manteiga). Nenhuma cor, curva ou tamanho solto nas seções: tudo sai daqui. */
+/* Zaniva: tokens (cores da logo: fundo #090716, branco-lilás #f2effa, rosa #df5eb0). Nenhuma cor, curva ou tamanho solto nas seções: tudo sai daqui. */
 :root {
   /* página */
-  --pagina: #0f1011;          /* preto da página: o pé do hero termina nele */
-  --card: #17181a;            /* card grafite do "Por que" */
-  --card-2: #202124;          /* símbolo apagado no fundo do card */
+  --pagina: #090716;          /* preto da página: o pé do hero termina nele */
+  --card: #14121f;            /* card grafite do "Por que" */
+  --card-2: #1c1a29;          /* símbolo apagado no fundo do card */
   --fio: rgba(255, 255, 255, 0.08);
   --fio-forte: rgba(255, 255, 255, 0.14);
-  --branco: #ffffff;
-  --texto: #f4f4f2;
-  --texto-2: #a3a6aa;         /* subtítulo, parágrafos */
-  --texto-3: #7f8287;         /* legendas */
+  --branco: #f2effa;
+  --texto: #f2effa;
+  --texto-2: #b1adc0;         /* subtítulo, parágrafos */
+  --texto-3: #837f96;         /* legendas */
 
   /* céu do hero (medido da paisagem tratada: o alto da imagem continua nele) */
   --ceu-0: #10131c;
   --ceu-1: #161a25;
   --ceu-2: #1d202c;
 
-  /* acentos Zaniva, só como pontuação: rosa (luz da copa, brilhos), pervinca (ação principal), manteiga (estrela), floresta (marca) */
-  --rosa: #ffbbfc;
-  --rosa-claro: #fff0fe;
-  --pervinca: #abcbf9;
-  --pervinca-claro: #dce8fd;
-  --floresta: #00543d;
+  /* acentos tirados da logo: rosa (luz da copa, hover, estados ativos) e ameixa; manteiga só na estrela */
+  --rosa: #df5eb0;   /* o rosa de "AGÊNCIA DIGITAL" na logo */
+  --rosa-claro: #fbe3f2;
+  --ameixa: #3d1c3a;          /* o brilho do canto da logo */
   --estrela: #fce88b;
 
   /* interface do produto (clara) */
@@ -32,11 +30,11 @@
   --ui-tinta: #0a0b0c;
   --ui-texto-2: #5c5f63;
   --ui-texto-3: #9a9da1;
-  --ui-menu: #0f1011;         /* menu lateral escuro */
+  --ui-menu: #090716;         /* menu lateral escuro */
   --ui-menu-texto: #d6d6da;
   --ui-menu-texto-2: #7b7b83;
-  --ui-laranja: #6e98e0;      /* passo selecionado: pervinca forte (o pervinca puro some no branco) */
-  --ui-laranja-claro: #eef4fe;
+  --ui-laranja: #df5eb0;      /* passo selecionado: o rosa da logo */
+  --ui-laranja-claro: #fcebf6;
   --ui-rosa: #e5484d;         /* parar e avisar */
   --ui-verde: #00543d;        /* salvo, colega, execução ok */
   --ui-verde-claro: #e2eee9;

@@ -10,7 +10,7 @@ npm run build   # gera dist/
 ```
 
 - Seções em `src/sections/<nome>.html|.css`, movimento em `src/motion/`, tokens em `src/styles/tokens.css`.
-- Logo: `<symbol id="i-t">` em `src/sections/icones.html` (Z de fluxo, três nós) e `public/favicon.svg`.
+- Logo: a palavra "zaniva." (Inter 500, minúsculas, `.nav__nome`); monograma "z." em `<symbol id="i-t">` de `src/sections/icones.html` e em `public/favicon.svg`. Cores da logo em `src/styles/tokens.css`: fundo #090716, branco-lilás #f2effa, rosa #df5eb0.
 - Paisagem: `python3 fonte/camadas.py` regera `public/img/hero-*.webp` (cores da copa no bloco `alvo_*`).
 
 Ainda da demo (não publicar como fato da Zaniva): textos de "automação sem código", nota 4,9/1.200 avaliações,

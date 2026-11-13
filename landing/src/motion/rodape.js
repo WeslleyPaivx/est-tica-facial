@@ -11,7 +11,7 @@ export function rodape() {
     try {
       const b = texto.getExtentOfChar(3);
       pingo.setAttribute('cx', (b.x + b.width / 2).toFixed(1));
-      pingo.setAttribute('cy', (b.y + b.height * 0.2).toFixed(1));
+      pingo.setAttribute('cy', (b.y + b.height * 0.27).toFixed(1));
     } catch { /* sem layout ainda */ }
   };
   poe();
