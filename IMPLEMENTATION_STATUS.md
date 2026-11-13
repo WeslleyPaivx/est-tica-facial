@@ -2,6 +2,13 @@
 
 ## Fase 2 — CRM core · **em andamento**
 
+### Entrega 2.5 — Leads e oportunidades no funil Kanban (2026-11-13)
+
+- Migration `20261113000300_deals_pipelines.sql` (não destrutiva; aplicada na homologação; advisors sem achado novo): `pipelines`, `pipeline_stages`, `deals` (título, valor em centavos, origem, status aberta/ganha/perdida com motivo obrigatório na perda, próxima ação e data, responsável, contato, empresa) e `deal_events` (histórico imutável escrito só por trigger). FKs compostas impedem etapa/contato/empresa/funil de outra organização e etapa de outro funil; `organization_id` imutável; responsável precisa ser membro; limite de escrita e `request_id` antiduplicação; funil padrão "Vendas" (Novo lead, Qualificado, Proposta enviada, Negociação) criado para toda organização nova e para as existentes. Permissões: owner/admin leem, escrevem e excluem; member lê e escreve; limited só lê.
+- Telas: `/deals` com quadro Kanban (arrastar com mouse e toque via `@dnd-kit/core` 6.3.1; pelo teclado, seletor "Mover para" em cada cartão; atualização otimista com reversão se o servidor recusar; totais por etapa; filtros Abertas/Ganhas/Perdidas, "Somente minhas" e busca), `/deals/new`, `/deals/[id]` (edição, ganhar, perder com motivo, reabrir, excluir, histórico). Item "Funil" no menu.
+- Lead = oportunidade nas primeiras etapas (uma tabela só, sem duplicar regras). Edição das etapas fica para a Fase 3 (configuração universal), com testes próprios.
+- Testes: SQL 186/186 (+33), Vitest 74/74 (+17), Playwright 24/24 (rotas do funil exigem login), lint, typecheck, build, scan:bundle. Conferência visual com dados sintéticos (desktop 4 colunas, celular uma coluna com rolagem lateral do quadro, sem rolagem da página), arrasto com mouse e seletor pelo teclado.
+
 ### Publicação para testes (2026-11-13, a pedido do proprietário)
 
 - CRM em https://zaniva-crm.vercel.app (região gru1) e landing em https://zaniva-crm-site.vercel.app; ambos respondem 200, cabeçalhos de segurança e CSP presentes, sem erros de execução registrados. Detalhes em DEPLOYMENT.md.

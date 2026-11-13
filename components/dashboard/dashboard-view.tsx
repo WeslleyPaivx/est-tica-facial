@@ -47,7 +47,7 @@ function ago(iso: string) {
 
 // As áreas com que a Zaniva trabalha; só "Clientes e vendas" já existe no sistema.
 const MODULES = [
-  { name: "Clientes e vendas", detail: "Contatos e empresas", href: "/contacts" },
+  { name: "Clientes e vendas", detail: "Funil, contatos e empresas", href: "/deals" },
   { name: "Atendimento e chamados", detail: "Suporte ao cliente" },
   { name: "Pessoas e RH", detail: "Funcionários e equipe" },
   { name: "Estoque e gestão", detail: "Produtos e operação" },

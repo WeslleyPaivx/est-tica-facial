@@ -53,3 +53,5 @@ select tests.login('a_member');
 select tests.lives($$insert into public.contacts (organization_id, full_name) values (tests.id('org_a'), 'Outro Tenant')$$,
   'usuário de outra organização não é afetado');
 reset role;
+-- limpa o limite esgotado para os próximos arquivos de teste
+delete from private.rate_limit_hits where user_id = (select id from tests.users where alias = 'b_member');
