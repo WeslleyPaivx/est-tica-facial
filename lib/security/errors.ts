@@ -4,6 +4,9 @@ type DbError = { code?: string; message?: string } | null | undefined;
 const BY_MESSAGE: Array<[RegExp, string]> = [
   [/email not verified|verified session required/i, "Confirme seu e-mail antes de continuar."],
   [/rate limit/i, "Limite de criação atingido. Tente novamente mais tarde."],
+  [/too many requests/i, "Muitas ações em pouco tempo. Aguarde um minuto e tente de novo."],
+  [/contacts_org_email_uniq/, "Já existe um contato com este e-mail."],
+  [/companies_org_name_uniq/, "Já existe uma empresa com este nome."],
   [/already a member/i, "Este e-mail já pertence a um membro da organização."],
   [/at least one owner/i, "A organização precisa manter ao menos um proprietário."],
   [/cannot change own role/i, "Você não pode alterar o próprio papel."],

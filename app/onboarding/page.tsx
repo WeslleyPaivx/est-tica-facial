@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import AuthLayout from "../(auth)/layout";
 import { CreateOrgForm } from "@/components/organizations/create-org-form";
 import { Alert } from "@/design-system/components/feedback";
-import { Button } from "@/design-system/components/button";
+import { buttonClass } from "@/design-system/components/button";
 import { requireSession } from "@/server/session";
 import { acceptInvitationAction } from "@/server/actions/organizations";
 import { signOutAction } from "@/server/actions/auth";
 import { ROLE_LABEL, isRole } from "@/lib/security/permissions";
+import { SubmitButton } from "@/design-system/components/submit-button";
 
 export const metadata: Metadata = { title: "Organização" };
 
@@ -37,7 +38,7 @@ export default async function OnboardingPage({ searchParams }: { searchParams: P
                   </div>
                   <form action={acceptInvitationAction}>
                     <input type="hidden" name="invitationId" value={inv.id} />
-                    <Button type="submit" size="sm">Aceitar</Button>
+                    <SubmitButton className={buttonClass("primary", "sm")} pendingLabel="Aceitando…">Aceitar</SubmitButton>
                   </form>
                 </li>
               ))}
@@ -47,7 +48,7 @@ export default async function OnboardingPage({ searchParams }: { searchParams: P
         </div>
       )}
       <form action={signOutAction} className="mt-5 text-sm text-muted">
-        <button type="submit" className="hover:text-fg">Sair</button>
+        <SubmitButton className="hover:text-fg" pendingLabel="Saindo…">Sair</SubmitButton>
       </form>
     </AuthLayout>
   );

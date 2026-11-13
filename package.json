@@ -12,6 +12,7 @@
     "test:rls": "bash scripts/test-rls.sh",
     "test:e2e": "playwright test",
     "scan:secrets": "node scripts/scan-secrets.mjs",
+    "scan:bundle": "node scripts/scan-bundle.mjs",
     "prepare": "git config core.hooksPath .githooks || true"
   },
   "dependencies": {

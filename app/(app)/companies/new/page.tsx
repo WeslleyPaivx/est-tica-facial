@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { PageHeader } from "@/design-system/components/layout";
@@ -12,7 +13,7 @@ export default async function NewCompanyPage() {
   return (
     <div className="flex flex-col gap-8">
       <PageHeader title="Nova empresa" />
-      <CompanyForm values={{ name: "", email: null, phone: null, website: null, notes: null }} readOnly={false} />
+      <CompanyForm values={{ request_id: randomUUID(), name: "", email: null, phone: null, website: null, notes: null }} readOnly={false} />
     </div>
   );
 }

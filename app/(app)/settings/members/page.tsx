@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { PageHeader, Section } from "@/design-system/components/layout";
 import { Badge, EmptyState } from "@/design-system/components/feedback";
-import { Button } from "@/design-system/components/button";
+import { buttonClass } from "@/design-system/components/button";
 import { Table, Td, Th } from "@/design-system/components/table";
 import { InviteForm, MemberRoleForm, RemoveMemberForm } from "@/components/organizations/org-forms";
 import { can, requireOrgSession } from "@/server/session";
 import { revokeInvitationAction } from "@/server/actions/organizations";
 import { ROLE_LABEL, assignableRoles, canManageMember, isRole, type Role } from "@/lib/security/permissions";
+import { SubmitButton } from "@/design-system/components/submit-button";
 
 export const metadata: Metadata = { title: "Membros" };
 
@@ -95,7 +96,7 @@ export default async function MembersPage() {
                   </span>
                   <form action={revokeInvitationAction}>
                     <input type="hidden" name="invitationId" value={inv.id} />
-                    <Button type="submit" size="sm" variant="secondary">Revogar</Button>
+                    <SubmitButton className={buttonClass("secondary", "sm")} pendingLabel="Revogando…">Revogar</SubmitButton>
                   </form>
                 </li>
               ))}

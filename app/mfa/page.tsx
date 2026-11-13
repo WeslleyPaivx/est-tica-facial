@@ -6,6 +6,7 @@ import { EnrollFactor, VerifyFactor } from "@/components/mfa/mfa-forms";
 import { requireSession } from "@/server/session";
 import { requiresMfa } from "@/lib/security/permissions";
 import { signOutAction } from "@/server/actions/auth";
+import { SubmitButton } from "@/design-system/components/submit-button";
 
 export const metadata: Metadata = { title: "Verificação em duas etapas" };
 
@@ -30,7 +31,7 @@ export default async function MfaPage() {
       <div className="mt-5 flex justify-between text-sm text-muted">
         {!mandatory && !factor ? <Link href="/" className="hover:text-fg">Agora não</Link> : <span />}
         <form action={signOutAction}>
-          <button type="submit" className="hover:text-fg">Sair</button>
+          <SubmitButton className="hover:text-fg" pendingLabel="Saindo…">Sair</SubmitButton>
         </form>
       </div>
     </AuthLayout>

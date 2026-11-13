@@ -9,9 +9,11 @@ import { deleteCompanyAction, deleteContactAction, saveCompanyAction, saveContac
 
 type Option = { id: string; label: string };
 
-export type CompanyValues = { id?: string; name: string; email: string | null; phone: string | null; website: string | null; notes: string | null };
+// request_id: gerado no servidor a cada tela de criação; reenvios do mesmo formulário não duplicam o registro.
+export type CompanyValues = { id?: string; request_id?: string; name: string; email: string | null; phone: string | null; website: string | null; notes: string | null };
 export type ContactValues = {
   id?: string;
+  request_id?: string;
   full_name: string;
   email: string | null;
   phone: string | null;
@@ -34,6 +36,7 @@ export function CompanyForm({ values, readOnly }: { values: CompanyValues; readO
   return (
     <form action={action} className="flex max-w-2xl flex-col gap-5">
       {values.id ? <input type="hidden" name="id" value={values.id} /> : null}
+      {values.request_id ? <input type="hidden" name="request_id" value={values.request_id} /> : null}
       <fieldset disabled={readOnly} className="flex flex-col gap-5">
         <Field label="Nome" htmlFor="name"><Input id="name" name="name" required maxLength={200} defaultValue={values.name} /></Field>
         <div className="grid gap-5 sm:grid-cols-2">
@@ -54,6 +57,7 @@ export function ContactForm({ values, companies, owners, readOnly }: { values: C
   return (
     <form action={action} className="flex max-w-2xl flex-col gap-5">
       {values.id ? <input type="hidden" name="id" value={values.id} /> : null}
+      {values.request_id ? <input type="hidden" name="request_id" value={values.request_id} /> : null}
       <fieldset disabled={readOnly} className="flex flex-col gap-5">
         <Field label="Nome" htmlFor="full_name"><Input id="full_name" name="full_name" required maxLength={200} defaultValue={values.full_name} /></Field>
         <div className="grid gap-5 sm:grid-cols-2">

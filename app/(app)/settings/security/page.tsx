@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader, Section } from "@/design-system/components/layout";
 import { Badge } from "@/design-system/components/feedback";
-import { Button, buttonClass } from "@/design-system/components/button";
+import { buttonClass } from "@/design-system/components/button";
 import { requireOrgSession } from "@/server/session";
 import { signOutAction } from "@/server/actions/auth";
+import { SubmitButton } from "@/design-system/components/submit-button";
 
 export const metadata: Metadata = { title: "Segurança" };
 
@@ -27,7 +28,7 @@ export default async function SecurityPage() {
       <Section title="Sessões" description="Encerre o acesso em todos os dispositivos, inclusive este.">
         <form action={signOutAction}>
           <input type="hidden" name="scope" value="global" />
-          <Button type="submit" variant="danger">Encerrar todas as sessões</Button>
+          <SubmitButton className={buttonClass("danger")} pendingLabel="Encerrando…">Encerrar todas as sessões</SubmitButton>
         </form>
       </Section>
     </div>

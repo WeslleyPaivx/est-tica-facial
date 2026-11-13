@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { PageHeader } from "@/design-system/components/layout";
@@ -15,7 +16,7 @@ export default async function NewContactPage() {
     <div className="flex flex-col gap-8">
       <PageHeader title="Novo contato" />
       <ContactForm
-        values={{ full_name: "", email: null, phone: null, company_id: null, owner_id: s.user.id, notes: null }}
+        values={{ request_id: randomUUID(), full_name: "", email: null, phone: null, company_id: null, owner_id: s.user.id, notes: null }}
         {...options}
         readOnly={false}
       />

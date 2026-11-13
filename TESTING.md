@@ -30,3 +30,7 @@ Playwright (Chromium desktop e Pixel 7) contra `next start` com env placeholder 
 ## Segredos — `pnpm scan:secrets [-- --history]`
 
 Também roda no pre-commit (`.githooks/pre-commit`) e na CI com `--history`.
+
+## Bundle do navegador — `pnpm scan:bundle` (depois de `pnpm build`)
+
+Varre `.next/static` (tudo que o navegador baixa): padrões de chaves conhecidas (JWT só passa se for `anon`) e o **valor** de toda variável de ambiente do servidor presente no build. Roda na CI logo após o build. Testes da própria varredura em `tests/security/bundle-scan.test.ts`.

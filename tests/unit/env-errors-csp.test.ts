@@ -26,6 +26,15 @@ describe("erros seguros", () => {
   it("mapeia RLS/permissão", () => expect(safeDbMessage({ code: "42501", message: "permission denied" })).toMatch(/permissão/));
   it("mapeia regra de último owner", () =>
     expect(safeDbMessage({ code: "P0001", message: "organization must keep at least one owner" })).toMatch(/proprietário/));
+  it("mapeia limite de escrita por minuto", () =>
+    expect(safeDbMessage({ code: "P0001", message: "too many requests" })).toMatch(/Aguarde um minuto/));
+  it("explica duplicado de contato e de empresa sem expor o nome do índice", () => {
+    const contato = safeDbMessage({ code: "23505", message: 'duplicate key value violates unique constraint "contacts_org_email_uniq"' });
+    const empresa = safeDbMessage({ code: "23505", message: 'duplicate key value violates unique constraint "companies_org_name_uniq"' });
+    expect(contato).toBe("Já existe um contato com este e-mail.");
+    expect(empresa).toBe("Já existe uma empresa com este nome.");
+    expect(contato + empresa).not.toMatch(/uniq|constraint/);
+  });
 });
 
 describe("CSP", () => {
