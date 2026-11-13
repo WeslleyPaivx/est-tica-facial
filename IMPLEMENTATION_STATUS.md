@@ -2,6 +2,14 @@
 
 ## Fase 2 — CRM core · **em andamento**
 
+### Entrega 2.3 — Painel inicial em bento (2026-11-13)
+
+- Visão geral refeita como bento de 9 blocos (4 colunas a partir de 1024 px de largura do painel, 2 a partir de 640 px, 1 abaixo; container queries), nas cores e tipografia do design system, claro e escuro: saudação com total de contatos e cadastros por dia (30 dias), equipe por papel e convites, progresso de configuração (meia-lua), crescimento acumulado (contatos ou empresas; 7D/30D/12M, cursor), contatos por responsável, qualidade do cadastro, módulos, cadastros recentes e auditoria.
+- **Só números reais**: `public.dashboard_summary(p_org)` (migration `20261113000200`, SECURITY INVOKER, RLS valendo; aplicada na homologação, advisors sem achado novo). Áreas que ainda não existem (atendimento, RH, estoque, equipamentos, assinaturas) aparecem como "Em breve", sem números.
+- Gráficos com uma série cada, em floresta (validação de paleta: os acentos da marca não se distinguem como série categórica; floresta passa contraste ≥ 3:1 nos dois temas). Movimento curto (≤ 800 ms) e desligado com "reduzir movimento".
+- `components/dashboard/dashboard-view.tsx` só apresenta (props); `server/dashboard.ts` busca e monta o DTO; `app/(app)/page.tsx` liga os dois.
+- Testes: SQL 153/153 (+8: tenant alheio recebe zero, anônimo bloqueado, série soma o total), Vitest 57/57, Playwright 22/22, lint, typecheck, build, scan:bundle. Conferência visual com dados sintéticos em 1456/900/390 px, claro e escuro, sem rolagem lateral nem erros no console.
+
 ### Entrega 2.2 — Anti-duplicação, cliques repetidos e vazamento (2026-11-13)
 
 - Migration `20261113000100_anti_abuse_dedup.sql` (não destrutiva; falha de propósito se já houver duplicados; **aplicada na homologação em 2026-11-13** com autorização do proprietário, após checar 0 duplicados): e-mail de contato único por organização (sem diferenciar maiúsculas); nome de empresa único por organização (ignorando espaços nas pontas); `request_id` único por organização em contatos e empresas (o mesmo formulário reenviado não cria segundo registro); limite de 120 comandos de escrita por minuto por usuário em contatos/empresas, contado no banco por `auth.uid()` (`private.rate_limit_hits`, sem acesso do app).
