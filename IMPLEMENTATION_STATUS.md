@@ -2,6 +2,12 @@
 
 ## Fase 2 — CRM core · **em andamento**
 
+### Publicação para testes (2026-11-13, a pedido do proprietário)
+
+- CRM em https://zaniva-crm.vercel.app (região gru1) e landing em https://zaniva-crm-site.vercel.app; ambos respondem 200, cabeçalhos de segurança e CSP presentes, sem erros de execução registrados. Detalhes em DEPLOYMENT.md.
+- Modelos de e-mail com a marca em `supabase/templates/` (confirmação, senha, troca de e-mail, link de acesso), com link `token_hash` direto (abre em qualquer aparelho).
+- Gate de auditoria continua aberto (PRODUCTION BLOCKED para dados reais): só dados sintéticos.
+
 ### Entrega 2.4 — Cores e logo da Zaniva no CRM; mostrar senha (2026-11-13)
 
 - Tokens do design system trocados pelas cores da logo (decisão do proprietário, registrada no CLAUDE.md): fundo #090716 / #F7F6FA, texto #F2EFFA / #090716, rosa #DF5EB0 como ação principal, `brand` (#B8338A claro / #E77BC2 escuro) para gráficos e destaques, ameixa como segundo acento. Tokens renomeados: `forest` → `brand`, `butter` → `plum`.
