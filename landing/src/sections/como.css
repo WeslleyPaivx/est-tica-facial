@@ -1,0 +1,94 @@
+.como { padding: var(--s-folga) var(--s-margem) 0; display: flex; flex-direction: column; align-items: center; }
+.como__passos {
+  width: 100%; max-width: var(--s-largura);
+  margin-top: var(--s-titulo-conteudo);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(20 * var(--su)); align-items: start;
+}
+/* escada: o passo do meio desce (os de fora ficam alinhados em cima) */
+.passo--meio { margin-top: calc(64 * var(--su)); }
+.passo {
+  position: relative;
+  padding: calc(16 * var(--su)) calc(16 * var(--su)) calc(30 * var(--su));
+  border-radius: var(--r-card); background: var(--card);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+  transition: box-shadow 0.6s var(--ease), translate 1.2s var(--ease), opacity 1s var(--ease);
+}
+:where(html:not(.is-scrolling):not(.toque)) .passo:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.09); }
+.passo__ilustra { position: relative; aspect-ratio: 340 / 236; border-radius: var(--r-ilustra); background: #efeff0; overflow: hidden; }
+.passo__n {
+  display: inline-grid; place-items: center;
+  width: calc(30 * var(--su)); height: calc(30 * var(--su)); margin: calc(28 * var(--su)) calc(14 * var(--su)) 0;
+  border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  font-size: calc(13 * var(--su)); font-weight: 500; font-variant-numeric: tabular-nums; color: var(--texto-2);
+}
+.passo__h3 { margin: calc(16 * var(--su)) calc(14 * var(--su)) 0; font-size: calc(23 * var(--su)); font-weight: 500; letter-spacing: -0.028em; line-height: 1.2; }
+.passo__p { margin: calc(10 * var(--su)) calc(14 * var(--su)) 0; font-size: calc(16 * var(--su)); line-height: 1.55; letter-spacing: -0.01em; color: var(--texto-2); }
+
+/* mini ilustrações (desenhadas em 340 × 236, reduzidas pelo --escala) */
+.mini { --escala: 1; position: absolute; left: 0; top: 0; width: 340px; height: 236px; transform: scale(var(--escala)); transform-origin: 0 0; font-family: var(--sans); color: #141416; }
+.mini__fios { position: absolute; inset: 0; width: 340px; height: 236px; overflow: visible; }
+.mini__fios path { fill: none; stroke: #d4d4d9; stroke-width: 2; }
+.mini__fios path[data-fio-passo] { stroke-dasharray: 140; stroke-dashoffset: 0; transition: stroke 0.4s; }
+.mini__fios path.aceso { stroke: var(--ui-laranja); }
+.mini__app, .mini__hub {
+  position: absolute; display: grid; place-items: center;
+  width: 56px; height: 56px; border-radius: 15px; background: #fafafa;
+  box-shadow: 0 0 0 1px #e6e6e8, 0 8px 16px -12px rgba(20, 20, 30, 0.3);
+}
+.mini__app svg { width: 24px; height: 24px; }
+.mini__hub { width: 60px; height: 60px; border-radius: 16px; background: #111114; color: #fff; box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.5); }
+.mini__hub svg { width: 34px; height: 34px; }
+.mini__chave {
+  position: absolute; display: inline-flex; align-items: center; gap: 8px;
+  height: 32px; padding: 0 12px 0 4px; border-radius: 999px; background: #fafafa;
+  box-shadow: 0 0 0 1px #e2e2e6; font-size: 13px; font-weight: 500; color: #55555c;
+  transition: background 0.5s var(--ease), color 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.mini__chave i { position: relative; width: 38px; height: 24px; border-radius: 999px; background: #dcdce1; transition: background 0.5s var(--ease); }
+.mini__chave i::after { content: ''; position: absolute; left: 3px; top: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); transition: transform 0.5s var(--ease); }
+.mini__chave.ligada { color: #00432f; box-shadow: 0 0 0 1px #bcd8cc; background: #f1f7f4; }
+.mini__chave.ligada i { background: var(--ui-verde); }
+.mini__chave.ligada i::after { transform: translateX(14px); }
+
+.bloco--mini { width: 128px; height: 48px; padding: 0 14px; gap: 10px; border-radius: 13px; }
+.bloco--mini i { width: 14px; height: 14px; }
+.bloco--mini b { height: 9px; }
+.bloco--fantasma { background: transparent; box-shadow: none; border: 1.5px dashed #c6c6cc; transition: opacity 0.4s var(--ease); }
+.bloco--arrasta { transition: left 1.2s var(--ease-troca), top 1.2s var(--ease-troca), box-shadow 0.5s var(--ease), transform 0.5s var(--ease); }
+.bloco--arrasta.pega { transform: rotate(-3deg) scale(1.04); box-shadow: 0 0 0 1.5px #3f8a70, 0 18px 30px -16px rgba(20, 20, 30, 0.45); }
+.mini__fio-novo { stroke-dasharray: 26; stroke-dashoffset: 26; transition: stroke-dashoffset 0.6s var(--ease); }
+.mini__fio-novo.desenhado { stroke-dashoffset: 0; }
+.colega--mini { transition: left 1.2s var(--ease-troca), top 1.2s var(--ease-troca); }
+.colega--mini > img { width: 34px; height: 34px; margin-top: 14px; box-shadow: 0 0 0 2.5px #fff, 0 6px 14px -6px rgba(0, 0, 0, 0.35); }
+
+.mini__lista { position: absolute; left: 22px; right: 22px; top: 22px; display: grid; gap: 8px; }
+.mini__lista li {
+  display: flex; align-items: center; gap: 10px; height: 42px; padding: 0 10px 0 9px;
+  border-radius: 12px; background: #fafafa; box-shadow: 0 0 0 1px #e8e8ea;
+  font-size: 13px; color: var(--ui-texto-3);
+  transition: box-shadow 0.5s var(--ease), background 0.5s var(--ease);
+}
+.mini__lista li i { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; flex: none; transition: background 0.4s, color 0.4s; }
+.mini__lista li i svg { width: 14px; height: 14px; }
+.mini__lista li i.ok { background: var(--ui-verde-claro); color: var(--ui-verde); }
+.mini__lista li i.nao { background: #fde8e8; color: var(--ui-rosa); }
+.mini__lista li b { height: 9px; border-radius: 5px; background: #e4e4e7; }
+.mini__lista li span { margin-left: auto; font-variant-numeric: tabular-nums; }
+.mini__lista li.erro { box-shadow: 0 0 0 1px #f6c9c9; background: #fff8f8; }
+.mini__refaz { padding: 5px 10px; border-radius: 999px; background: #141416; color: #fff !important; font-weight: 500; font-size: 12px; transition: transform 0.2s var(--ease); }
+.mini__refaz.aperta { transform: scale(0.9); }
+.mini__lista li.nova { animation: entra-linha 0.7s var(--ease); }
+@keyframes entra-linha { from { opacity: 0; transform: translateY(-12px); } }
+
+/* no celular os passos viram um trilho de lado (rolagem comum, com encaixe), um card por gesto */
+@media (max-width: 760px) {
+  .como__passos {
+    display: flex; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory; scroll-padding: 0 20px;
+    width: calc(100% + 40px); max-width: none; margin-left: -20px; margin-right: -20px; padding: 0 20px 4px;
+    scrollbar-width: none;
+  }
+  .como__passos::-webkit-scrollbar { display: none; }
+  .passo { flex: 0 0 84%; scroll-snap-align: start; }
+  .passo--meio { margin-top: 0; }
+}

@@ -1,0 +1,19 @@
+.logos { display: flex; align-items: center; gap: calc(var(--hu) * 62); }
+.logos__item {
+  display: block; height: calc(var(--hu) * 30); min-height: 22px;
+  color: rgba(255, 255, 255, 0.88); border-radius: 6px;
+  transition: color 0.45s var(--ease), opacity 0.45s var(--ease), transform var(--t-micro) var(--ease);
+}
+.logos__item svg { height: 100%; width: auto; overflow: visible; }
+:where(html:not(.is-scrolling):not(.toque)) .logos:has(.logos__item:hover) .logos__item { opacity: 0.45; }
+:where(html:not(.is-scrolling):not(.toque)) .logos .logos__item:hover { opacity: 1; color: #fff; transform: translateY(-1px); }
+.logos__item:active { transform: scale(0.96); }
+.logos__item:focus-visible { outline-offset: 6px; }
+
+/* no celular, a faixa rola sozinha (a lista é duplicada pelo logos.js) */
+@media (max-width: 760px) {
+  .logos-faixa { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+  .logos { width: max-content; gap: 44px; padding-right: 44px; animation: faixa 26s linear infinite; }
+  .logos__item { height: 24px; }
+  @keyframes faixa { to { transform: translateX(-50%); } }
+}

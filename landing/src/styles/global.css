@@ -1,0 +1,107 @@
+/* peças que se repetem: botões, chip, símbolo */
+
+/* hover só com mouse de verdade e com a página parada: rolando com o cursor parado nada acende (.is-scrolling) e na
+   tela de toque o hover fica desligado de vez (.toque, posto no <head>) */
+
+.botao {
+  --h: 52px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: var(--h);
+  padding: 0 28px;
+  border-radius: var(--r-pilula);
+  font-size: 15.5px;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform var(--t-micro) var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s var(--ease), color 0.4s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.botao--p { --h: 40px; padding: 0 18px; font-size: 14px; }
+.botao__txt { position: relative; z-index: 1; }
+.botao__seta { position: relative; z-index: 1; width: 16px; height: 16px; overflow: hidden; flex: none; }
+.botao__seta svg { width: 16px; height: 16px; transition: transform 0.55s var(--ease); }
+.botao__seta svg + svg { position: absolute; inset: 0; transform: translateX(-130%); }
+
+/* principal (pervinca Zaniva, texto escuro): um pervinca mais claro sobe por dentro */
+.botao--branco { background: var(--pervinca); color: #0a0b0c; }
+.botao--branco::before {
+  content: ''; position: absolute; inset: 0; z-index: 0; border-radius: inherit;
+  background: radial-gradient(120% 140% at 50% 120%, var(--rosa-claro) 0%, var(--pervinca-claro) 46%, var(--pervinca) 82%);
+  transform: translateY(102%);
+  transition: transform 0.6s var(--ease);
+}
+/* grafite: a borda acende e um brilho rosa atravessa */
+.botao--grafite {
+  background: #16161a;
+  color: var(--branco);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+.botao--grafite::before {
+  content: ''; position: absolute; inset: -1px; z-index: 0; border-radius: inherit;
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 187, 252, 0.28) 45%, rgba(255, 255, 255, 0.16) 52%, transparent 75%);
+  transform: translateX(-110%);
+  transition: transform 0.9s var(--ease);
+}
+
+:where(html:not(.is-scrolling):not(.toque)) .botao--branco:hover::before { transform: none; }
+:where(html:not(.is-scrolling):not(.toque)) .botao--branco:hover { box-shadow: 0 10px 30px -12px rgba(171, 203, 249, 0.55); }
+:where(html:not(.is-scrolling):not(.toque)) .botao--grafite:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26), 0 10px 30px -14px rgba(255, 187, 252, 0.45); }
+:where(html:not(.is-scrolling):not(.toque)) .botao--grafite:hover::before { transform: translateX(110%); }
+:where(html:not(.is-scrolling):not(.toque)) .botao:hover .botao__seta svg:first-child { transform: translateX(130%); }
+:where(html:not(.is-scrolling):not(.toque)) .botao:hover .botao__seta svg + svg { transform: none; }
+.botao:active, .botao.apertou { transform: scale(0.97); transition-duration: 0.12s; }
+.botao:focus-visible { outline: 2px solid var(--branco); outline-offset: 4px; }
+
+/* símbolo: o Z branco num círculo floresta (a cor da marca), no escuro e no claro */
+.simbolo {
+  display: inline-grid; place-items: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--floresta); color: var(--branco);
+  flex: none;
+}
+.simbolo svg { width: 76%; height: 76%; }
+.simbolo--escuro { background: var(--floresta); color: var(--branco); }
+
+/* chip de categoria (hero) */
+.chip {
+  display: inline-flex; align-items: center; gap: 10px;
+  height: 36px; padding: 0 16px 0 18px;
+  border-radius: var(--r-pilula);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px; letter-spacing: -0.01em;
+  transition: box-shadow 0.5s var(--ease), background 0.5s var(--ease), transform var(--t-micro) var(--ease);
+}
+.chip svg { width: 14px; height: 14px; opacity: 0.7; transition: transform 0.5s var(--ease), opacity 0.5s var(--ease); }
+/* a área de toque passa da pílula (44 px de altura) sem mudar o desenho */
+.chip { position: relative; }
+.chip::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 44px; margin-top: -22px; }
+:where(html:not(.is-scrolling):not(.toque)) .chip:hover { background: rgba(255, 255, 255, 0.075); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22); }
+:where(html:not(.is-scrolling):not(.toque)) .chip:hover svg { transform: translateX(3px); opacity: 1; }
+.chip:active, .chip.apertou { transform: scale(0.97); }
+
+/* chip claro (título de seção): símbolo num círculo preto + texto */
+.chip-claro {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 34px; padding: 0 15px 0 4px;
+  border-radius: var(--r-pilula);
+  background: var(--branco); color: #111114;
+  font-size: 14px; font-weight: 500; letter-spacing: -0.012em;
+}
+.chip-claro .simbolo { width: 26px; height: 26px; }
+
+/* cabeça de seção: chip claro + título serifado de duas linhas, centralizados */
+.cabeca { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.cabeca__titulo { margin-top: calc(26 * var(--su)); font-size: var(--s-h2); line-height: 1.04; }
+.cabeca__sub { margin-top: calc(18 * var(--su)); max-width: calc(560 * var(--su)); font-size: var(--s-corpo); line-height: 1.55; letter-spacing: -0.012em; color: var(--texto-2); text-wrap: balance; }
+@media (max-width: 760px) { .cabeca__sub { max-width: none; } }

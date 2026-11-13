@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Zaniva · sua operação no piloto automático</title>
+    <meta name="description" content="Automação de processos sem código para empresas: monte fluxos, conecte as ferramentas que a equipe já usa e acompanhe cada execução em tempo real." />
+    <meta name="theme-color" content="#10131c" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- no dev do Vite o CSS entra pelo JS: o body espera escondido até src/estilo.js (ou 6 s, se algo falhar), e nada
+         transiciona do estilo padrão do navegador para o da página -->
+    <style>html { background: #10131c; } html:not(.com-estilo) body { visibility: hidden; animation: mostra 0s 6s forwards; } @keyframes mostra { to { visibility: visible; } } html:not(.assentou) *, html:not(.assentou) ::before, html:not(.assentou) ::after { transition: none !important; }</style>
+    <noscript><style>body { visibility: visible !important; animation: none; }</style></noscript>
+    <link rel="preload" as="image" href="/img/hero-fundo.webp" media="(min-width: 761px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/img/hero-copa.webp" media="(min-width: 761px)" />
+    <link rel="preload" as="image" href="/img/hero-fundo-1100.webp" media="(max-width: 760px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/img/hero-copa-1100.webp" media="(max-width: 760px)" />
+    <script>
+      document.documentElement.classList.add('js');
+      if (matchMedia('(hover: none)').matches) document.documentElement.classList.add('toque');
+    </script>
+  </head>
+  <body>
+    <!-- @secao icones -->
+    <!-- @secao nav -->
+    <main>
+      <!-- @secao hero -->
+      <!-- @secao porque -->
+      <!-- @secao como -->
+      <!-- @secao integracoes -->
+      <!-- @secao planos -->
+      <!-- @secao clientes -->
+      <!-- @secao fecho -->
+    </main>
+    <!-- @secao rodape -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+/* Hero: escala de cena. --hu é 1 px de design numa tela de 1440 × 880 e acompanha a tela pelo lado que limita.
+   A paisagem ocupa a largura inteira; a posição dela sai da crista da copa (o fundo do vale fica a 373 de design
+   abaixo do topo do painel), então copa e painel guardam a mesma relação em qualquer largura. */
+.hero {
+  --hu: min(calc(100vw / 1440), calc(100svh / 880));
+  --palco-h: calc(100vw * 941 / 1672);
+  --painel-topo: calc(var(--hu) * 532);
+  --crista: calc(var(--painel-topo) + var(--hu) * 373);
+  --palco-topo: calc(var(--crista) - var(--palco-h) * 0.6854);
+  position: relative;
+  height: calc(var(--palco-topo) + var(--palco-h));
+  overflow: clip;
+  background: var(--ceu-0);
+  isolation: isolate;
+}
+.hero__camada { position: absolute; inset: 0; will-change: transform; }
+.hero__fundo { z-index: 1; background: linear-gradient(180deg, var(--ceu-0) 0%, var(--ceu-1) 18%, #151927 var(--palco-topo), #151927 100%); }
+.hero__palco { position: absolute; left: 0; width: 100%; top: var(--palco-topo); height: var(--palco-h); }
+.hero__paisagem {
+  width: 100%; height: 100%; object-fit: cover;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 16%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 16%);
+}
+.hero__painel { z-index: 2; pointer-events: none; }
+.hero__painel-sobe {
+  position: absolute; left: 50%; top: var(--painel-topo);
+  width: calc(var(--hu) * 1040);
+  margin-left: calc(var(--hu) * -520);
+  pointer-events: auto;
+}
+/* ao carregar, o painel nasce de trás da copa: começa 330 abaixo (só a ponta aparece no vale) e sobe */
+html.js .hero__painel-sobe { translate: 0 calc(var(--hu) * 330); opacity: 0; }
+html.js .hero.entrou .hero__painel-sobe {
+  translate: 0 0; opacity: 1;
+  transition: translate 2.1s var(--ease) 0.5s, opacity 0.35s linear 0.5s;
+}
+.hero__copa { z-index: 4; pointer-events: none; }
+.hero__copa-img { position: absolute; left: 0; top: 54.84%; width: 100%; height: 45.16%; }
+/* o pé do hero sempre termina no preto da página, mesmo com a copa andando */
+.hero::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -1px; z-index: 5; pointer-events: none;
+  height: calc(var(--hu) * 120);
+  background: linear-gradient(180deg, rgba(15, 16, 17, 0) 0%, rgba(15, 16, 17, 0.6) 50%, var(--pagina) 100%);
+}
+
+/* texto */
+.hero__texto {
+  position: relative; z-index: 3; will-change: transform;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding-top: calc(var(--hu) * 124);
+}
+.hero__texto .chip { margin-bottom: calc(var(--hu) * 30); }
+.hero__titulo {
+  font-size: clamp(40px, calc(var(--hu) * 60), 76px);
+  text-wrap: balance;
+}
+.hero__sub {
+  max-width: calc(var(--hu) * 610);
+  margin-top: calc(var(--hu) * 22);
+  font-size: clamp(15px, calc(var(--hu) * 17.5), 19px);
+  line-height: 1.5; letter-spacing: -0.012em;
+  color: var(--texto-2);
+  text-wrap: balance;
+}
+.hero__acoes { display: flex; align-items: center; gap: calc(var(--hu) * 26); margin-top: calc(var(--hu) * 32); }
+
+.nota { display: grid; justify-items: start; gap: 2px; padding: 4px 6px; border-radius: 10px; text-align: left; transition: transform var(--t-micro) var(--ease); }
+.nota__linha { display: flex; align-items: center; gap: 7px; }
+.nota__estrelas { display: grid; place-items: center; width: 22px; height: 22px; color: var(--estrela); }
+.nota__estrelas svg { width: 22px; height: 22px; transition: transform 0.7s var(--ease), filter 0.5s; }
+.nota strong { font-size: 19px; font-weight: 500; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.nota__fonte { font-size: 13px; color: var(--texto-3); letter-spacing: -0.005em; transition: color 0.4s var(--ease); }
+:where(html:not(.is-scrolling):not(.toque)) .nota:hover .nota__estrelas svg { transform: rotate(72deg) scale(1.12); filter: drop-shadow(0 0 8px rgba(252, 232, 139, 0.55)); }
+:where(html:not(.is-scrolling):not(.toque)) .nota:hover .nota__fonte { color: var(--texto-2); }
+.nota:active { transform: scale(0.97); }
+
+/* logos no pé do hero */
+.hero__logos {
+  position: absolute; z-index: 6; left: calc(var(--hu) * 40); right: calc(var(--hu) * 40);
+  bottom: calc(var(--hu) * 60);
+  display: flex; align-items: center; justify-content: space-between; gap: 40px;
+}
+.hero__logos-frase { font-size: clamp(14px, calc(var(--hu) * 15.5), 17px); line-height: 1.3; letter-spacing: -0.015em; color: rgba(255, 255, 255, 0.92); }
+
+@media (max-width: 760px) {
+  .hero {
+    --hu: calc(100vw / 390);
+    --palco-h: calc(var(--hu) * 640);
+    --painel-topo: calc(var(--hu) * 574);
+    --crista: calc(var(--painel-topo) + var(--hu) * 190);
+    --palco-topo: calc(var(--crista) - var(--palco-h) * 0.6854);
+  }
+  .hero__palco { left: 50%; width: calc(var(--palco-h) * 1672 / 941); margin-left: calc(var(--palco-h) * -836 / 941); }
+  .hero__texto { padding: calc(var(--hu) * 104) 20px 0; }
+  .hero__texto .chip { margin-bottom: 22px; font-size: 13px; height: 32px; }
+  .hero__titulo { font-size: calc(var(--hu) * 40); }
+  .hero__sub { max-width: none; font-size: 15px; margin-top: 16px; }
+  .hero__acoes { flex-direction: column; gap: 12px; margin-top: 24px; }
+  .nota { justify-items: center; text-align: center; }
+  /* no celular a janela vem sem o menu lateral (968 de design, painel.css): a moldura começa no respiro da esquerda,
+     o fluxo cabe inteiro na largura e o painel de propriedades sai pela borda da direita */
+  .hero__painel-sobe { left: 0; width: calc(var(--hu) * 528); margin-left: calc(var(--hu) * 20); }
+  .hero__logos { left: 0; right: 0; bottom: calc(var(--hu) * 34); flex-direction: column; align-items: stretch; gap: 18px; }
+  .hero__logos-frase { text-align: center; font-size: 14px; }
+}

@@ -1,0 +1,47 @@
+<section class="hero" id="topo" data-hero>
+  <!-- camada 1: céu (CSS) e a paisagem inteira; anda a meia velocidade -->
+  <div class="hero__camada hero__fundo" data-camada="fundo" aria-hidden="true">
+    <div class="hero__palco">
+      <img class="hero__paisagem" src="/img/hero-fundo.webp" srcset="/img/hero-fundo-1100.webp 1100w, /img/hero-fundo.webp 1672w" sizes="(max-width: 760px) 1100px, 100vw" alt="" width="1672" height="941" fetchpriority="high" decoding="async" />
+    </div>
+  </div>
+
+  <div class="hero__texto" data-camada="texto">
+    <a class="chip" href="#por-que" data-entra style="--atraso: 0.25s">Automação sem código para empresas<svg aria-hidden="true"><use href="#i-seta-dir"/></svg></a>
+    <h1 class="hero__titulo serifa" data-titulo style="--atraso: 0.35s">
+      <span class="linha" style="--i: 0"><span>Toda a sua operação</span></span>
+      <span class="linha" style="--i: 1"><span>no piloto automático</span></span>
+    </h1>
+    <p class="hero__sub" data-entra style="--atraso: 0.7s">Monte fluxos sem código, conecte as ferramentas que a equipe já usa e acompanhe cada etapa em tempo real, com a IA apontando o que melhorar.</p>
+    <div class="hero__acoes" data-entra style="--atraso: 0.85s">
+      <a class="botao botao--branco" href="#produto"><span class="botao__txt">Conhecer a plataforma</span></a>
+      <a class="nota" href="#depoimentos" aria-label="Nota 4,9 de 5 em mais de 1.200 avaliações">
+        <span class="nota__linha">
+          <span class="nota__estrelas" aria-hidden="true"><svg><use href="#i-estrela"/></svg></span>
+          <strong>4,9</strong>
+        </span>
+        <span class="nota__fonte">em 1.200+ avaliações</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- camada 2: o painel do produto, entre os morros e a copa; sobe um pouco mais rápido que a página -->
+  <div class="hero__camada hero__painel" data-camada="painel">
+    <div class="hero__painel-sobe" data-painel-sobe>
+      <!-- @secao painel -->
+    </div>
+  </div>
+
+  <!-- camada 3: a copa recortada, por cima do painel; anda mais devagar que ele, então o painel sai de trás dela -->
+  <div class="hero__camada hero__copa" data-camada="copa" aria-hidden="true">
+    <div class="hero__palco">
+      <img class="hero__copa-img" src="/img/hero-copa.webp" srcset="/img/hero-copa-1100.webp 1100w, /img/hero-copa.webp 1672w" sizes="(max-width: 760px) 1100px, 100vw" alt="" width="1672" height="425" decoding="async" />
+    </div>
+    <i class="hero__pe"></i>
+  </div>
+
+  <div class="hero__logos" data-entra>
+    <p class="hero__logos-frase">Mais de 3.000 empresas<br />rodam seus processos na Zaniva</p>
+    <div class="logos-faixa"><!-- @secao logos --></div>
+  </div>
+</section>

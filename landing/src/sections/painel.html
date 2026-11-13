@@ -1,0 +1,154 @@
+<!-- O painel da Zaniva: desenhado em 1180 × 740 e reduzido como um print (src/motion/painel.js ajusta a escala).
+     Para usar o print do próprio produto no lugar da maquete, ver "Personalizar" no guia. -->
+<div class="moldura" data-moldura>
+  <div class="app" data-app role="group" aria-label="Demonstração do construtor de fluxos da Zaniva">
+    <aside class="app__menu">
+      <div class="app__marca">
+        <span class="simbolo"><svg><use href="#i-t"/></svg></span>
+        <span>Zaniva</span>
+        <button class="app__icone app__icone--escuro" type="button" aria-label="Recolher menu" tabindex="-1"><svg><use href="#i-recolher"/></svg></button>
+      </div>
+      <div class="app__busca"><svg><use href="#i-busca"/></svg><span>Buscar…</span><kbd>⌘ K</kbd></div>
+      <p class="app__secao">Visão geral</p>
+      <ul class="app__itens">
+        <li><button class="app__item" type="button" tabindex="-1"><svg><use href="#i-inicio"/></svg>Início</button></li>
+        <li><button class="app__item" type="button" tabindex="-1"><svg><use href="#i-fluxos"/></svg>Fluxos</button></li>
+        <li><button class="app__item" type="button" tabindex="-1"><svg><use href="#i-conexoes"/></svg>Conexões</button></li>
+        <li><button class="app__item" type="button" tabindex="-1"><svg><use href="#i-tabelas"/></svg>Tabelas</button></li>
+        <li><button class="app__item" type="button" tabindex="-1"><svg><use href="#i-relatorios"/></svg>Relatórios</button></li>
+      </ul>
+      <p class="app__secao app__secao--mais">Projetos <button class="app__mais" type="button" aria-label="Novo projeto" tabindex="-1"><svg><use href="#i-mais"/></svg></button></p>
+      <ul class="app__itens app__projetos">
+        <li><button class="app__item app__item--ativo" type="button" tabindex="-1"><svg class="app__alca"><use href="#i-alca"/></svg><span class="app__ladrilho app__ladrilho--branco"><svg><use href="#i-cifrao"/></svg></span>Vendas<svg class="app__chev"><use href="#i-chevron"/></svg></button></li>
+        <li><button class="app__item" type="button" tabindex="-1"><svg class="app__alca"><use href="#i-alca"/></svg><span class="app__ladrilho app__ladrilho--verde"><svg><use href="#i-cobranca"/></svg></span>Financeiro<svg class="app__chev"><use href="#i-chevron"/></svg></button></li>
+        <li><button class="app__item" type="button" tabindex="-1"><svg class="app__alca"><use href="#i-alca"/></svg><span class="app__ladrilho app__ladrilho--roxo"><svg><use href="#i-comentario"/></svg></span>Atendimento<svg class="app__chev"><use href="#i-chevron"/></svg></button></li>
+        <li><button class="app__item" type="button" tabindex="-1"><svg class="app__alca"><use href="#i-alca"/></svg><span class="app__ladrilho app__ladrilho--laranja"><svg><use href="#i-pessoa"/></svg></span>Pessoas<svg class="app__chev"><use href="#i-chevron"/></svg></button></li>
+      </ul>
+      <div class="app__plano">
+        <p><strong>Plano Equipe</strong><span>12 de 20 fluxos ativos</span></p>
+        <i class="app__barra"><b></b></i>
+      </div>
+      <div class="app__perfil"><img src="/img/avatar/teo.webp" alt="" /><span><strong>Téo Martins</strong><small>Administrador</small></span><svg><use href="#i-sobe-desce"/></svg></div>
+    </aside>
+
+    <div class="app__tela">
+      <header class="app__topo">
+        <p class="app__migalhas"><span>Projetos</span><i>/</i><span>Vendas</span><i>/</i><strong>Todos os fluxos</strong></p>
+        <div class="app__topo-acoes">
+          <button class="app__icone" type="button" aria-label="Comentários" tabindex="-1"><svg><use href="#i-comentario"/></svg></button>
+          <button class="app__icone app__icone--aviso" type="button" aria-label="Avisos" tabindex="-1"><svg><use href="#i-sino"/></svg></button>
+          <button class="app__ia" type="button" tabindex="-1">Sugestões da IA<svg><use href="#i-brilho"/></svg></button>
+          <span class="app__eu"><img src="/img/avatar/teo.webp" alt="" width="28" height="28" /><svg><use href="#i-chevron"/></svg></span>
+        </div>
+      </header>
+
+      <div class="app__fluxo">
+        <div class="app__fluxo-nome">
+          <svg class="app__voltar"><use href="#i-seta-esq"/></svg>
+          <strong>Boas-vindas ao cliente</strong>
+          <span class="app__selo">Rascunho</span>
+        </div>
+        <div class="app__fluxo-acoes">
+          <span class="app__salvo" data-salvo><svg><use href="#i-ciclo"/></svg><span data-salvo-txt>Salvo agora</span></span>
+          <span class="app__rostos"><img src="/img/avatar/bia.webp" alt="" /><img src="/img/avatar/rafa.webp" alt="" /><img src="/img/avatar/lu.webp" alt="" /></span>
+          <i class="app__div"></i>
+          <button class="app__botao" type="button" tabindex="-1">Salvar rascunho</button>
+          <button class="app__botao app__botao--escuro" type="button" tabindex="-1">Publicar</button>
+          <svg class="app__kebab"><use href="#i-kebab"/></svg>
+        </div>
+      </div>
+
+      <div class="app__corpo">
+        <div class="tela" data-tela>
+          <div class="tela__barra tela__barra--esq"><button type="button" tabindex="-1" aria-label="Desfazer"><svg><use href="#i-desfazer"/></svg></button><button type="button" tabindex="-1" aria-label="Refazer" disabled><svg><use href="#i-refazer"/></svg></button></div>
+          <div class="tela__barra tela__barra--dir"><button type="button" tabindex="-1" aria-label="Diminuir zoom" data-zoom="-1"><svg><use href="#i-menos"/></svg></button><span data-zoom-valor>80%</span><button type="button" tabindex="-1" aria-label="Aumentar zoom" data-zoom="1"><svg><use href="#i-mais"/></svg></button></div>
+
+          <div class="tela__mundo" data-mundo>
+            <svg class="tela__fios" viewBox="0 0 654 560" aria-hidden="true">
+              <path data-fio="g-v" d="M125 129 V210" />
+              <path data-fio="v-pare" d="M244 226 C274 226 264 111 298 111" />
+              <path data-fio="v-anual" class="fio--ativo" d="M244 263 C268 263 272 268 298 268" />
+              <path data-fio="v-mensal" class="fio--ativo" d="M244 263 C268 263 270 368 298 368" />
+              <path data-fio="anual-erp" d="M448 268 C470 268 464 185 486 185" />
+              <path data-fio="mensal-bv" d="M448 368 C462 368 460 346 474 346" />
+              <path data-fio="erp-bv" d="M566 201 V330" />
+              <circle class="tela__luz" data-luz r="4.5" cx="-20" cy="-20" />
+            </svg>
+            <span class="tela__rotulo" style="left: 256px; top: 152px">senão</span>
+            <span class="tela__rotulo" style="left: 250px; top: 306px">se válido</span>
+            <span class="tela__rotulo" style="left: 544px; top: 258px">depois</span>
+
+            <button class="no" type="button" tabindex="-1" data-no="gatilho" style="left: 30px; top: 64px; width: 190px">
+              <span class="no__topo"><span class="no__icone no__icone--preto"><svg><use href="#i-raio"/></svg></span>Gatilho<svg class="no__kebab"><use href="#i-kebab"/></svg></span>
+              <span class="no__corpo">Novo cliente cadastrado</span>
+              <i class="no__ponto" data-ponto></i>
+            </button>
+
+            <button class="no no--selecionado" type="button" tabindex="-1" data-no="validar" style="left: 30px; top: 210px; width: 214px">
+              <span class="no__topo"><span class="no__icone no__icone--laranja"><svg><use href="#i-escudo"/></svg></span>Validar<svg class="no__kebab"><use href="#i-kebab"/></svg></span>
+              <span class="no__corpo">Conferir dados do cliente</span>
+              <span class="no__campos"><i data-campo>nome</i><i data-campo>e-mail</i><i data-campo>CNPJ</i><i data-campo>plano</i></span>
+            </button>
+
+            <button class="no no--pilula" type="button" tabindex="-1" data-no="pare" style="left: 298px; top: 96px">
+              <span class="no__icone no__icone--rosa"><svg><use href="#i-pare"/></svg></span>Parar e avisar o time
+            </button>
+
+            <button class="no" type="button" tabindex="-1" data-no="anual" style="left: 298px; top: 236px; width: 150px">
+              <span class="no__topo"><span class="no__icone no__icone--preto"><svg><use href="#i-pessoa"/></svg></span>Ação<svg class="no__kebab"><use href="#i-kebab"/></svg></span>
+              <span class="no__corpo">Plano anual</span>
+              <i class="no__ok"><svg><use href="#i-check"/></svg></i>
+            </button>
+
+            <button class="no" type="button" tabindex="-1" data-no="mensal" style="left: 298px; top: 336px; width: 150px">
+              <span class="no__topo"><span class="no__icone no__icone--preto"><svg><use href="#i-pessoa"/></svg></span>Ação<svg class="no__kebab"><use href="#i-kebab"/></svg></span>
+              <span class="no__corpo">Plano mensal</span>
+              <i class="no__ok"><svg><use href="#i-check"/></svg></i>
+            </button>
+
+            <button class="no no--pilula" type="button" tabindex="-1" data-no="erp" style="left: 486px; top: 170px">
+              <span class="no__icone no__icone--cinza"><svg><use href="#i-mais"/></svg></span>Criar conta no ERP
+              <i class="no__ok"><svg><use href="#i-check"/></svg></i>
+            </button>
+
+            <button class="no" type="button" tabindex="-1" data-no="boas-vindas" style="left: 474px; top: 330px; width: 172px">
+              <span class="no__topo"><span class="no__icone no__icone--laranja"><svg><use href="#i-envio"/></svg></span>Mensagem<svg class="no__kebab"><use href="#i-kebab"/></svg></span>
+              <span class="no__corpo">Enviar boas-vindas</span>
+              <i class="no__ok"><svg><use href="#i-check"/></svg></i>
+            </button>
+
+            <!-- colegas na tela -->
+            <span class="cursor cursor--eu" data-cursor-eu style="left: 230px; top: 292px"><svg><use href="#i-cursor"/></svg></span>
+            <span class="cursor cursor--verde" data-cursor-bia style="left: 112px; top: 322px">
+              <svg><use href="#i-cursor"/></svg>
+              <span class="cursor__etiqueta"><img src="/img/avatar/bia.webp" alt="" /><span data-bia-txt>ficou redondo</span></span>
+            </span>
+          </div>
+
+          <div class="tela__log">
+            <span class="tela__log-titulo">Últimas execuções</span>
+            <ul class="tela__log-lista" data-log>
+              <li><i><svg><use href="#i-check"/></svg></i>Mercado Doze<span>2 min</span></li>
+              <li><i><svg><use href="#i-check"/></svg></i>Clínica Sol<span>6 min</span></li>
+              <li><i><svg><use href="#i-check"/></svg></i>Oficina 21<span>9 min</span></li>
+            </ul>
+          </div>
+          <p class="tela__aviso" data-aviso aria-live="off"><svg><use href="#i-check"/></svg><span data-aviso-txt>Execução concluída em 1,2 s</span></p>
+        </div>
+
+        <aside class="lado">
+          <div class="lado__topo"><span class="no__icone no__icone--laranja"><svg><use href="#i-escudo"/></svg></span><strong>Validar</strong><svg class="lado__x"><use href="#i-x"/></svg></div>
+          <div class="lado__campo">Conferir dados do cliente<svg><use href="#i-lapis"/></svg></div>
+          <div class="lado__passo"><strong>Próximo passo</strong><svg><use href="#i-chevron"/></svg></div>
+          <p class="lado__nota">Defina o que acontece depois</p>
+          <div class="lado__select"><span class="lado__ramo"><svg><use href="#i-t"/></svg></span>Se / Senão<svg><use href="#i-sobe-desce"/></svg></div>
+          <div class="lado__cond"><span class="lado__verdade">Verdadeiro<i></i></span><span class="lado__valor">se válido</span></div>
+          <div class="lado__acao"><svg class="lado__alca"><use href="#i-alca"/></svg><span class="no__icone no__icone--preto"><svg><use href="#i-pessoa"/></svg></span>Escolher ação</div>
+          <div class="lado__cond lado__cond--falso"><span class="lado__falso">Falso<i></i></span><span class="lado__valor">senão</span></div>
+          <div class="lado__acao"><svg class="lado__alca"><use href="#i-alca"/></svg><span class="no__icone no__icone--rosa"><svg><use href="#i-pare"/></svg></span>Parar e avisar o time</div>
+          <p class="lado__exec">Execuções hoje <strong data-execucoes>1.284</strong></p>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>

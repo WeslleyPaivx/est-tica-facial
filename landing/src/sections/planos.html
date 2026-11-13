@@ -1,0 +1,61 @@
+<section class="planos" id="precos" aria-labelledby="planos-titulo">
+  <div class="cabeca">
+    <span class="chip-claro" data-entra><span class="simbolo simbolo--escuro" aria-hidden="true"><svg><use href="#i-t"/></svg></span>Planos</span>
+    <h2 class="cabeca__titulo serifa" id="planos-titulo" data-titulo style="--atraso: 0.1s">
+      <span class="linha" style="--i: 0"><span>Comece grátis.</span></span>
+      <span class="linha planos__cinza" style="--i: 1"><span>Cresça no seu ritmo.</span></span>
+    </h2>
+    <div class="periodo" role="radiogroup" aria-label="Cobrança" data-entra style="--atraso: 0.25s" data-periodo>
+      <i class="periodo__fundo" aria-hidden="true"></i>
+      <button class="periodo__op" type="button" role="radio" aria-checked="true" data-op="mensal">Mensal</button>
+      <button class="periodo__op" type="button" role="radio" aria-checked="false" data-op="anual">Anual <span class="periodo__selo">−20%</span></button>
+    </div>
+  </div>
+
+  <div class="planos__lista" data-lenis-prevent-horizontal>
+    <article class="plano" data-entra style="--atraso: 0.1s">
+      <span class="plano__icone" aria-hidden="true"><svg><use href="#i-raio"/></svg></span>
+      <h3 class="plano__nome">Essencial</h3>
+      <p class="plano__desc">Para tirar os primeiros processos da planilha.</p>
+      <p class="plano__preco"><span class="plano__moeda">R$</span><strong data-preco data-mensal="0" data-anual="0">0</strong><span class="plano__per">/mês</span></p>
+      <a class="botao botao--grafite plano__botao" href="#comecar"><span class="botao__txt">Começar grátis</span></a>
+      <ul class="plano__itens">
+        <li><svg><use href="#i-check"/></svg>Até 3 fluxos ativos</li>
+        <li><svg><use href="#i-check"/></svg>1.000 execuções por mês</li>
+        <li><svg><use href="#i-check"/></svg>E-mail, planilhas e formulários</li>
+        <li><svg><use href="#i-check"/></svg>Histórico de 7 dias</li>
+      </ul>
+    </article>
+
+    <article class="plano plano--destaque" data-entra style="--atraso: 0.2s">
+      <span class="plano__selo">Mais escolhido</span>
+      <span class="plano__icone" aria-hidden="true"><svg><use href="#i-t"/></svg></span>
+      <h3 class="plano__nome">Equipe</h3>
+      <p class="plano__desc">Para a operação inteira rodar no automático.</p>
+      <p class="plano__preco"><span class="plano__moeda">R$</span><strong data-preco data-mensal="189" data-anual="151">189</strong><span class="plano__per">/mês</span></p>
+      <a class="botao botao--escuro plano__botao" href="#comecar"><span class="botao__txt">Assinar o Equipe</span><span class="botao__seta" aria-hidden="true"><svg><use href="#i-seta-dir"/></svg><svg><use href="#i-seta-dir"/></svg></span></a>
+      <ul class="plano__itens">
+        <li><svg><use href="#i-check"/></svg>Fluxos ilimitados</li>
+        <li><svg><use href="#i-check"/></svg>20 mil execuções por mês</li>
+        <li><svg><use href="#i-check"/></svg>Todas as integrações e webhooks</li>
+        <li><svg><use href="#i-check"/></svg>Sugestões da IA nos fluxos</li>
+        <li><svg><use href="#i-check"/></svg>Até 10 pessoas na equipe</li>
+      </ul>
+    </article>
+
+    <article class="plano" data-entra style="--atraso: 0.3s">
+      <span class="plano__icone" aria-hidden="true"><svg><use href="#i-escudo"/></svg></span>
+      <h3 class="plano__nome">Empresa</h3>
+      <p class="plano__desc">Para quem precisa de controle e suporte dedicado.</p>
+      <p class="plano__preco plano__preco--texto"><strong>Sob consulta</strong></p>
+      <a class="botao botao--grafite plano__botao" href="#vendas"><span class="botao__txt">Falar com vendas</span></a>
+      <ul class="plano__itens">
+        <li><svg><use href="#i-check"/></svg>Execuções sob medida</li>
+        <li><svg><use href="#i-check"/></svg>Login único (SSO) e permissões</li>
+        <li><svg><use href="#i-check"/></svg>Ambiente de testes separado</li>
+        <li><svg><use href="#i-check"/></svg>Suporte dedicado e SLA</li>
+      </ul>
+    </article>
+  </div>
+  <p class="planos__nota" data-entra>Preços em reais, sem fidelidade. No anual, cobrado uma vez por ano.</p>
+</section>
