@@ -4,11 +4,12 @@
 
 ### Entrega 2.2 — Anti-duplicação, cliques repetidos e vazamento (2026-11-13)
 
-- Migration `20261113000100_anti_abuse_dedup.sql` (não destrutiva, **não aplicada na homologação**: falha de propósito se já houver duplicados): e-mail de contato único por organização (sem diferenciar maiúsculas); nome de empresa único por organização (ignorando espaços nas pontas); `request_id` único por organização em contatos e empresas (o mesmo formulário reenviado não cria segundo registro); limite de 120 comandos de escrita por minuto por usuário em contatos/empresas, contado no banco por `auth.uid()` (`private.rate_limit_hits`, sem acesso do app).
+- Migration `20261113000100_anti_abuse_dedup.sql` (não destrutiva; falha de propósito se já houver duplicados; **aplicada na homologação em 2026-11-13** com autorização do proprietário, após checar 0 duplicados): e-mail de contato único por organização (sem diferenciar maiúsculas); nome de empresa único por organização (ignorando espaços nas pontas); `request_id` único por organização em contatos e empresas (o mesmo formulário reenviado não cria segundo registro); limite de 120 comandos de escrita por minuto por usuário em contatos/empresas, contado no banco por `auth.uid()` (`private.rate_limit_hits`, sem acesso do app).
 - App: telas de criação recebem `request_id` gerado no servidor; reenvio repetido vira sucesso silencioso; mensagens claras para duplicado e para limite. `SubmitButton` (useFormStatus) trava os botões que ainda não travavam (revogar/aceitar convite, encerrar sessões, sair); os demais já travavam via `useActionState`.
 - `scripts/scan-bundle.mjs` + `pnpm scan:bundle` (na CI após o build): nenhum segredo nem valor de variável de servidor no código enviado ao navegador. Verificado com vazamento plantado de propósito (detectado, exit 1).
 - Testes: SQL 145/145 (+17), Vitest 57/57 (+6), Playwright 22/22, lint, typecheck, build, scan:secrets e scan:bundle ok.
-- Pendente: aplicar a migration na homologação (com autorização), E2E autenticado (R2), limite para leituras (R4).
+- Advisors após aplicar: Security = WARN `auth_leaked_password_protection` (já conhecido, R10) + INFO `rls_enabled_no_policy` em `private.rate_limit_hits` (intencional: schema não exposto, sem acesso do app); Performance = só `unused_index` INFO (banco vazio).
+- Pendente: E2E autenticado (R2), limite para leituras (R4).
 
 ### Entrega 2.1 — Contatos e empresas (2026-11-04)
 
