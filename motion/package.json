@@ -1,0 +1,26 @@
+{
+  "name": "zaniva-motion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Comercial motion design 35s — Zaniva (Remotion)",
+  "scripts": {
+    "studio": "remotion studio",
+    "audio": "node scripts/make-audio.mjs",
+    "render": "remotion render ZanivaAd renders/zaniva-motion-final.mp4",
+    "render:preview": "remotion render ZanivaAd renders/zaniva-motion-preview.mp4 --scale=0.5 --crf=24",
+    "storyboard": "bash scripts/storyboard.sh",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@remotion/cli": "4.0.543",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}
