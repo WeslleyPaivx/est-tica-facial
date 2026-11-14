@@ -17,6 +17,8 @@ npm install          # Node 20+ ; FFmpeg só é necessário para o storyboard
 | `npm run audio` | Regenera trilha e efeitos em `public/audio/` (síntese determinística) |
 | `npm run render:preview` | Preview 540×960 → `renders/zaniva-motion-preview.mp4` |
 | **`npm run render`** | **Render final → `renders/zaniva-motion-final.mp4`** |
+| `bash scripts/place-voice.sh locucao.mp3` | Recorta a locução e posiciona as frases → `public/audio/voice.wav` |
+| `npm run render -- --props='{"voiceover":true}'` | Render final **com narração** |
 | `npm run storyboard` | Folha de contato → `renders/zaniva-storyboard.png` |
 | `npm run typecheck` | TypeScript |
 

@@ -119,7 +119,7 @@ export const BRAND = {
 export type SfxName = 'whoosh' | 'click' | 'tick' | 'notify' | 'pop' | 'buzz' | 'pulse' | 'swell' | 'impact' | 'shimmer';
 export type SfxCue = {frame: number; sfx: SfxName; volume: number};
 export const SFX_FRAMES: Record<SfxName, number> = {whoosh: 36, click: 5, tick: 3, notify: 54, pop: 10, buzz: 18, pulse: 54, swell: 45, impact: 90, shimmer: 156};
-export const AUDIO = {music: 'audio/music.wav', musicVolume: 0.62, musicVolumeUnderVoice: 0.34, voice: 'audio/voice.wav', voiceVolume: 1, sfxMaster: 1};
+export const AUDIO = {music: 'audio/music.wav', musicVolume: 0.62, musicVolumeUnderVoice: 0.34, voice: 'audio/voice.wav', voiceVolume: 0.9, sfxMaster: 1};
 
 const typing = (start: number, end: number): SfxCue[] =>
   Array.from({length: Math.floor((end - start) / 5)}, (_, i) => ({frame: start + i * 5, sfx: 'tick' as const, volume: 0.16}));

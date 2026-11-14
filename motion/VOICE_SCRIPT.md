@@ -1,7 +1,11 @@
 # VOICE_SCRIPT — narração opcional (pt-BR)
 
-Status: **não gravada**. O vídeo final foi exportado sem narração (trilha + efeitos).
-O projeto já aceita um arquivo externo — veja "Como encaixar" no fim.
+Status: **gravada e aplicada** (ElevenLabs v3, arquivo único enviado pelo proprietário).
+`scripts/place-voice.sh` recorta as seis frases pelas pausas e posiciona cada uma na sua cena,
+gerando `public/audio/voice.wav`. Entradas usadas no vídeo final: 1,0 s · 6,6 s · 12,0 s · 20,0 s · 29,4 s · 32,0 s.
+Os pontos de corte foram achados por detecção de silêncio, não por escuta — confira ouvindo.
+
+A tabela abaixo é o planejamento original (antes da gravação).
 
 ## Roteiro com marcações
 
