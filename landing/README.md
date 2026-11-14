@@ -29,7 +29,7 @@ O catálogo cobre os domínios do material fornecido: CRM/vendas (Frappe CRM), a
 
 Da referência visual permanecem apenas a montanha, céu, vegetação, texturas, fonte e mecanismos de movimento. Textos, planos, portfólios, nomes, vagas e depoimentos fictícios foram removidos. Os cartões visuais são representações em HTML/CSS, não portfólios reais.
 
-Pendente: número do WhatsApp comercial em `src/config.js` (ativa o balão do WhatsApp e o envio do resumo pelo WhatsApp). Preços, clientes, depoimentos e indicadores não foram inventados.
+WhatsApp comercial configurado em `src/config.js` (balão flutuante e envio do resumo do projeto). Preços, clientes, depoimentos e indicadores não foram inventados.
 
 ## Publicação na Vercel
 
